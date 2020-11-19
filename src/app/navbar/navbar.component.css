@@ -1,49 +1,73 @@
-nav{
-    padding: 15px;
-    display: flex;
-    flex-wrap: wrap;
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.container{
+    max-width: 1350px;
+    margin: 0 auto;
+}
+
+nav {
+    padding: 15px 10px;
     background-color: #7bed9f;
-    
 }
 
-.titulo{
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+nav .row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
 }
 
-.usuario{
+.login{
     width: 40%;
-    display: flex;
-    margin-left: 200px;
-    flex-wrap: wrap;
     justify-content: right;
-
-}
-
-.usuario button{
-    display: flex;
-    flex-wrap: wrap;
-    width: 200px;
-    font-size: 1.2em;
-}
-
-.usuario button:hover{
-    transform: scale(1.1);
-}
-
-.usuario button i{
-    color: #105f1a;
-    font-size: 28px;
-    width: 30%;
-    
     
 }
 
-button{
-    width: 200px;
-    padding: 15px;
-    font-size: 1.2em;
+nav .logo{
+    width: 60%;
 }
 
-button:hover{
+nav .logo a{
+    font-size: 1.7em;
+    color: black;
+    
+}
+
+.login button{
+    width: 40%;
+    margin-left: 15px;
+    padding: 10px;
+    font-size: 1.3em;
+}
+
+.login button i{
+    font-size: 100%;
+    margin-right: 20px;
+
+}
+
+.login button:hover{
     transform: scale(1.1);
+}
+
+@media(max-width: 62.75em){
+    .login span{
+        display: none;
+    }
+
+    .login button{
+        width: auto;
+    }
+}
+
+@media(max-width: 48em){
+    .login span{
+        display: none;
+    }
+
+    .login button{
+        width: auto;
+    }
 }
