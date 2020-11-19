@@ -29,10 +29,10 @@ nav .logo{
     width: 60%;
 }
 
-nav .logo a{
+nav .logo a, nav .logo i{
     font-size: 1.7em;
     color: black;
-    
+    text-decoration: none;
 }
 
 .login button{
@@ -50,6 +50,11 @@ nav .logo a{
 
 .login button:hover{
     transform: scale(1.1);
+}
+
+a, span {
+    font-family: var(--fuentePrimaria);
+    
 }
 
 @media(max-width: 62.75em){
