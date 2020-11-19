@@ -1,4 +1,43 @@
-h2 {
-    color: red; 
-    font-weight: 700;
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
+
+.pie {
+    justify-content: space-between;
+    color: white;
+    justify-content: space-around;
+}
+
+.pie .logo {
+    color: white;
+    margin-left: 15px;
+    font-size: 30px;
+}
+
+.pie ul {
+   list-style: none;
+}
+
+.navi li {
+    padding-left: 50px;
+}
+
+.logo-redes {
+    justify-content: space-between;
+}
+
+.fab, .far {
+    color: white;
+    font-size: 25px;
+    padding: 25px 10px;
+
+}
+
+.pie .texto {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+
