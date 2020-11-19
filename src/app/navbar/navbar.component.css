@@ -1,0 +1,49 @@
+nav{
+    padding: 15px;
+    display: flex;
+    flex-wrap: wrap;
+    background-color: #7bed9f;
+    
+}
+
+.titulo{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.usuario{
+    width: 40%;
+    display: flex;
+    margin-left: 200px;
+    flex-wrap: wrap;
+    justify-content: right;
+
+}
+
+.usuario button{
+    display: flex;
+    flex-wrap: wrap;
+    width: 200px;
+    font-size: 1.2em;
+}
+
+.usuario button:hover{
+    transform: scale(1.1);
+}
+
+.usuario button i{
+    color: #105f1a;
+    font-size: 28px;
+    width: 30%;
+    
+    
+}
+
+button{
+    width: 200px;
+    padding: 15px;
+    font-size: 1.2em;
+}
+
+button:hover{
+    transform: scale(1.1);
+}
