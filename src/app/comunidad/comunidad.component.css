@@ -1,0 +1,90 @@
+.mainCont {
+    background-color: white;
+    flex-wrap: wrap;
+    display: flex;
+    justify-content: space-around;
+    margin-top: 30px;
+    margin-bottom: 50px;
+}
+
+.titulo {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 30px; 
+}
+
+.titulo h2 {
+    font-family: var(--fuentePrimaria);
+    font-weight: 700;
+}
+
+
+.comunitarios {
+    width: 40%;
+}
+
+.comunitarios{
+    background-image: url('/assets/images/huertos.jpg');
+    background-size: cover;
+    width: 40%;
+    height: 250px;
+    opacity: 0.78;
+    background-color: rgb(109, 177, 124);
+    background-blend-mode: multiply;
+    border: 1px solid var(--color-secundario);
+    border-radius: 3px;
+}
+
+.infoCultivo{
+    background-image: url('/assets/images/huertos.jpg');
+    background-size: cover;
+    width: 40%;
+    height: 250px;
+    opacity: 0.78;
+    background-color: rgb(109, 177, 124);
+    background-blend-mode: multiply;
+    border: 1px solid var(--color-secundario);
+    border-radius: 3px;
+}
+
+
+.texto h3 {
+    color: rgb(255, 255, 255);
+    font-family: var(--fuentePrincipal);
+    font-weight: 900;
+    position: relative;
+    top: 60px;
+    text-align: center;
+    text-shadow: 1px 0 black, 0 1px black, 1px 0 black, 0 1px black;
+}
+
+
+.texto p {
+    color: rgb(255, 255, 255);
+    font-family: var(--fuenteSecundaria);
+    font-weight: 900;
+    position: relative;
+    top: 70px;
+    text-align: center;
+    text-shadow: 1px 0 black, 0 1px black, 1px 0 black, 0 1px black;
+}
+
+
+.infoCultivo {
+    background-image: url('/assets/images/cultivos.jpg');
+    background-size: cover;
+    width: 40%;
+    height: 250px;
+}
+
+
+@media(max-width: 48em){
+
+    .texto h3 {
+        font-size: 16px; 
+    }
+
+    .texto p {
+        font-size: 13px;
+    }
+}
