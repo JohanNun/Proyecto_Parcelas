@@ -7,6 +7,7 @@ import { HomeComponent } from './home/home.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { BuscadorComponent } from './buscador/buscador.component';
 import { ComunidadComponent } from './comunidad/comunidad.component';
+import { HuertosComunitariosComponent } from './huertos-comunitarios/huertos-comunitarios.component';
 
 
 @NgModule({
@@ -15,7 +16,8 @@ import { ComunidadComponent } from './comunidad/comunidad.component';
     HomeComponent,
     NavbarComponent,
     BuscadorComponent,
-    ComunidadComponent
+    ComunidadComponent,
+    HuertosComunitariosComponent
   ],
   imports: [
     BrowserModule,

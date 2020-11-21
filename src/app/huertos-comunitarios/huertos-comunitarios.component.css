@@ -1,0 +1,41 @@
+.mainCont {
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.busqueda {
+    flex-wrap: wrap;
+    display: flex;
+}
+
+.busqueda input {
+    width: 300px;
+    height: 50px;
+    border: 1px solid rgb(90, 89, 89);
+    border-right: none;
+    border-radius: 3px;
+    margin-bottom: 20px;
+    padding-bottom: 2px;
+}
+
+.busqueda .boton {
+    width: 75px;
+    height: 50px;
+    border: 1px solid rgb(90, 89, 89);
+    border-radius: 3px;
+}
+
+.mainCont h3 {
+    font-family: var(--fuentePrincipal);
+    font-weight: 800;
+    margin-top: 10px;
+}
+
+.lista ul {
+    list-style: none;
+    padding: 10px; 
+}
+
+.lista ul li {
+    margin-bottom: 8px;
+}
