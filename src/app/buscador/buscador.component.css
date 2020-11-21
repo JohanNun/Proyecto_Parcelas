@@ -1,11 +1,13 @@
 .buscador {
     text-align: center;
+    width: 100%;
 }
 
 .buscador h2 {
     margin-top: 20px;
     margin-bottom: 50px;
     font-family: var(--fuentePrimaria);
+    font-weight: 700;
 }
 
 .buscador input {
