@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { BuscadorComponent } from './buscador/buscador.component';
+import { ComunidadComponent } from './comunidad/comunidad.component';
 
 
 @NgModule({
@@ -13,7 +14,8 @@ import { BuscadorComponent } from './buscador/buscador.component';
     AppComponent,
     HomeComponent,
     NavbarComponent,
-    BuscadorComponent
+    BuscadorComponent,
+    ComunidadComponent
   ],
   imports: [
     BrowserModule,
