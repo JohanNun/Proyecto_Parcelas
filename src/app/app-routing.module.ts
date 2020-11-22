@@ -9,11 +9,8 @@ const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: '/home' },
   { path: 'home', component: HomeComponent },
   { path: 'huertos-colectivos', component: HuertosComunitariosComponent },
-<<<<<<< HEAD
   { path: 'info-cultivo', component: InfoCultivoComponent },
-=======
   { path: 'form', component: FormularioComponent },
->>>>>>> 5924dcf0030e341ce811e0dace93ea76b1c812b1
   { path: '**', redirectTo: '/home' }
 ];
 
