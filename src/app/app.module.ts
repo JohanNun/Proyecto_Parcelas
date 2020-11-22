@@ -8,6 +8,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { BuscadorComponent } from './buscador/buscador.component';
 import { ComunidadComponent } from './comunidad/comunidad.component';
 import { HuertosComunitariosComponent } from './huertos-comunitarios/huertos-comunitarios.component';
+import { InfoCultivoComponent } from './info-cultivo/info-cultivo.component';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import { HuertosComunitariosComponent } from './huertos-comunitarios/huertos-com
     NavbarComponent,
     BuscadorComponent,
     ComunidadComponent,
-    HuertosComunitariosComponent
+    HuertosComunitariosComponent,
+    InfoCultivoComponent
   ],
   imports: [
     BrowserModule,

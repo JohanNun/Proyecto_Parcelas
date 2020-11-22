@@ -1,0 +1,100 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.mainCont {
+    margin-top: 50px;
+    margin-bottom: 50px;
+    padding: 35px;
+}
+
+.busqueda {
+    flex-wrap: wrap;
+    display: flex;
+    margin-left: 20px;
+}
+
+.busqueda input {
+    width: 300px;
+    height: 50px;
+    border: 1px solid rgb(90, 89, 89);
+    border-right: none;
+    border-radius: 3px;
+    margin-bottom: 20px;
+    padding-bottom: 2px;
+    padding-left: 5px;
+}
+
+.busqueda .boton {
+    width: 75px;
+    height: 50px;
+    border: 1px solid rgb(90, 89, 89);
+    border-radius: 3px;
+}
+
+.columna {
+    border-bottom: 0.5px solid rgb(90, 89, 89);
+    flex-wrap: wrap;
+    display: flex;
+}
+
+
+.alimento {
+    margin-top: 20px;
+    margin-bottom: 50px;
+    border: 1px solid rgb(90, 89, 89);
+    margin-left: 15px;
+}
+
+
+.nombre {
+    width: 100%;
+    background-color: var(--color-principal);
+    padding-left: 25px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+}
+
+.alimento img {
+    padding: 25px;
+    background-size: cover;
+}
+
+.columna p {
+    padding: 25px;
+}
+
+.texto {
+    width: 100%;
+    border-left: 0.5px solid rgb(90, 89, 89);
+}
+
+.info {
+    padding: 30px;
+}
+
+.info h5 {
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+.info p {
+    margin-bottom: 30px;
+}
+
+
+.info li {
+    margin-top: 10px;
+    margin-left: 20px;
+}
+
+@media(max-width: 48em){
+    
+    .texto {
+        border-left: none;
+    }
+}
+ 
