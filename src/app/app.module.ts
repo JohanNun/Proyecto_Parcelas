@@ -8,6 +8,8 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { BuscadorComponent } from './buscador/buscador.component';
 import { ComunidadComponent } from './comunidad/comunidad.component';
 import { HuertosComunitariosComponent } from './huertos-comunitarios/huertos-comunitarios.component';
+import { FormularioComponent } from './formulario/formulario.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -17,11 +19,13 @@ import { HuertosComunitariosComponent } from './huertos-comunitarios/huertos-com
     NavbarComponent,
     BuscadorComponent,
     ComunidadComponent,
-    HuertosComunitariosComponent
+    HuertosComunitariosComponent,
+    FormularioComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

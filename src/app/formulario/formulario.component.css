@@ -1,0 +1,25 @@
+form{
+    padding: 50px 200px;
+}
+
+.form-group{
+    margin-top: 10px;
+}
+
+.form-group label{
+    text-decoration: underline;
+}
+
+legend{
+    text-decoration: underline;
+}
+
+.btn{
+    width: 200px;
+}
+
+@media(max-width: 62.75em){
+   form{
+       padding: 50px 0;
+   }
+}

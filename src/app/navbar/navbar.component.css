@@ -11,6 +11,7 @@
 nav {
     padding: 15px 10px;
     background-color: #7bed9f;
+    border-bottom:1px ridge green;
 }
 
 nav .row {
