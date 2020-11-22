@@ -21,7 +21,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     BuscadorComponent,
     ComunidadComponent,
     HuertosComunitariosComponent,
-    InfoCultivoComponent
+    InfoCultivoComponent,
     FormularioComponent
   ],
   imports: [
