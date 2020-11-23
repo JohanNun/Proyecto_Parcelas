@@ -1,0 +1,17 @@
+<div class="mainCont container col-12">
+
+    <div class="busqueda">
+
+        <input type="text" placeholder="Codigo postal, dirección, ...">
+        <button class="boton btn-success"><i class="fas fa-search"></i></button>
+    </div>
+
+    <div class="mapa">
+
+        <agm-map [latitude]="latitud" [longitude]="longitud" [zoom]="10">
+            <agm-marker [latitude]="latitud" [longitude]="longitud"></agm-marker>
+        </agm-map>
+
+
+    </div>
+</div>
