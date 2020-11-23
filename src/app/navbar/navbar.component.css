@@ -124,21 +124,26 @@ nav .logo a, nav .logo i{
 }
 
 @media(max-width: 62.75em){
-    .login span{
-        display: none;
+    .logo{
+        width: 30%;
     }
 
-    .login button{
-        width: auto;
+
+    .venta{
+        width: 30%;
+    }
+
+    .contenido-desplegable{
+        width: 30%;
     }
 }
 
 @media(max-width: 48em){
-    .login span{
-        display: none;
+    .venta{
+        width: 48%;
     }
 
-    .login button{
-        width: auto;
+    .contenido-desplegable{
+        width: 48%;
     }
 }

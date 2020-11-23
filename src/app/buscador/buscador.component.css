@@ -1,10 +1,15 @@
 .buscador {
     text-align: center;
     width: 100%;
+    height: 800px;
+    background-image: url(https://economiademallorca.com/upload/img/periodico/img_13942.jpg);
+    background-size: cover;
+    background-position: center;
+    padding: 200px 0px;
+    background-blend-mode: multiply;
 }
 
 .buscador h2 {
-    margin-top: 20px;
     margin-bottom: 50px;
     font-family: var(--fuentePrimaria);
     font-weight: 700;
