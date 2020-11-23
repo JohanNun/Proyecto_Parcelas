@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { AgmCoreModule } from '@agm/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -12,6 +13,7 @@ import { InfoCultivoComponent } from './info-cultivo/info-cultivo.component';
 import { FormularioComponent } from './formulario/formulario.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { LoginComponent } from './login/login.component';
+import { MapaComponent } from './mapa/mapa.component';
 
 
 @NgModule({
@@ -24,12 +26,16 @@ import { LoginComponent } from './login/login.component';
     HuertosComunitariosComponent,
     InfoCultivoComponent,
     FormularioComponent,
-    LoginComponent
+    LoginComponent,
+    MapaComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyD8sl9A2I_jgowz5eVHdM8szV9wRMR7WIw'
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]
