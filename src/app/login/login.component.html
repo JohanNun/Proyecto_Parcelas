@@ -1,0 +1,37 @@
+<navbar></navbar>
+
+<div class="container">
+    <h2>Login</h2>
+    <form [formGroup]="formularioLogin" (ngSubmit)="onSubmit()" class="contenido">
+        <div class="imgcontainer">
+            <img src="https://cdn.pixabay.com/photo/2013/07/13/10/14/man-156836_960_720.png" alt="Avatar"
+                class="avatar">
+        </div>
+
+        <div class="container">
+            <label for="username"><b>Nombre Usuario</b></label>
+            <input type="text" placeholder="Introduce Nombre de usuario" name="uname" formControlName="nombreusuario">
+            <p class="text-danger"
+                *ngIf="formularioLogin.get('nombreusuario').hasError('required') && formularioLogin.get('nombreusuario').touched">
+                Introduce un nombre de usuario
+            </p>
+
+            <label for="psw"><b>Contraseña</b></label>
+            <input type="password" placeholder="Introduce Contraseña" name="psw" formControlName="contraseña">
+            <p class="text-danger"
+                *ngIf="formularioLogin.get('contraseña').hasError('required') && formularioLogin.get('contraseña').touched">
+                Introduce una contraseña
+            </p>
+
+            <button type="submit">Login</button>
+            <label>
+                <input type="checkbox" checked="checked" name="recordarme"> Recordarme
+            </label>
+        </div>
+
+        <div class="container" style="background-color:var(--color-secundario)">
+            <button type="button" class="cancelbtn">Cancel</button>
+            <span class="nopassword">Olvidaste la <a href="#">contraseña?</a></span>
+        </div>
+    </form>
+</div>

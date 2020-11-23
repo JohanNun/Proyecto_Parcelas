@@ -11,6 +11,7 @@ import { HuertosComunitariosComponent } from './huertos-comunitarios/huertos-com
 import { InfoCultivoComponent } from './info-cultivo/info-cultivo.component';
 import { FormularioComponent } from './formulario/formulario.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { LoginComponent } from './login/login.component';
 
 
 @NgModule({
@@ -22,7 +23,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     ComunidadComponent,
     HuertosComunitariosComponent,
     InfoCultivoComponent,
-    FormularioComponent
+    FormularioComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,

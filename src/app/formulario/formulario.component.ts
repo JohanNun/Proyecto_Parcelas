@@ -32,7 +32,7 @@ export class FormularioComponent implements OnInit {
       parcela: new FormControl('', [Validators.required]),
       experiencia: new FormControl(),
       descripcion: new FormControl()
-    })
+    }, [this.passwordValidator])
 
   }
 
