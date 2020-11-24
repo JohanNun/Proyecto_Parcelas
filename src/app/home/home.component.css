@@ -1,0 +1,156 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.container{
+    max-width: 1150px;
+    margin: 0 auto;
+}
+
+.hero{
+    background-image: url(https://economiademallorca.com/upload/img/periodico/img_13942.jpg);
+    background-size: cover;
+    background-position: center;
+    background-blend-mode: multiply;
+    background-color: rgb(175, 170, 170);
+}
+
+nav {
+    padding: 15px 10px;
+}
+
+nav .row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.venta{
+    padding-top: 8px;
+    margin-left: 100px;
+}
+
+.venta button{
+    padding: 5px;
+    border: none;
+    color: var(--color-secundario);
+    font-family: var(--fuentePrimaria);
+    font-size: 1.2em;
+}
+
+.venta button:hover{
+    transform: scale(1.1);
+    background-color: #2ed573;
+    color: var(--color-secundario);
+    border-bottom: 1px outset green;
+    border-right: 1px outset green;
+}
+
+
+
+nav .logo{
+    width: 60%;
+    
+}
+
+nav .logo a, nav .logo i{
+    font-size: 1.7em;
+    color: black;
+    
+}
+
+.desplegable{
+    position: relative;
+    width: 100px;
+}
+
+.desplegable button{
+    width: 80px;
+    height: 50px;
+    border: none;
+
+}
+
+.desplegable button i{
+    font-size: 35px;
+    color: var(--color-secundario);
+    
+}
+
+.contenido-desplegable{
+    border: 2px solid green;
+    display: none;
+    left: 0;
+    padding-top: 4px;
+    position: absolute;
+    top: 100%;
+    background-color: white;
+    z-index: 9999;
+    width: 200px;  
+    margin-top: 2px; 
+    
+}
+
+.contenido-desplegable ul li{
+    margin-bottom: 2px;
+    text-align: left;
+    list-style: none;
+    width: 100%;
+    padding: 5px;
+    font-family: var(--fuentePrimaria);
+}
+
+.contenido-desplegable ul li a{
+    text-decoration: none;
+    width: 100%;
+    color: green;
+}
+
+.contenido-desplegable ul li i{
+    padding: 0 10px;
+    width: 25%;
+    font-size: 20px;
+}
+
+.contenido-desplegable ul li a:hover{
+    text-decoration: underline;
+}
+
+.desplegable button:hover{
+    transform: scale(1.1);
+    background-color: #2ed573;
+    border-bottom: 1px outset green;
+    border-right: 1px outset green;
+    
+}
+
+.desplegable:hover .contenido-desplegable{
+    display: block;
+}
+
+@media(max-width: 62.75em){
+    .logo{
+        width: 30%;
+    }
+
+
+    .venta{
+        width: 30%;
+    }
+
+    .contenido-desplegable{
+        width: 30%;
+    }
+}
+
+@media(max-width: 48em){
+    .venta{
+        width: 48%;
+    }
+
+    .contenido-desplegable{
+        width: 48%;
+    }
+}

@@ -10,8 +10,8 @@
 
 nav {
     padding: 15px 10px;
-    background-color: #7bed9f;
     border-bottom:1px ridge green;
+    background-color: rgba(116, 216, 116, 0.137);
 }
 
 nav .row {
@@ -22,6 +22,7 @@ nav .row {
 }
 
 .venta{
+    width: 25%;
     padding-top: 8px;
     margin-left: 100px;
 }
@@ -32,20 +33,20 @@ nav .row {
     color: var(--color-secundario);
     font-family: var(--fuentePrimaria);
     font-size: 1.2em;
+    border-radius: 20px 20px;
 }
 
 .venta button:hover{
     transform: scale(1.1);
-    background-color: #2ed573;
+    background-color: #44f18c46;
     color: var(--color-secundario);
-    border-bottom: 1px outset green;
-    border-right: 1px outset green;
 }
 
 
 
 nav .logo{
-    width: 60%;
+    width: 40%;
+    margin-left: 50px;
 }
 
 nav .logo a, nav .logo i{
@@ -56,17 +57,26 @@ nav .logo a, nav .logo i{
 
 .desplegable{
     position: relative;
-    width: 100px;
+    width: 20%;
 }
 
 .desplegable button{
     width: 80px;
     height: 50px;
     border: none;
+    border-radius: 20px 20px;
 
 }
 
-.desplegable button i{
+.desplegable button i:first-child{
+    font-size: 20px;
+    color: var(--color-secundario);
+    margin-right: 5px;
+    text-align: center
+    
+}
+
+.desplegable button i:last-child{
     font-size: 35px;
     color: var(--color-secundario);
     
@@ -74,25 +84,29 @@ nav .logo a, nav .logo i{
 
 .contenido-desplegable{
     border: 2px solid green;
+    border-radius: 10px 10px;
     display: none;
-    left: 0;
+    right: 10;
     padding-top: 4px;
     position: absolute;
-    top: 100%;
     background-color: white;
-    z-index: 9999;
     width: 200px;  
-    margin-top: 2px; 
-    
+    margin-top: 2px;
 }
 
 .contenido-desplegable ul li{
-    margin-bottom: 2px;
+    margin-bottom: 5px;
     text-align: left;
     list-style: none;
     width: 100%;
     padding: 5px;
     font-family: var(--fuentePrimaria);
+}
+
+.contenido-desplegable ul li:hover{
+    background-color: #44f18c46;
+    border-radius: 10px 10px;
+    
 }
 
 .contenido-desplegable ul li a{
@@ -109,13 +123,12 @@ nav .logo a, nav .logo i{
 
 .contenido-desplegable ul li a:hover{
     text-decoration: underline;
+    
 }
 
 .desplegable button:hover{
     transform: scale(1.1);
-    background-color: #2ed573;
-    border-bottom: 1px outset green;
-    border-right: 1px outset green;
+    background-color: #44f18c46;
     
 }
 
@@ -123,27 +136,3 @@ nav .logo a, nav .logo i{
     display: block;
 }
 
-@media(max-width: 62.75em){
-    .logo{
-        width: 30%;
-    }
-
-
-    .venta{
-        width: 30%;
-    }
-
-    .contenido-desplegable{
-        width: 30%;
-    }
-}
-
-@media(max-width: 48em){
-    .venta{
-        width: 48%;
-    }
-
-    .contenido-desplegable{
-        width: 48%;
-    }
-}
