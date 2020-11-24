@@ -14,6 +14,7 @@ import { FormularioComponent } from './formulario/formulario.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { LoginComponent } from './login/login.component';
 import { MapaComponent } from './mapa/mapa.component';
+import { PaginaBusquedaComponent } from './pagina-busqueda/pagina-busqueda.component';
 
 
 @NgModule({
@@ -27,7 +28,8 @@ import { MapaComponent } from './mapa/mapa.component';
     InfoCultivoComponent,
     FormularioComponent,
     LoginComponent,
-    MapaComponent
+    MapaComponent,
+    PaginaBusquedaComponent
   ],
   imports: [
     BrowserModule,
