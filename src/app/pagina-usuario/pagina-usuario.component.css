@@ -1,0 +1,93 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.mainCont {
+    width: 85%;
+    margin: 0 auto;
+    margin-bottom: 25px;
+    margin-top: 25px;
+    -webkit-box-shadow: 0px 0px 10px -2px rgba(0,0,0,0.34); 
+    box-shadow: 0px 0px 10px -2px rgba(0,0,0,0.34); 
+}
+
+.top {
+   padding: 10px 20px;
+   flex-wrap: wrap;
+   display: flex;
+   margin-bottom: 20px;
+}
+
+.ekis {
+  width: 15%;
+  float: right;
+}
+
+.foto {
+    width: 85%;
+    text-align: left;
+    background-color: white;
+}
+
+.campos{
+    width: 100%;
+    padding: 25px;
+}
+
+.campos h4, h5 {
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.campos p {
+    margin-bottom: 15px;
+}
+
+
+.campos button {
+    margin-top: 5px;
+    margin-bottom: 10px;
+    height: 50px;
+    width: 120px;
+}
+
+.galeria {
+    flex-wrap: wrap;
+    display: flex;
+    padding: 0px 25px; 
+}
+
+.galeria img {
+    width: 32%;
+    margin: 5px;
+    height: 100%;
+}
+
+.galeria ul {
+    list-style: none;
+}
+
+.galeria li {
+    display: inline;
+}
+
+
+.pie {
+    flex-wrap: wrap;
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 10px; 
+}
+
+.cancelbtn {
+    width: 120px;
+    height: 40px;
+}
+
+
+
+.big {
+    width: 500px;
+}

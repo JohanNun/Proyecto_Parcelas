@@ -1,7 +1,7 @@
 
 
 
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-mapa',
@@ -13,6 +13,7 @@ export class MapaComponent implements OnInit {
   latitud: number;
   longitud: number;
   zoom: number;
+  @Input() buscador: boolean = true;
 
   constructor() { }
 

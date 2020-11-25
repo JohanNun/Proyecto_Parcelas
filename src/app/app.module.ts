@@ -15,6 +15,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { LoginComponent } from './login/login.component';
 import { MapaComponent } from './mapa/mapa.component';
 import { PaginaBusquedaComponent } from './pagina-busqueda/pagina-busqueda.component';
+import { PaginaUsuarioComponent } from './pagina-usuario/pagina-usuario.component';
 
 
 @NgModule({
@@ -29,7 +30,8 @@ import { PaginaBusquedaComponent } from './pagina-busqueda/pagina-busqueda.compo
     FormularioComponent,
     LoginComponent,
     MapaComponent,
-    PaginaBusquedaComponent
+    PaginaBusquedaComponent,
+    PaginaUsuarioComponent
   ],
   imports: [
     BrowserModule,
