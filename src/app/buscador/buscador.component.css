@@ -44,7 +44,7 @@ h1 {
  user-select:none;
 }
 
-h1 span { display:inline-block; animation:float .2s ease-in-out infinite; }
+h1 span { display:inline-block; animation:float .5s ease-in-out infinite; }
  @keyframes float {
   0%,100%{ transform:none; }
   33%{ transform:translateY(-1px) rotate(-2deg); }
@@ -75,3 +75,5 @@ h1 span:nth-child(11){ animation-delay:.5s; }
 h1 span:nth-child(12){ animation-delay:.55s; }
 h1 span:nth-child(13){ animation-delay:.6s; }
 h1 span:nth-child(14){ animation-delay:.65s; }
+h1 span:nth-child(15){ animation-delay:.7s; }
+h1 span:nth-child(16){ animation-delay:.75s; }
