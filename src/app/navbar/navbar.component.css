@@ -94,7 +94,7 @@ nav .logo a, nav .logo i{
     border: 2px solid green;
     border-radius: 10px 10px;
     display: none;
-    left: 0;
+    left: -150px;
     padding-top: 4px;
     position: absolute;
     background-color: white;
