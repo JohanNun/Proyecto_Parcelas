@@ -1,0 +1,137 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.mainCont {
+    width: 85%;
+    margin: 0 auto;
+    margin-bottom: 25px;
+    margin-top: 25px;
+    padding: 10px;
+    -webkit-box-shadow: 0px 0px 10px -2px rgba(0,0,0,0.34); 
+    box-shadow: 0px 0px 10px -2px rgba(0,0,0,0.34); 
+}
+
+.cabecera {
+    flex-wrap: wrap;
+    display: flex;
+}
+
+
+.foto {
+    width: 20%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 20px;
+}
+
+.foto img {
+    width: 100%;
+}
+
+.foto h5 {
+    margin-top: 10px;
+    font-weight: 500;
+    font-size: 17px;
+    margin-left: 7px;
+}
+
+.foto h5:hover{
+    transform: scale(1.05);
+    transition: ease;
+    cursor: pointer;
+}
+
+.texto {
+    width: 70%;
+    display: block;
+    margin-left: 20px;
+    margin-top: 10px;
+}
+
+.texto h5 {
+    margin-bottom: 10px;
+}
+
+.texto p {
+    margin-left: 7px;
+}
+
+.caracteristicas{
+    margin-top: 20px;
+}
+
+.caracteristicas ul {
+    list-style: none;
+    margin-left: 7px;
+}
+
+.linea{
+    width: 95%;
+    height: 1.5px;
+    background-color: rgb(54, 53, 53);
+    margin: 0 auto; 
+    margin-top: 20px;
+}
+
+.descripcion {
+    margin-top: 20px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.descripcion h5 {
+    margin-bottom: 15px;
+}
+
+
+.pie {
+    flex-wrap: wrap;
+    display: flex;
+}
+
+.mapa {
+    width: 40%;
+}
+
+.mapa h5 {
+    margin-bottom: 20px;
+    margin-left: 20px;
+}
+
+
+.galeria {
+    width: 60%;
+    flex-wrap: wrap;
+    display: flex;
+    padding: 0px 5px; 
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+
+.galeria ul {
+    list-style: none;
+    margin-top: 20px;
+}
+
+.galeria li  {
+    width: 22%;
+    height: 120px;
+    margin: 5px;
+    display: inline-flex;
+}
+
+.galeria img {
+    width: 100%;
+    height: auto; 
+    object-fit: fill;
+    transition: .5s;
+}
+
+/* Alargar imagenes */
+.grande {
+    transform: scale(1.7);
+}

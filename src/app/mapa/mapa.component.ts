@@ -21,7 +21,7 @@ export class MapaComponent implements OnInit {
     navigator.geolocation.getCurrentPosition(position => {
       this.latitud = position.coords.latitude;
       this.longitud = position.coords.longitude;
-      this.zoom = 10;
+      this.zoom = 13;
     });
   }
 

@@ -1,0 +1,90 @@
+<navbar></navbar>
+
+<div class="mainCont container">
+
+    <div class="cabecera">
+        <div class="foto">
+            <img src="/assets/images/goku.jpg">
+            <h5 (click)="onClick('pagina-usuario')">Enlace a perfil del usuario</h5>
+        </div>
+
+        <div class="texto">
+            <h5>Titulo del anuncio</h5>
+            <p>Zona - Location</p>
+
+
+            <div class="caracteristicas">
+
+                <h5>Caracteristicas</h5>
+
+                <ul>
+                    <li>Tamaño total: </li>
+                    <li>Tamaño disponible: </li>
+                    <li>Se puede o no encargar el anunciante</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="linea"></div>
+
+
+    <div class="descripcion">
+
+
+        <h5>Comentarios del anunciante</h5>
+
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad repudiandae quos velit optio maxime deserunt
+            tempore nesciunt numquam asperiores voluptatibus sint, quas nemo ipsam sapiente, eveniet ducimus nobis autem
+            id quo iste recusandae alias et? Laudantium vitae at fugiat suscipit doloribus expedita quis itaque, maxime,
+            quasi facere nulla quae libero dignissimos! Sint alias corporis totam expedita cumque sequi deleniti, minima
+            eaque ipsum inventore recusandae est esse iusto placeat ad. Eligendi enim expedita sint vel tempore
+            accusantium cumque tempora. Esse doloribus quam, impedit iusto itaque ex, hic rerum culpa temporibus dolorum
+            est voluptatem possimus atque magnam et dolore dolores labore neque.</p>
+
+    </div>
+
+
+
+    <div class="pie">
+
+        <div class="mapa">
+            <h5>Ubicación</h5>
+            <app-mapa [buscador]="false"></app-mapa>
+        </div>
+
+
+
+        <div class="galeria">
+
+            <ul>
+                <li>
+                    <img src="/assets/images/huertito.jpeg" (click)="onClickImagen($event)">
+                </li>
+
+                <li>
+                    <img src="/assets/images/huertos.jpg" (click)="onClickImagen($event)">
+                </li>
+
+                <li>
+                    <img src="/assets/images/cultivos.jpg" (click)="onClickImagen($event)">
+                </li>
+
+                <li>
+                    <img src="/assets/images/huertos.jpg" (click)="onClickImagen($event)">
+                </li>
+
+                <li>
+                    <img src="/assets/images/huertito.jpeg" (click)="onClickImagen($event)">
+                </li>
+
+                <li>
+                    <img src="/assets/images/cultivos.jpg" (click)="onClickImagen($event)">
+                </li>
+
+            </ul>
+        </div>
+    </div>
+
+</div>

@@ -16,6 +16,7 @@ import { LoginComponent } from './login/login.component';
 import { MapaComponent } from './mapa/mapa.component';
 import { PaginaBusquedaComponent } from './pagina-busqueda/pagina-busqueda.component';
 import { PaginaUsuarioComponent } from './pagina-usuario/pagina-usuario.component';
+import { PaginaAnuncioComponent } from './pagina-anuncio/pagina-anuncio.component';
 
 
 @NgModule({
@@ -31,7 +32,8 @@ import { PaginaUsuarioComponent } from './pagina-usuario/pagina-usuario.componen
     LoginComponent,
     MapaComponent,
     PaginaBusquedaComponent,
-    PaginaUsuarioComponent
+    PaginaUsuarioComponent,
+    PaginaAnuncioComponent
   ],
   imports: [
     BrowserModule,
