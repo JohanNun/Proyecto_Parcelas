@@ -53,28 +53,37 @@
     width: 120px;
 }
 
+
 .galeria {
+    width: 100%;
     flex-wrap: wrap;
     display: flex;
     padding: 0px 25px; 
+    margin-bottom: 20px;
 }
 
-.galeria img {
-    width: 32%;
-    margin: 5px;
-    height: 100%;
-}
 
 .galeria ul {
     list-style: none;
 }
 
-.galeria li {
-    display: inline;
+.galeria li  {
+    width: 30%;
+    height: 100%;
+    margin: 5px;
+    display: inline-flex;
+}
+
+.galeria img {
+    width: 100%;
+    height: auto; 
+    object-fit: fill;
+    transition: .5s;
 }
 
 
 .pie {
+    width: 100%;
     flex-wrap: wrap;
     display: flex;
     justify-content: space-between;
@@ -88,6 +97,9 @@
 
 
 
-.big {
-    width: 500px;
+/* Alargar y reducir imagen */
+
+.grande {
+    transform: scale(1.7);
+
 }

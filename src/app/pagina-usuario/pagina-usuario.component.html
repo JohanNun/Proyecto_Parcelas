@@ -30,20 +30,32 @@
 
         </div>
 
+
         <div class="galeria">
             <ul>
+                <li>
+                    <img src="/assets/images/huertito.jpeg" (click)="onClick($event)">
+                </li>
 
-                <li (click)="onClick()"><img src="/assets/images/huertito.jpeg" alt=""></li>
-                <li><a href=""><img src="/assets/images/huertos.jpg" alt=""></a></li>
-                <li><a href=""><img src="/assets/images/cultivos.jpg" alt=""></a></li>
 
+                <li>
+                    <img src="/assets/images/huertos.jpg" (click)="onClick($event)">
+
+                </li>
+
+
+                <li>
+                    <img src="/assets/images/cultivos.jpg" (click)="onClick($event)">
+                </li>
             </ul>
-
-
-
-            <div class="pie container" style="background-color:#f1f1f1">
-                <button class="cancelbtn btn btn-danger" type="button">Cancel</button>
-                <span class="contrasenaOlvidada">Has olvidado tu <a href="#">contraseña?</a></span>
-            </div>
         </div>
+
+
+
+
+        <div class="pie container" style="background-color:#f1f1f1">
+            <button class="cancelbtn btn btn-danger" type="button">Cancel</button>
+            <span class="contrasenaOlvidada">Has olvidado tu <a href="#">contraseña?</a></span>
+        </div>
+
     </div>

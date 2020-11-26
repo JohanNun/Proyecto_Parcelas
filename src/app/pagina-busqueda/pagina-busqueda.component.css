@@ -190,7 +190,16 @@ input[type="radio"]:checked ~ label {
 }
 
 .columna2 h5 {
-	margin-bottom: 15px;
+	margin-bottom: 5px;
+}
+
+.columna2 a {
+	color: rgb(51, 51, 51);
+}
+
+.columna2 h6 {
+	margin-bottom: 10px;
+	color: teal;
 }
 
 

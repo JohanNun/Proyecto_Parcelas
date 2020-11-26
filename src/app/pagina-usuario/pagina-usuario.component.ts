@@ -15,9 +15,14 @@ export class PaginaUsuarioComponent implements OnInit {
   }
 
 
-  onClick() {
-    this.tamanoImagen = !this.tamanoImagen;
+  onClick($event) {
+    $event.target.classList.toggle('grande');
   }
+
+
+
+
+
 
 
 
