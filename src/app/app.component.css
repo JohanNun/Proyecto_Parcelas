@@ -42,3 +42,22 @@
 }
 
 
+@media(max-width: 48em){
+    
+    .navi li {
+        padding-left: 10px;
+    }
+
+    .pie .logo {
+        margin-left: 6px;
+    }
+
+    .fab, .far {
+        padding: 25px 8px;
+    }
+
+    .pie .texto {
+        font-size: small;
+    }
+}
+
