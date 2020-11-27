@@ -4,32 +4,53 @@
     box-sizing: border-box;
 }
 
-.container{
-    max-width: 1350px;
-    margin: 0 auto;
+
+.mainCont {
+    background-color: rgb(225, 238, 213);
 }
 
-nav {
-    padding: 15px 10px;
+.mainCont2 {
+    width: 100%;
+    height: 80px;
+    flex-wrap: wrap;
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 25px;
     border-bottom:1px ridge green;
     background-color: rgba(150, 230, 150, 0.137);
-    
 }
 
-nav .row {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    width: 100%;
+
+.logo {
+    margin-left: 25px;
 }
+
+.logo i{
+    margin-top: 6px;
+    font-size: 2.4em;
+    color: black;
+    text-decoration: none;
+}
+
+
+
+
+.clicka {
+    display: flex;
+    width: 30%;
+    justify-content: space-evenly;
+}
+
 
 .venta{
-    width: 25%;
-    padding-top: 8px;
-    margin-left: 100px;
+    width: 100%;
+    margin-left: -50px;
+    padding-right: 10px;
 }
 
 .venta button{
+    width: 100%;
+    height: 50px;
     padding: 5px;
     border: none;
     color: var(--color-secundario);
@@ -49,21 +70,10 @@ nav .row {
 
 
 
-nav .logo{
-    width: 40%;
-    margin-left: 50px;
-}
-
-nav .logo a, nav .logo i{
-    font-size: 1.7em;
-    color: black;
-    text-decoration: none;
-}
 
 .desplegable{
-    position: relative;
-    width: 20%;
-    
+    width: 45%;
+    margin-left: 10px;
 }
 
 .desplegable button{
@@ -81,8 +91,8 @@ nav .logo a, nav .logo i{
     font-size: 20px;
     color: var(--color-secundario);
     margin-right: 5px;
-    text-align: center
-    
+    text-align: center;
+    padding: 3px;
 }
 
 .desplegable button i:last-child{
@@ -95,9 +105,9 @@ nav .logo a, nav .logo i{
     border: 2px solid green;
     border-radius: 10px 10px;
     display: none;
-    left: -150px;
+    left: -120px;
     padding-top: 4px;
-    position: absolute;
+    position: relative;
     background-color: white;
     width: 200px;  
     margin-top: 2px;
@@ -116,7 +126,7 @@ nav .logo a, nav .logo i{
     background-color: #44f18c46;
     border-radius: 10px 10px;
     
-}
+} 
 
 .contenido-desplegable ul li a{
     text-decoration: none;
@@ -130,10 +140,9 @@ nav .logo a, nav .logo i{
     font-size: 20px;
 }
 
-.contenido-desplegable ul li a:hover{
-    text-decoration: underline;
-    
-}
+/*  .contenido-desplegable ul li a:hover{
+    text-decoration: underline;   
+}  */
 
 .desplegable button:hover{
     transform: scale(1.1);
@@ -143,5 +152,32 @@ nav .logo a, nav .logo i{
 
 .desplegable:hover .contenido-desplegable{
     display: block;
+}
+
+
+@media(max-width: 48em){
+
+    .logo {
+        margin-left: -10px;
+    }
+
+    .logo i{
+        margin-top: 9px;
+        font-size: 1.9em;
+        text-decoration: none;
+    }
+
+    .clicka {
+        display: flex;
+        width: 45%;
+        justify-content: space-evenly;
+    }
+
+    .venta button{
+        width: 100%;
+        padding: 0px;
+        line-height: 1;
+    }
+
 }
 
