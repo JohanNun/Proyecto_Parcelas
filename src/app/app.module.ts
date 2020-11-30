@@ -17,6 +17,7 @@ import { MapaComponent } from './mapa/mapa.component';
 import { PaginaBusquedaComponent } from './pagina-busqueda/pagina-busqueda.component';
 import { PaginaUsuarioComponent } from './pagina-usuario/pagina-usuario.component';
 import { PaginaAnuncioComponent } from './pagina-anuncio/pagina-anuncio.component';
+import { FormularioParcelaComponent } from './formulario-parcela/formulario-parcela.component';
 
 
 @NgModule({
@@ -33,7 +34,8 @@ import { PaginaAnuncioComponent } from './pagina-anuncio/pagina-anuncio.componen
     MapaComponent,
     PaginaBusquedaComponent,
     PaginaUsuarioComponent,
-    PaginaAnuncioComponent
+    PaginaAnuncioComponent,
+    FormularioParcelaComponent
   ],
   imports: [
     BrowserModule,

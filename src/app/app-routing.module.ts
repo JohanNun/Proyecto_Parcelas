@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { FormularioParcelaComponent } from './formulario-parcela/formulario-parcela.component';
 import { FormularioComponent } from './formulario/formulario.component';
 import { HomeComponent } from './home/home.component';
 import { HuertosComunitariosComponent } from './huertos-comunitarios/huertos-comunitarios.component';
@@ -19,6 +20,7 @@ const routes: Routes = [
   { path: 'pagina-busqueda', component: PaginaBusquedaComponent },
   { path: 'pagina-anuncio', component: PaginaAnuncioComponent },
   { path: 'pagina-usuario', component: PaginaUsuarioComponent },
+  { path: 'form-parcela', component: FormularioParcelaComponent },
   { path: '**', redirectTo: '/home' }
 ];
 

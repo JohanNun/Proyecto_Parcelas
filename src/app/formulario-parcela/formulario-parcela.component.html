@@ -1,0 +1,33 @@
+<navbar></navbar>
+
+<div class="titulo">
+    <h2>Registra aquí tu parcela</h2>
+</div>
+
+<form id="formparcela" class="form-group row" [formGroup]="formularioParcela" (ngSubmit)="onSubmit()">
+    <div class="form-group col-12">
+        <label>Título</label>
+        <input type="text" class="form-control" formControlName="titulo">
+    </div>
+    <div class="form-group col-6">
+        <label>Tamaño</label>
+        <input type="number" class="form-control" formControlName="tamaño">
+    </div>
+    <div class="form-group col-6">
+        <label>Precio</label>
+        <input type="number" class="form-control" formControlName="precio">
+    </div>
+    <div class="form-group col-12">
+        <label>Imagenes</label>
+        <input type="text" class="form-control" formControlName="imagenes">
+    </div>
+    <div class="form-group col-12">
+        <label>Localizacion</label>
+        <input type="text" class="form-control" formControlName="localizacion">
+    </div>
+    <div class="form-group col-12">
+        <label>Descripción</label>
+        <textarea rows="4" class="form-control" formControlName="descripcion"></textarea>
+    </div>
+    <input class="btn btn-success" type="submit" value="Registrar Parcela">
+</form>

@@ -1,0 +1,11 @@
+#formparcela{
+    padding: 50px;
+    margin: 0 50px;
+}
+
+.titulo{
+    text-align: center;
+    margin-top: 30px;
+    text-decoration: underline;
+    font-family: var(--fuentePrincipal);
+}
