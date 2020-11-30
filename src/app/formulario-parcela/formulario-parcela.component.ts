@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-formulario-parcela',
@@ -13,12 +13,12 @@ export class FormularioParcelaComponent implements OnInit {
   constructor() {
 
     this.formularioParcela = new FormGroup({
-      titulo: new FormControl(),
-      tamaño: new FormControl(),
-      precio: new FormControl(),
-      imagenes: new FormControl(),
-      localizacion: new FormControl(),
-      descripcion: new FormControl()
+      titulo: new FormControl('', [Validators.required]),
+      tamaño: new FormControl('', [Validators.required]),
+      precio: new FormControl('', [Validators.required]),
+      imagenes: new FormControl('', [Validators.required]),
+      localizacion: new FormControl('', [Validators.required]),
+      descripcion: new FormControl('', [Validators.required])
     })
 
   }
@@ -27,6 +27,7 @@ export class FormularioParcelaComponent implements OnInit {
   }
 
   onSubmit() {
+    console.log(this.formularioParcela.value);
 
   }
 

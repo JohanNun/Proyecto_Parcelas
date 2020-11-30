@@ -29,7 +29,6 @@ export class FormularioComponent implements OnInit {
       numerotelefono: new FormControl(),
       fechanacimiento: new FormControl(),
       imagen: new FormControl(),
-      parcela: new FormControl('', [Validators.required]),
       experiencia: new FormControl(),
       descripcion: new FormControl()
     }, [this.passwordValidator])

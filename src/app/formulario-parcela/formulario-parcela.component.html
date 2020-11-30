@@ -8,26 +8,52 @@
     <div class="form-group col-12">
         <label>Título</label>
         <input type="text" class="form-control" formControlName="titulo">
+        <p class="text-danger"
+            *ngIf="formularioParcela.get('titulo').hasError('required') && formularioParcela.get('titulo').touched">
+            Introduce un titulo para ofrecer la parcela.
+        </p>
     </div>
     <div class="form-group col-6">
         <label>Tamaño</label>
         <input type="number" class="form-control" formControlName="tamaño">
+        <p class="text-danger"
+            *ngIf="formularioParcela.get('tamaño').hasError('required') && formularioParcela.get('tamaño').touched">
+            Introduce el tamaño en m2 de la parcela.
+        </p>
     </div>
     <div class="form-group col-6">
         <label>Precio</label>
         <input type="number" class="form-control" formControlName="precio">
+        <p class="text-danger"
+            *ngIf="formularioParcela.get('precio').hasError('required') && formularioParcela.get('precio').touched">
+            Introduce un precio en € del m2.
+        </p>
     </div>
     <div class="form-group col-12">
         <label>Imagenes</label>
         <input type="text" class="form-control" formControlName="imagenes">
+        <p class="text-danger"
+            *ngIf="formularioParcela.get('imagenes').hasError('required') && formularioParcela.get('imagenes').touched">
+            Añade imagenes de la parcela.
+        </p>
     </div>
     <div class="form-group col-12">
         <label>Localizacion</label>
         <input type="text" class="form-control" formControlName="localizacion">
+        <p class="text-danger"
+            *ngIf="formularioParcela.get('localizacion').hasError('required') && formularioParcela.get('localizacion').touched">
+            Indica la localización de la parcela.
+        </p>
     </div>
     <div class="form-group col-12">
         <label>Descripción</label>
         <textarea rows="4" class="form-control" formControlName="descripcion"></textarea>
+        <p class="text-danger"
+            *ngIf="formularioParcela.get('descripcion').hasError('required') && formularioParcela.get('descripcion').touched">
+            Añade una descripción de la parcela.
+        </p>
     </div>
-    <input class="btn btn-success" type="submit" value="Registrar Parcela">
+    <div class="form-group col-12 boton">
+        <input class="btn btn-success" type="submit" value="Registrar Parcela" [disabled]="!formularioParcela.valid">
+    </div>
 </form>
