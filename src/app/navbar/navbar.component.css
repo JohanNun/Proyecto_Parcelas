@@ -44,7 +44,7 @@
 
 .venta{
     width: 100%;
-    margin-left: -50px;
+    margin-left: -30px;
     padding-right: 10px;
 }
 
@@ -111,9 +111,9 @@
     border: 2px solid green;
     border-radius: 10px 10px;
     display: none;
-    left: -120px;
+    right: 80px;
     padding-top: 4px;
-    position: relative;
+    position: absolute;
     background-color: white;
     width: 200px;  
     margin-top: 2px;

@@ -36,7 +36,16 @@
 @import url(https://fonts.googleapis.com/css?family=Signika:700,300,600);
 
 html, body { height: 100%; }
-body { display: flex; justify-content: center; align-items: center; margin:20px 0; text-align:center; background:beige; overflow:hidden; }
+body { 
+
+    display: flex; 
+    justify-content: center;
+    align-items: center; 
+    margin:20px 0; 
+    text-align:center; 
+    background:beige; 
+    overflow:hidden; 
+}
 
 h1 {
  font-size:5em;
@@ -45,11 +54,7 @@ h1 {
 }
 
 h1 span { display:inline-block; animation:float .5s ease-in-out infinite; }
- @keyframes float {
-  0%,100%{ transform:none; }
-  33%{ transform:translateY(-1px) rotate(-2deg); }
-  66%{ transform:translateY(1px) rotate(2deg); }
-}
+
 h1:hover span { animation:bounce .6s; }
 @keyframes bounce {
   0%,100%{ transform:translate(0); }
