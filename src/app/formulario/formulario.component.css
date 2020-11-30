@@ -1,5 +1,5 @@
 form{
-    padding: 50px 200px;
+    padding: 50px 30px;
 }
 
 .form-group{
@@ -18,8 +18,25 @@ legend{
     width: 200px;
 }
 
+.exp {
+    margin-top: 50px;
+    padding-left: 25px;
+}
+
+.exp label {
+    margin-right: 20px;
+}
+
+.exp input {
+    margin: 5px;
+}
+
 @media(max-width: 62.75em){
    form{
        padding: 50px 0;
+   }
+
+   .exp label {
+       margin-right: 5px;
    }
 }

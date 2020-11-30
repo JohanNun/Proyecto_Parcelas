@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { UsuariosService } from '../services/usuarios.service';
 
 @Component({
   selector: 'formulario',
@@ -11,7 +12,7 @@ export class FormularioComponent implements OnInit {
   formulario: FormGroup;
   tipoPassword: string;
 
-  constructor() {
+  constructor(private usuariosService: UsuariosService) {
 
     this.tipoPassword = 'password';
 
@@ -20,14 +21,14 @@ export class FormularioComponent implements OnInit {
       nombre: new FormControl('', [Validators.required]),
       apellidos: new FormControl('', [Validators.required]),
       sexo: new FormControl(),
-      nombreusuario: new FormControl('', [Validators.required]),
-      contraseña: new FormControl('', [Validators.required, Validators.pattern(/^(?=.*\d).{4,8}$/)]),
-      repitecontraseña: new FormControl('', [Validators.required]),
+      nombre_usuario: new FormControl('', [Validators.required]),
+      password: new FormControl('', [Validators.required, Validators.pattern(/^(?=.*\d).{4,8}$/)]),
+      repite_password: new FormControl('', [Validators.required]),
       email: new FormControl('', [Validators.required, Validators.pattern(/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/)]),
-      localizacion: new FormControl('', [Validators.required]),
-      dni: new FormControl('', [Validators.required, this.dniValidator]),
-      numerotelefono: new FormControl(),
-      fechanacimiento: new FormControl(),
+      locacion: new FormControl('', [Validators.required]),
+      /* dni: new FormControl('', [Validators.required, this.dniValidator]),
+      numerotelefono: new FormControl(), */
+      fecha_nacimiento: new FormControl(),
       imagen: new FormControl(),
       experiencia: new FormControl(),
       descripcion: new FormControl()
@@ -39,7 +40,15 @@ export class FormularioComponent implements OnInit {
   }
 
   onSubmit() {
-    console.log(this.formulario.value);
+    /* console.log(this.formulario.value); */
+    this.usuariosService.create(this.formulario.value)
+      .then(response => {
+        console.log(response);
+
+      })
+      .catch(error => console.log(error));
+
+    this.formulario.reset();
   }
 
 
@@ -64,14 +73,14 @@ export class FormularioComponent implements OnInit {
   }
 
   passwordValidator(form: FormGroup) {
-    const passwordValue = form.get('contraseña').value;
+    const passwordValue = form.get('password').value;
 
-    const passwordRepeatValue = form.get('repitecontraseña').value;
+    const passwordRepeatValue = form.get('repite_password').value;
 
     if (passwordValue === passwordRepeatValue) {
       return null;
     } else {
-      form.get('repitecontraseña').setErrors({ passwordvalidator: true });
+      form.get('repite_password').setErrors({ passwordvalidator: true });
       return { passwordvalidator: true };
     }
   }

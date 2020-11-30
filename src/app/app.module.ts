@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
 import { AgmCoreModule } from '@agm/core';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -41,6 +42,7 @@ import { FormularioParcelaComponent } from './formulario-parcela/formulario-parc
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
+    HttpClientModule,
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyD8sl9A2I_jgowz5eVHdM8szV9wRMR7WIw'
     })
