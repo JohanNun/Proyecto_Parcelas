@@ -55,7 +55,10 @@
     </div>
     <div class="form-group col-12 boton">
         <input class="btn btn-success" type="submit" value="Registrar Parcela"
-            [disabled]="!formularioParcela.valid || usuariosService.isLogged()">
+            [disabled]="!formularioParcela.valid || !usuariosService.isLogged()">
+        <p *ngIf="!usuariosService.isLogged() && formularioParcela.touched" class="warn text-success"
+            (click)="redirigir('login')">Inicia sesion para
+            registrar tu parcela</p>
 
     </div>
 </form>

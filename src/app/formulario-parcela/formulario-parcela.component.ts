@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { UsuariosService } from '../services/usuarios.service';
 
 @Component({
@@ -11,7 +12,8 @@ export class FormularioParcelaComponent implements OnInit {
 
   formularioParcela: FormGroup;
 
-  constructor(public usuariosService: UsuariosService) {
+  constructor(public usuariosService: UsuariosService,
+    private router: Router) {
 
     this.formularioParcela = new FormGroup({
       titulo: new FormControl('', [Validators.required]),
@@ -29,7 +31,10 @@ export class FormularioParcelaComponent implements OnInit {
 
   onSubmit() {
     console.log(this.formularioParcela.value);
+  }
 
+  redirigir(pRuta) {
+    this.router.navigate([pRuta])
   }
 
 }
