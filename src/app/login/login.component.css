@@ -46,6 +46,12 @@ img.avatar {
 .container {
     padding: 16px;
   }
+
+.cont {
+  border-radius: 0px 0px 20px 20px;
+  width: 100.3%;
+  margin-left: -1px;
+}
   
 span.nopassword {
     float: right;

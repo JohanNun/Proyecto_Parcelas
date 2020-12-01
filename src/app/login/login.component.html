@@ -9,19 +9,15 @@
         </div>
 
         <div class="container">
-            <label for="username"><b>Nombre Usuario</b></label>
-            <input type="text" placeholder="Introduce Nombre de usuario" name="uname" formControlName="nombreusuario">
-            <p class="text-danger"
-                *ngIf="formularioLogin.get('nombreusuario').hasError('required') && formularioLogin.get('nombreusuario').touched">
-                Introduce un nombre de usuario
-            </p>
+            <label for="email"><b>Email</b></label>
+            <input type="text" placeholder="Introduce tu email" formControlName="email">
 
-            <label for="psw"><b>Contraseña</b></label>
-            <input type="password" placeholder="Introduce Contraseña" name="psw" formControlName="contraseña">
-            <p class="text-danger"
-                *ngIf="formularioLogin.get('contraseña').hasError('required') && formularioLogin.get('contraseña').touched">
-                Introduce una contraseña
-            </p>
+
+            <label for="password"><b>Contraseña</b></label>
+            <input type="password" placeholder="Introduce Contraseña" formControlName="password">
+
+            <p class="text-danger" *ngIf="mensajeError"> {{ mensajeError }}</p>
+
 
             <button type="submit">Login</button>
             <label>
@@ -29,7 +25,7 @@
             </label>
         </div>
 
-        <div class="container" style="background-color:var(--color-secundario)">
+        <div class="cont container" style="background-color:var(--color-secundario)">
             <button type="button" class="cancelbtn">Cancel</button>
             <span class="nopassword">Olvidaste la <a href="#">contraseña?</a></span>
         </div>

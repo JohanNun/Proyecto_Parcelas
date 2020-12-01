@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Router } from '@angular/router';
 
 
 export interface usuario {
@@ -24,7 +25,8 @@ export class UsuariosService {
 
   baseUrl: string;
 
-  constructor(private httpClient: HttpClient) {
+  constructor(private httpClient: HttpClient,
+    private router: Router) {
 
     this.baseUrl = 'http://localhost:3000/api/usuarios';
 
@@ -35,5 +37,22 @@ export class UsuariosService {
     return this.httpClient.post<usuario>(this.baseUrl, pFormValue).toPromise();
   }
 
+
+
+
+  login(pFormularioValue): Promise<usuario> {
+    return this.httpClient.post<usuario>(`${this.baseUrl}/login`, pFormularioValue).toPromise();
+  }
+
+
+
+
+  isLogged(): boolean {
+    if (localStorage.getItem('login_usuario')) {
+      return true;
+    } else {
+      return false;
+    }
+  }
 
 }

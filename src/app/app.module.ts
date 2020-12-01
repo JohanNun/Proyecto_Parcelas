@@ -12,7 +12,7 @@ import { ComunidadComponent } from './comunidad/comunidad.component';
 import { HuertosComunitariosComponent } from './huertos-comunitarios/huertos-comunitarios.component';
 import { InfoCultivoComponent } from './info-cultivo/info-cultivo.component';
 import { FormularioComponent } from './formulario/formulario.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LoginComponent } from './login/login.component';
 import { MapaComponent } from './mapa/mapa.component';
 import { PaginaBusquedaComponent } from './pagina-busqueda/pagina-busqueda.component';
@@ -43,6 +43,7 @@ import { FormularioParcelaComponent } from './formulario-parcela/formulario-parc
     AppRoutingModule,
     ReactiveFormsModule,
     HttpClientModule,
+    FormsModule,
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyD8sl9A2I_jgowz5eVHdM8szV9wRMR7WIw'
     })

@@ -5,6 +5,7 @@ import { FormularioComponent } from './formulario/formulario.component';
 import { HomeComponent } from './home/home.component';
 import { HuertosComunitariosComponent } from './huertos-comunitarios/huertos-comunitarios.component';
 import { InfoCultivoComponent } from './info-cultivo/info-cultivo.component';
+import { LoginGuard } from './login.guard';
 import { LoginComponent } from './login/login.component';
 import { PaginaAnuncioComponent } from './pagina-anuncio/pagina-anuncio.component';
 import { PaginaBusquedaComponent } from './pagina-busqueda/pagina-busqueda.component';

@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormControl, FormGroup } from '@angular/forms';
+import { Router } from '@angular/router';
+import { UsuariosService } from '../services/usuarios.service';
 
 @Component({
   selector: 'login',
@@ -9,12 +11,15 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 export class LoginComponent implements OnInit {
 
   formularioLogin: FormGroup;
+  mensajeError: string;
 
-  constructor() {
+
+  constructor(private usuariosService: UsuariosService,
+    private router: Router) {
 
     this.formularioLogin = new FormGroup({
-      nombreusuario: new FormControl('', [Validators.required]),
-      contraseña: new FormControl('', Validators.required)
+      email: new FormControl(''),
+      password: new FormControl('')
     })
 
   }
@@ -24,7 +29,28 @@ export class LoginComponent implements OnInit {
 
 
   onSubmit() {
-    console.log(this.formularioLogin.value);
+    this.usuariosService.login(this.formularioLogin.value)
+
+      .then(response => {
+        console.log(response);
+
+        if (response['error']) {
+          this.mensajeError = response['error']
+
+          this.formularioLogin.reset();
+
+          //Quitar mensaje al reintroducir data
+
+        } else {
+          localStorage.setItem('login_usuario', response['token']);
+
+          this.router.navigate(['/home']);  //Cuando el login este hecho manda a la pagina home
+        }
+
+
+
+      })
+      .catch(error => console.log(error));
 
   }
 }

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { UsuariosService } from '../services/usuarios.service';
 
 @Component({
   selector: 'app-pagina-usuario',
@@ -9,7 +10,7 @@ export class PaginaUsuarioComponent implements OnInit {
 
   tamanoImagen: boolean = false;
 
-  constructor() { }
+  constructor(public usuariosService: UsuariosService) { }
 
   ngOnInit(): void {
   }
@@ -17,6 +18,12 @@ export class PaginaUsuarioComponent implements OnInit {
 
   onClick($event) {
     $event.target.classList.toggle('grande');
+  }
+
+
+
+  mandarMensaje() {
+
   }
 
 

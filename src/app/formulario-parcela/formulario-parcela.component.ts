@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { UsuariosService } from '../services/usuarios.service';
 
 @Component({
   selector: 'app-formulario-parcela',
@@ -10,7 +11,7 @@ export class FormularioParcelaComponent implements OnInit {
 
   formularioParcela: FormGroup;
 
-  constructor() {
+  constructor(public usuariosService: UsuariosService) {
 
     this.formularioParcela = new FormGroup({
       titulo: new FormControl('', [Validators.required]),
