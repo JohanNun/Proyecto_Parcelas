@@ -15,10 +15,6 @@ export class PaginaAnuncioComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  redirigir(pRuta) {
-    this.router.navigate([pRuta])
-  }
-
 
   onClick(pRuta: string) {
     this.router.navigate([pRuta])

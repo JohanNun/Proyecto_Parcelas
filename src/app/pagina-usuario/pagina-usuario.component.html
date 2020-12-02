@@ -26,9 +26,11 @@
             no llamarte Rodrigor te voy a borrar el cerito la caidita </p>
 
 
-        <button class="btn btn-success" type="submit" (click)="mandarMensaje()"
-            [disabled]="usuariosService.isLogged()">Enviar
+        <button class="btn btn-success" type="submit" (click)="onClick('mensaje')">Enviar
             mensaje</button>
+
+        <p *ngIf="!usuariosService.isLogged()" class=" warn text-success" (click)="onClick('login')">Inicia sesion para
+            mandar un mensaje</p>
 
     </div>
 

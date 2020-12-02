@@ -88,8 +88,8 @@
 
 
     </div>
-    <input (click)="onClick('mensaje')" class="btn btn-success" type="submit" value="Enviar mensaje"
-        [disabled]="usuariosService.isLogged()">
-    <p *ngIf="usuariosService.isLogged()" class=" warn text-success" (click)="onClick('login')">Inicia sesion para
+    <input (click)="onClick('mensaje')" class="btn btn-success" type="submit" value="Enviar mensaje">
+
+    <p *ngIf="!usuariosService.isLogged()" class=" warn text-success" (click)="onClick('login')">Inicia sesion para
         mandar un mensaje</p>
 </div>
