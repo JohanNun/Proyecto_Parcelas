@@ -7,6 +7,7 @@ import { HuertosComunitariosComponent } from './huertos-comunitarios/huertos-com
 import { InfoCultivoComponent } from './info-cultivo/info-cultivo.component';
 import { LoginGuard } from './login.guard';
 import { LoginComponent } from './login/login.component';
+import { MensajeComponent } from './mensaje/mensaje.component';
 import { PaginaAnuncioComponent } from './pagina-anuncio/pagina-anuncio.component';
 import { PaginaBusquedaComponent } from './pagina-busqueda/pagina-busqueda.component';
 import { PaginaUsuarioComponent } from './pagina-usuario/pagina-usuario.component';
@@ -22,6 +23,7 @@ const routes: Routes = [
   { path: 'pagina-anuncio', component: PaginaAnuncioComponent },
   { path: 'pagina-usuario', component: PaginaUsuarioComponent },
   { path: 'form-parcela', component: FormularioParcelaComponent },
+  { path: 'mensaje', component: MensajeComponent, canActivate: [LoginGuard] },
   { path: '**', redirectTo: '/home' }
 ];
 

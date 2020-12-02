@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { UsuariosService } from '../services/usuarios.service';
 
 @Component({
   selector: 'app-pagina-anuncio',
@@ -8,9 +9,14 @@ import { Router } from '@angular/router';
 })
 export class PaginaAnuncioComponent implements OnInit {
 
-  constructor(private router: Router) { }
+  constructor(private router: Router,
+    public usuariosService: UsuariosService) { }
 
   ngOnInit(): void {
+  }
+
+  redirigir(pRuta) {
+    this.router.navigate([pRuta])
   }
 
 

@@ -19,6 +19,7 @@ import { PaginaBusquedaComponent } from './pagina-busqueda/pagina-busqueda.compo
 import { PaginaUsuarioComponent } from './pagina-usuario/pagina-usuario.component';
 import { PaginaAnuncioComponent } from './pagina-anuncio/pagina-anuncio.component';
 import { FormularioParcelaComponent } from './formulario-parcela/formulario-parcela.component';
+import { MensajeComponent } from './mensaje/mensaje.component';
 
 
 @NgModule({
@@ -36,7 +37,8 @@ import { FormularioParcelaComponent } from './formulario-parcela/formulario-parc
     PaginaBusquedaComponent,
     PaginaUsuarioComponent,
     PaginaAnuncioComponent,
-    FormularioParcelaComponent
+    FormularioParcelaComponent,
+    MensajeComponent
   ],
   imports: [
     BrowserModule,
