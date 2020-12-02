@@ -20,7 +20,8 @@ import { PaginaUsuarioComponent } from './pagina-usuario/pagina-usuario.componen
 import { PaginaAnuncioComponent } from './pagina-anuncio/pagina-anuncio.component';
 import { FormularioParcelaComponent } from './formulario-parcela/formulario-parcela.component';
 import { MensajeComponent } from './mensaje/mensaje.component';
-
+import { GaleriaComponent } from './galeria/galeria.component';
+import { GalleriaModule } from 'primeng/galleria';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import { MensajeComponent } from './mensaje/mensaje.component';
     PaginaUsuarioComponent,
     PaginaAnuncioComponent,
     FormularioParcelaComponent,
-    MensajeComponent
+    MensajeComponent,
+    GaleriaComponent
   ],
   imports: [
     BrowserModule,
@@ -46,6 +48,7 @@ import { MensajeComponent } from './mensaje/mensaje.component';
     ReactiveFormsModule,
     HttpClientModule,
     FormsModule,
+    GalleriaModule,
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyD8sl9A2I_jgowz5eVHdM8szV9wRMR7WIw'
     })
