@@ -5,14 +5,15 @@
     <ng-template pTemplate="item" let-item>
         <img [src]="item.previewImageSrc" style="width: 100%; display: block;" />
     </ng-template>
-    <ng-template pTemplate="thumbnail" let-item>
+    <!--   <ng-template pTemplate="thumbnail" let-item>
         <div class="p-grid p-nogutter p-justify-center">
             <img [src]="item.thumbnailImageSrc" style="display: block;" />
         </div>
-    </ng-template>
+    </ng-template> -->
 </p-galleria>
-<div *ngIf="imagenes" class="p-grid" style="max-width: 400px;">
-    <div *ngFor="let image of imagenes; let index = index;" class="p-col-3" key="index">
-        <img [src]="image.thumbnailImageSrc" [alt]="image.alt" style="cursor: pointer" (click)="imagenClick(index)" />
+<div *ngIf="imagenes" class="p-grid galeriapequeña">
+    <div class="galeriapequeña2" *ngFor="let imagen of imagenes; let index = index;" key="index">
+        <img class="imagenpequeña" [src]="imagen.thumbnailImageSrc" [alt]="imagen.alt" style="cursor: pointer"
+            (click)="imagenClick(index)" />
     </div>
 </div>

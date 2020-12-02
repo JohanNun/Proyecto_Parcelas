@@ -22,6 +22,7 @@ import { FormularioParcelaComponent } from './formulario-parcela/formulario-parc
 import { MensajeComponent } from './mensaje/mensaje.component';
 import { GaleriaComponent } from './galeria/galeria.component';
 import { GalleriaModule } from 'primeng/galleria';
+import { PerfilUsuarioComponent } from './perfil-usuario/perfil-usuario.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,8 @@ import { GalleriaModule } from 'primeng/galleria';
     PaginaAnuncioComponent,
     FormularioParcelaComponent,
     MensajeComponent,
-    GaleriaComponent
+    GaleriaComponent,
+    PerfilUsuarioComponent
   ],
   imports: [
     BrowserModule,
