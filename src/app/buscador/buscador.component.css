@@ -18,13 +18,13 @@
     width: 350px;
     height: 50px;
     border: 1px solid rgb(90, 89, 89);
-    border-right: none;
+    /* border-right: none; */
     border-radius: 20px 20px;
     margin-bottom: 20px;
     padding: 5px;
     text-align: center;
     margin-right: 5px;
-    background-color: rgba(240, 255, 240, 0.699);
+    background-color: rgba(250, 255, 250, 0.699);
 }
 
 .boton {
@@ -32,7 +32,7 @@
     height: 50px;
     border: 1px solid rgb(75, 5, 45);
     border-radius: 20px 20px;
-    background-color: rgb(102, 12, 65);
+    background-color: rgb(143, 8, 42);
 }
 
 @import url(https://fonts.googleapis.com/css?family=Signika:700,300,600);
@@ -51,7 +51,7 @@ body {
 
 h1 {
  font-size:5em;
- font:bold 7.5vw/1.6 'Signika', sans-serif;
+ font:bold 6vw/1.6 var(--fuentePrincipal), sans-serif;
  user-select:none;
 }
 
@@ -67,7 +67,7 @@ h1:hover span { animation:bounce .6s; }
 span:nth-child(4n) { color:hsl(71, 100%, 60%); text-shadow:1px 1px hsl(50, 33%, 42%), 2px 2px hsl(50, 46%, 12%), 3px 3px hsl(50, 30%, 45%), 4px 4px hsl(30, 25%, 43%); }
 span:nth-child(4n-1) { color:hsl(135, 43%, 57%); text-shadow:1px 1px hsl(136, 14%, 27%), 2px 2px hsl(134, 20%, 21%), 3px 3px hsl(135, 95%, 17%), 4px 4px hsl(135, 35%, 45%); }
 span:nth-child(4n-2) { color:hsl(155, 100%, 54%); text-shadow:1px 1px hsl(155, 51%, 20%), 2px 2px hsl(155, 74%, 15%), 3px 3px hsl(153, 16%, 29%), 4px 4px hsl(157, 13%, 38%); }
-span:nth-child(4n-3) { color:hsl(315, 31%, 70%); text-shadow:1px 1px hsl(34, 6%, 23%), 2px 2px hsl(30, 34%, 23%), 3px 3px hsl(14, 36%, 44%), 4px 4px hsl(311, 12%, 29%); }
+span:nth-child(4n-3) { color:hsl(340, 69%, 58%); text-shadow:1px 1px hsl(34, 6%, 23%), 2px 2px hsl(30, 34%, 23%), 3px 3px hsl(12, 13%, 31%), 4px 4px hsl(311, 10%, 23%); }
 
 h1 span:nth-child(2){ animation-delay:.05s; }
 h1 span:nth-child(3){ animation-delay:.1s; }
