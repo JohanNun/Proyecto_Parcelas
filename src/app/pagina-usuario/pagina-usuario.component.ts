@@ -22,15 +22,5 @@ export class PaginaUsuarioComponent implements OnInit {
 
 
 
-  mandarMensaje() {
-
-  }
-
-
-
-
-
-
-
 
 }
