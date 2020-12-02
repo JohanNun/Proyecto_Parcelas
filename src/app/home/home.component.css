@@ -3,10 +3,7 @@
     padding: 0;
     box-sizing: border-box;
 }
-/* .container{
-    max-width: 1150px;
-    margin: 0 auto;
-} */
+
 
 navbar {
     width: 100%;
@@ -15,19 +12,22 @@ navbar {
 }
 
 
+
+
 .hero{
     background-image: url('/assets/images/cultisun.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     background-blend-mode: multiply;
-    background-color: rgb(175, 170, 170);
-    height: 110vh;
+    background-color: rgb(71, 212, 236);
+    height: 100vh;
     /* width: fit-content; */
 }
 
 
-@media(max-width: 30em){
+
+@media(max-width: 27em){
 
     .hero{
         width: fit-content;

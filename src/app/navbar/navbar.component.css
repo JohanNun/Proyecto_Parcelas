@@ -6,7 +6,7 @@
 
 
 .mainCont {
-    background-color: rgb(225, 238, 213);
+    background-color: rgb(242, 247, 247);
 }
 
 .mainCont2 {
@@ -16,8 +16,15 @@
     display: flex;
     justify-content: space-between;
     padding: 15px 25px;
-    border-bottom:1px ridge green;
-    background-color: rgba(150, 230, 150, 0.137);
+    /* border-bottom:1px ridge rgb(102, 5, 45); */
+    
+        border-bottom: 2px solid;
+        border-image-source: linear-gradient(45deg, rgb(0,143,104), rgb(250,224,66));
+        border-image-slice: 1;
+        
+    
+    
+    background-color: rgba(244, 252, 251, 0.137);
 }
 
 
