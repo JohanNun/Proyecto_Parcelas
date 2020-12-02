@@ -11,6 +11,7 @@ import { MensajeComponent } from './mensaje/mensaje.component';
 import { PaginaAnuncioComponent } from './pagina-anuncio/pagina-anuncio.component';
 import { PaginaBusquedaComponent } from './pagina-busqueda/pagina-busqueda.component';
 import { PaginaUsuarioComponent } from './pagina-usuario/pagina-usuario.component';
+import { PerfilUsuarioComponent } from './perfil-usuario/perfil-usuario.component';
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: '/home' },
@@ -23,6 +24,7 @@ const routes: Routes = [
   { path: 'pagina-anuncio', component: PaginaAnuncioComponent },
   { path: 'pagina-usuario', component: PaginaUsuarioComponent },
   { path: 'form-parcela', component: FormularioParcelaComponent },
+  { path: 'perfil-usuario', component: PerfilUsuarioComponent },
   { path: 'mensaje', component: MensajeComponent, canActivate: [LoginGuard] },
   { path: '**', redirectTo: '/home' }
 ];

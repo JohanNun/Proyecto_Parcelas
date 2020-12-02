@@ -24,111 +24,198 @@
       </select>
     </div>
 
+    <div class="scroll">
+      <div class="fila">
 
-    <div class="fila">
-
-      <div class="columna">
-        <img src="/assets/images/huertito.jpeg" class="card-img" alt="...">
-      </div>
-
-
-      <div class="columna2">
-        <div class="card-body">
-          <h5 class="card-title" (click)="onClick('pagina-anuncio')">Titulo anuncio</h5>
-          <h6>Precio por m2</h6>
-          <p class="card-text">Descripción breve: Lorem ipsum dolor sit, amet consectetur adipisicing
-            elit.
-            Eveniet numquam molestias, consequatur officia nobis rerum.</p>
-          <p class="card-text text-muted">Información addicional localizacion (barrio, metro, etc.)</p>
+        <div class="columna">
+          <p-galleria [(value)]="imagenes" [responsiveOptions]="responsiveOptions"
+            [containerStyle]="{'max-width': '640px'}" [numVisible]="5" [showThumbnails]="false" [showIndicators]="true">
+            <ng-template pTemplate="item" let-item>
+              <img [src]="item.previewImageSrc" style="width: 100%; display: block;" />
+            </ng-template>
+            <ng-template pTemplate="thumbnail" let-item>
+              <div class="p-grid p-nogutter p-justify-center">
+                <img [src]="item.thumbnailImageSrc" style="display: block;" />
+              </div>
+            </ng-template>
+          </p-galleria>
         </div>
-      </div>
 
 
-      <div class="corazoncito">
-        <input type="checkbox" id="like" />
-        <label for="like">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-            <path
-              d="M12 21.35l-1.45-1.32c-5.15-4.67-8.55-7.75-8.55-11.53 0-3.08 2.42-5.5 5.5-5.5 1.74 0 3.41.81 4.5 2.09 1.09-1.28 2.76-2.09 4.5-2.09 3.08 0 5.5 2.42 5.5 5.5 0 3.78-3.4 6.86-8.55 11.54l-1.45 1.31z" />
-          </svg>
-        </label>
-      </div>
-      <div class="puntuacion">
-        <p class="clasificacion">
-          <input id="radio1" type="radio" name="estrellas" value="5">
-          <!--
+        <div class="columna2">
+          <div class="card-body">
+            <h5 class="card-title" (click)="onClick('pagina-anuncio')">Titulo anuncio</h5>
+            <h6>Precio por m2</h6>
+            <p class="card-text">Descripción breve: Lorem ipsum dolor sit, amet consectetur adipisicing
+              elit.
+              Eveniet numquam molestias, consequatur officia nobis rerum.</p>
+            <p class="card-text text-muted">Información addicional localizacion (barrio, metro, etc.)</p>
+          </div>
+        </div>
+
+
+        <div class="corazoncito">
+          <input type="checkbox" id="like" />
+          <label for="like">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+              <path
+                d="M12 21.35l-1.45-1.32c-5.15-4.67-8.55-7.75-8.55-11.53 0-3.08 2.42-5.5 5.5-5.5 1.74 0 3.41.81 4.5 2.09 1.09-1.28 2.76-2.09 4.5-2.09 3.08 0 5.5 2.42 5.5 5.5 0 3.78-3.4 6.86-8.55 11.54l-1.45 1.31z" />
+            </svg>
+          </label>
+        </div>
+        <div class="puntuacion">
+          <p class="clasificacion">
+            <input id="radio1" type="radio" name="estrellas" value="5">
+            <!--
                   --><label for="radio1">★</label>
-          <!--
+            <!--
                   --><input id="radio2" type="radio" name="estrellas" value="4">
-          <!--
+            <!--
                   --><label for="radio2">★</label>
-          <!--
+            <!--
                   --><input id="radio3" type="radio" name="estrellas" value="3">
-          <!--
+            <!--
                   --><label for="radio3">★</label>
-          <!--
+            <!--
                   --><input id="radio4" type="radio" name="estrellas" value="2">
-          <!--
+            <!--
                   --><label for="radio4">★</label>
-          <!--
+            <!--
                   --><input id="radio5" type="radio" name="estrellas" value="1">
-          <!--
+            <!--
                   --><label for="radio5">★</label>
-        </p>
-      </div>
-
-
-    </div>
-
-
-
-
-
-
-    <div class="fila">
-      <div class="columna">
-        <img src="/assets/images/huertito.jpeg" class="card-img" alt="...">
-      </div>
-      <div class="columna2">
-        <div class="card-body">
-          <h5 class="card-title">Titulo anuncio</h5>
-          <p class="card-text">Descripción breve: Lorem ipsum dolor sit, amet consectetur adipisicing
-            elit.
-            Eveniet numquam molestias, consequatur officia nobis rerum.</p>
-          <p class="card-text text-muted">Información addicional localizacion (barrio, metro, etc.)</p>
+          </p>
         </div>
+
+
       </div>
-      <div class="corazoncito">
-        <input type="checkbox" id="like" />
-        <label for="like">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-            <path
-              d="M12 21.35l-1.45-1.32c-5.15-4.67-8.55-7.75-8.55-11.53 0-3.08 2.42-5.5 5.5-5.5 1.74 0 3.41.81 4.5 2.09 1.09-1.28 2.76-2.09 4.5-2.09 3.08 0 5.5 2.42 5.5 5.5 0 3.78-3.4 6.86-8.55 11.54l-1.45 1.31z" />
-          </svg>
-        </label>
-      </div>
-      <div class="puntuacion">
-        <p class="clasificacion">
-          <input id="radiov1" type="radio" name="estrellas" value="5">
-          <!--
+
+
+
+
+
+
+      <div class="fila">
+        <div class="columna">
+          <p-galleria [(value)]="imagenes" [responsiveOptions]="responsiveOptions"
+            [containerStyle]="{'max-width': '640px'}" [numVisible]="5" [showThumbnails]="false" [showIndicators]="true">
+            <ng-template pTemplate="item" let-item>
+              <img [src]="item.previewImageSrc" style="width: 100%; display: block;" />
+            </ng-template>
+            <ng-template pTemplate="thumbnail" let-item>
+              <div class="p-grid p-nogutter p-justify-center">
+                <img [src]="item.thumbnailImageSrc" style="display: block;" />
+              </div>
+            </ng-template>
+          </p-galleria>
+        </div>
+        <div class="columna2">
+          <div class="card-body">
+            <h5 class="card-title">Titulo anuncio</h5>
+            <p class="card-text">Descripción breve: Lorem ipsum dolor sit, amet consectetur adipisicing
+              elit.
+              Eveniet numquam molestias, consequatur officia nobis rerum.</p>
+            <p class="card-text text-muted">Información addicional localizacion (barrio, metro, etc.)</p>
+          </div>
+        </div>
+        <div class="corazoncito">
+          <input type="checkbox" id="like" />
+          <label for="like">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+              <path
+                d="M12 21.35l-1.45-1.32c-5.15-4.67-8.55-7.75-8.55-11.53 0-3.08 2.42-5.5 5.5-5.5 1.74 0 3.41.81 4.5 2.09 1.09-1.28 2.76-2.09 4.5-2.09 3.08 0 5.5 2.42 5.5 5.5 0 3.78-3.4 6.86-8.55 11.54l-1.45 1.31z" />
+            </svg>
+          </label>
+        </div>
+        <div class="puntuacion">
+          <p class="clasificacion">
+            <input id="radiov1" type="radio" name="estrellas" value="5">
+            <!--
                   --><label for="radiov1">★</label>
-          <!--
+            <!--
                   --><input id="radiov2" type="radio" name="estrellas" value="4">
-          <!--
+            <!--
                   --><label for="radiov2">★</label>
-          <!--
+            <!--
                   --><input id="radiov3" type="radio" name="estrellas" value="3">
-          <!--
+            <!--
                   --><label for="radiov3">★</label>
-          <!--
+            <!--
                   --><input id="radiov4" type="radio" name="estrellas" value="2">
-          <!--
+            <!--
                   --><label for="radiov4">★</label>
-          <!--
+            <!--
                   --><input id="radiov5" type="radio" name="estrellas" value="1">
-          <!--
+            <!--
                   --><label for="radiov5">★</label>
-        </p>
+          </p>
+        </div>
+
+
+      </div>
+      <div class="fila">
+
+        <div class="columna">
+          <p-galleria [(value)]="imagenes" [responsiveOptions]="responsiveOptions"
+            [containerStyle]="{'max-width': '640px'}" [numVisible]="5" [showThumbnails]="false" [showIndicators]="true">
+            <ng-template pTemplate="item" let-item>
+              <img [src]="item.previewImageSrc" style="width: 100%; display: block;" />
+            </ng-template>
+            <ng-template pTemplate="thumbnail" let-item>
+              <div class="p-grid p-nogutter p-justify-center">
+                <img [src]="item.thumbnailImageSrc" style="display: block;" />
+              </div>
+            </ng-template>
+          </p-galleria>
+        </div>
+
+
+        <div class="columna2">
+          <div class="card-body">
+            <h5 class="card-title" (click)="onClick('pagina-anuncio')">Titulo anuncio</h5>
+            <h6>Precio por m2</h6>
+            <p class="card-text">Descripción breve: Lorem ipsum dolor sit, amet consectetur adipisicing
+              elit.
+              Eveniet numquam molestias, consequatur officia nobis rerum.</p>
+            <p class="card-text text-muted">Información addicional localizacion (barrio, metro, etc.)</p>
+          </div>
+        </div>
+
+
+        <div class="corazoncito">
+          <input type="checkbox" id="like" />
+          <label for="like">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+              <path
+                d="M12 21.35l-1.45-1.32c-5.15-4.67-8.55-7.75-8.55-11.53 0-3.08 2.42-5.5 5.5-5.5 1.74 0 3.41.81 4.5 2.09 1.09-1.28 2.76-2.09 4.5-2.09 3.08 0 5.5 2.42 5.5 5.5 0 3.78-3.4 6.86-8.55 11.54l-1.45 1.31z" />
+            </svg>
+          </label>
+        </div>
+        <div class="puntuacion">
+          <p class="clasificacion">
+            <input id="radiovv1" type="radio" name="estrellas" value="5">
+            <!--
+                  --><label for="radiovv1">★</label>
+            <!--
+                  --><input id="radiovv2" type="radio" name="estrellas" value="4">
+            <!--
+                  --><label for="radiovv2">★</label>
+            <!--
+                  --><input id="radiovv3" type="radio" name="estrellas" value="3">
+            <!--
+                  --><label for="radiovv3">★</label>
+            <!--
+                  --><input id="radiovv4" type="radio" name="estrellas" value="2">
+            <!--
+                  --><label for="radiovv4">★</label>
+            <!--
+                  --><input id="radiovv5" type="radio" name="estrellas" value="1">
+            <!--
+                  --><label for="radiovv5">★</label>
+          </p>
+        </div>
+
+
       </div>
 
 
