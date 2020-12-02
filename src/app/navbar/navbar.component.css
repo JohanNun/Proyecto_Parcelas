@@ -161,6 +161,49 @@
 }
 
 
+@media(max-width: 68em){
+    .contenido-desplegable{
+        border: 2px solid green;
+        border-radius: 10px 10px;
+        display: none;
+        right: 30px;
+        padding-top: 4px;
+        position: absolute;
+        background-color: white;
+        width: 210px;  
+        margin-top: 2px;
+    }
+}
+
+
+@media(max-width: 62em){
+
+    .venta button{
+        width: 80%;
+        padding: 0px;
+        line-height: 1;
+        font-size: 16px;
+    }
+
+
+    .contenido-desplegable{
+        border: 2px solid green;
+        border-radius: 10px 10px;
+        display: none;
+        right: 30px;
+        padding-top: 4px;
+        position: absolute;
+        background-color: white;
+        width: 190px;  
+        margin-top: 2px;
+    }
+
+}
+
+
+
+
+
 @media(max-width: 48em){
 
     .logo {
@@ -185,5 +228,33 @@
         line-height: 1;
     }
 
+    .contenido-desplegable{
+        border: 2px solid green;
+        border-radius: 10px 10px;
+        display: none;
+        right: 15px;
+        padding-top: 4px;
+        position: absolute;
+        background-color: white;
+        width: 180px;  
+        margin-top: 2px;
+    }
+
+}
+
+
+
+@media(max-width: 39em){
+    .contenido-desplegable{
+        border: 2px solid green;
+        border-radius: 10px 10px;
+        display: none;
+        right: 0px;
+        padding-top: 4px;
+        position: absolute;
+        background-color: white;
+        width: 170px;  
+        margin-top: 2px;
+    }
 }
 
