@@ -7,7 +7,7 @@
             <input type="text" class="form-control" formControlName="nombre">
             <p class="text-danger"
                 *ngIf="formulario.get('nombre').hasError('required') && formulario.get('nombre').touched">
-                Introduce un nombre.
+                Introduce un nombre
             </p>
         </div>
         <div class="form-group col-6">
@@ -15,7 +15,7 @@
             <input type="text" class="form-control" formControlName="apellidos">
             <p class="text-danger"
                 *ngIf="formulario.get('apellidos').hasError('required') && formulario.get('apellidos').touched">
-                Introduce un apellido.
+                Introduce un apellido
             </p>
         </div>
         <div class="form-group col-12">
@@ -37,7 +37,7 @@
             <input type="text" class="form-control" formControlName="nombre_usuario">
             <p class="text-danger"
                 *ngIf="formulario.get('nombre_usuario').hasError('required') && formulario.get('nombre_usuario').touched">
-                Introduce un nombre de usuario.
+                Introduce un nombre de usuario
             </p>
         </div>
 
@@ -50,7 +50,7 @@
             </p>
             <p class="text-danger"
                 *ngIf="formulario.get('email').hasError('required') && formulario.get('email').touched">
-                Introduce un email.
+                Introduce un email
             </p>
         </div>
 
@@ -59,14 +59,18 @@
             <input type="password" class="form-control" formControlName="password">
             <p class="text-danger"
                 *ngIf="formulario.get('password').hasError('required') && formulario.get('password').touched">
-                Introduce una contraseña.
+                Introduce una contraseña
             </p>
         </div>
 
         <div class="form-group col-6">
             <label>Repite contraseña*</label>
-            <input [type]="tipoPassword" class="form-control" formControlName="repite_password">
-            <button (click)="onClick($event)">👁</button>
+            <div class="repite">
+                <input [type]="tipoPassword" class="form-control" formControlName="repite_password">
+                <div class="ojo">
+                    <i (click)="onClick($event)" class="fas fa-eye"></i>
+                </div>
+            </div>
             <p class="text-danger"
                 *ngIf="formulario.get('repite_password').hasError('passwordvalidator') && formulario.get('repite_password').touched">
                 Las contraseñas no coinciden
@@ -123,7 +127,7 @@
             <label>Descripción</label>
             <textarea class="form-control" rows="3" formControlName="descripcion"></textarea>
         </div>
-        <div class=" boton col-12">
+        <div class="boton col-12">
             <input type="submit" value="Enviar" class="btn btn-info" [disabled]="!formulario.valid">
         </div>
 

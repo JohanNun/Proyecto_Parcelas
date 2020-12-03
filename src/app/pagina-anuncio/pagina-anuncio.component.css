@@ -9,7 +9,7 @@
     margin: 0 auto;
     margin-bottom: 25px;
     margin-top: 25px;
-    padding: 10px;
+    padding: 8px;
     -webkit-box-shadow: 0px 0px 10px -2px rgba(0,0,0,0.34); 
     box-shadow: 0px 0px 10px -2px rgba(0,0,0,0.34); 
 }
@@ -93,7 +93,7 @@
 }
 
 .mapa {
-    width: 40%;
+    width: 45%;
 }
 
 .mapa h5 {
@@ -103,38 +103,13 @@
 
 
 .galeria {
-    width: 60%;
-    flex-wrap: wrap;
-    display: flex;
+    width: 55%;
     padding: 0px 5px; 
     margin-bottom: 20px;
-    margin-top: 20px;
+    margin-top: 45px;
 }
 
 
-.galeria ul {
-    list-style: none;
-    margin-top: 20px;
-}
-
-.galeria li  {
-    width: 22%;
-    height: 120px;
-    margin: 5px;
-    display: inline-flex;
-}
-
-.galeria img {
-    width: 100%;
-    height: auto; 
-    object-fit: fill;
-    transition: .5s;
-}
-
-/* Alargar imagenes */
-.grande {
-    transform: scale(1.7);
-}
 
 input {
     width: 120px;
@@ -142,4 +117,37 @@ input {
     margin-top: 30px;
     margin-left: 20px;
     margin-bottom: 20px;
+}
+
+
+@media(max-width: 52em){
+    .mapa { 
+        width: 100%;
+    }
+
+    .galeria {
+        margin-top: 30px;
+        width: 100%;
+    }
+}
+
+@media(max-width: 46em){
+
+    .mainCont{
+        width: 100%;
+    }
+    .foto{
+        width: 90%; 
+        margin-left: 1
+        0px;
+    }
+
+    .mapa { 
+        width: 100%;
+    }
+
+    .galeria {
+        margin-top: 30px;
+        width: 100%;
+    }
 }

@@ -1,6 +1,6 @@
 <navbar></navbar>
 
-<div class="mainCont container">
+<div class="mainCont">
 
     <div class="top">
 
@@ -8,9 +8,7 @@
             <img src="/assets/images/imagenusuario.png" alt="foto del usuario">
         </div>
 
-        <div class="estrellas">
-            <span style.display='none' class="close" title="Close Modal">&times;</span>
-        </div>
+
 
     </div>
 
@@ -35,31 +33,29 @@
     </div>
 
 
+
+
     <div class="galeria">
-        <ul>
-            <li>
-                <img src="/assets/images/huertito.jpeg" (click)="onClick($event)">
-            </li>
+        <p-galleria [(value)]="imagenes" [responsiveOptions]="responsiveOptions"
+            [containerStyle]="{'max-width': '640px'}" [numVisible]="5" [showThumbnails]="false" [showIndicators]="true">
+            <ng-template pTemplate="item" let-item>
+                <img [src]="item.previewImageSrc" style="width: 100%; display: block;" />
+            </ng-template>
+            <ng-template pTemplate="thumbnail" let-item>
+                <div class="p-grid p-nogutter p-justify-center">
+                    <img [src]="item.thumbnailImageSrc" style="display: block;" />
+                </div>
+            </ng-template>
+        </p-galleria>
 
-
-            <li>
-                <img src="/assets/images/huertos.jpg" (click)="onClick($event)">
-
-            </li>
-
-
-            <li>
-                <img src="/assets/images/cultivos.jpg" (click)="onClick($event)">
-            </li>
-        </ul>
     </div>
 
 
 
 
-    <div class="pie container" style="background-color:#f1f1f1">
+    <!--  <div class="pie">
         <button class="cancelbtn btn btn-danger" type="button">Cancel</button>
         <span class="contrasenaOlvidada">Has olvidado tu <a href="#">contraseña?</a></span>
-    </div>
+    </div> -->
 
 </div>
