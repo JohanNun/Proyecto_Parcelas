@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ImagenesgaleriaService } from '../services/imagenesgaleria.service';
 import { UsuariosService } from '../services/usuarios.service';
 
 @Component({
@@ -8,11 +9,29 @@ import { UsuariosService } from '../services/usuarios.service';
 })
 export class PaginaUsuarioComponent implements OnInit {
 
-  tamanoImagen: boolean = false;
+  imagenes: any[];
 
-  constructor(public usuariosService: UsuariosService) { }
+  responsiveOptions: any[] = [
+    {
+      breakpoint: '1024px',
+      numVisible: 5
+    },
+    {
+      breakpoint: '768px',
+      numVisible: 3
+    },
+    {
+      breakpoint: '560px',
+      numVisible: 1
+    }
+  ];
+
+  constructor(public usuariosService: UsuariosService,
+    private imagenesService: ImagenesgaleriaService) { }
 
   ngOnInit(): void {
+    this.imagenesService.getImagenes()
+      .then(imagenes => this.imagenes = imagenes)
   }
 
 

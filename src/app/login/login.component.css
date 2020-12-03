@@ -10,7 +10,7 @@ input[type=text], input[type=password] {
   
   
 button {
-    background-color: var(--color-principal);
+    background-color: rgb(14, 99, 99);
     color: white;
     padding: 14px 20px;
     margin: 8px 0;
@@ -61,7 +61,7 @@ span.nopassword {
   
   
 .contenido {
-    background-color: #6bdb8767;
+    background-color: #43ce6667;
     margin: 5% auto 15% auto;
     border: 1px solid #888;
     border-radius: 20px 20px;

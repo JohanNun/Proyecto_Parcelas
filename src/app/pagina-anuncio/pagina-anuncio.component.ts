@@ -41,7 +41,7 @@ export class PaginaAnuncioComponent implements OnInit {
     this.router.navigate([pRuta])
   }
 
-  onClickImagen($event) {
+  /* onClickImagen($event) {
     $event.target.classList.toggle('grande');
-  }
+  } */
 }

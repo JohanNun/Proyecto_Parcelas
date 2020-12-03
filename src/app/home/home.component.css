@@ -15,12 +15,12 @@ navbar {
 
 
 .hero{
-    background-image: url('/assets/images/cultisun.jpg');
+    background-image: url('/assets/images/culti.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     background-blend-mode: multiply;
-    background-color: rgb(71, 212, 236);
+    background-color: rgb(94, 182, 163);
     height: 100vh;
     /* width: fit-content; */
 }
