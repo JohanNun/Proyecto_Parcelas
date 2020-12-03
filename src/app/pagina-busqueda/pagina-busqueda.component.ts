@@ -9,8 +9,9 @@ import { ImagenesgaleriaService } from '../services/imagenesgaleria.service';
 })
 export class PaginaBusquedaComponent implements OnInit {
 
-  imagenes: any[]
   val: number[];
+
+  imagenes: any[]
 
   responsiveOptions: any[] = [
     {

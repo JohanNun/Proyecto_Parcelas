@@ -57,8 +57,19 @@
 
 
         <div class="galeria">
-
-            <ul>
+            <p-galleria [(value)]="imagenes" [responsiveOptions]="responsiveOptions"
+                [containerStyle]="{'max-width': '640px'}" [numVisible]="5" [showThumbnails]="false"
+                [showIndicators]="true">
+                <ng-template pTemplate="item" let-item>
+                    <img [src]="item.previewImageSrc" style="width: 100%; display: block;" />
+                </ng-template>
+                <ng-template pTemplate="thumbnail" let-item>
+                    <div class="p-grid p-nogutter p-justify-center">
+                        <img [src]="item.thumbnailImageSrc" style="display: block;" />
+                    </div>
+                </ng-template>
+            </p-galleria>
+            <!-- <ul>
                 <li>
                     <img src="/assets/images/huertito.jpeg" (click)="onClickImagen($event)">
                 </li>
@@ -83,7 +94,7 @@
                     <img src="/assets/images/cultivos.jpg" (click)="onClickImagen($event)">
                 </li>
 
-            </ul>
+            </ul> -->
         </div>
 
 
