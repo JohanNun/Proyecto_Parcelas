@@ -1,0 +1,82 @@
+.perfilusuario{
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    padding: 20px;
+    -webkit-box-shadow: 0px 0px 12px -2px rgba(80, 214, 18, 0.575);  
+    box-shadow: 0px 0px 12px -2px rgba(3, 85, 3, 0.418);
+}
+
+.nombre{
+    width: 74%;
+    margin-top: 50px;
+    margin-left: 30px;
+    
+}
+
+.nombre h2{
+    font-size: 3em;
+    font-family: var(--fuentePrincipal);
+}
+
+.imagenusuario{
+    width: 20%;
+    margin-right: 30px;
+    
+}
+
+.imagenusuario img{
+    width: 100%;
+    border-radius: 50%;
+    -webkit-box-shadow: 0px 0px 12px -2px rgba(80, 214, 18, 0.575);  
+    box-shadow: 0px 0px 12px -2px rgba(3, 85, 3, 0.418);
+}
+
+.todainfo{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.todainfo span{
+    font-size: 1.2em;
+    font-family: var(--fuentePrincipal);
+    color: green;
+}
+
+.infogeneral{
+    width: 49%;
+    padding: 10px;
+    margin-right: 10px;
+    -webkit-box-shadow: 0px 0px 12px -2px rgba(80, 214, 18, 0.575);  
+     box-shadow: 0px 0px 12px -2px rgba(3, 85, 3, 0.418);
+}
+
+.contacto{
+    width: 49%;
+    padding: 10px;
+    -webkit-box-shadow: 0px 0px 12px -2px rgba(80, 214, 18, 0.575);  
+     box-shadow: 0px 0px 12px -2px rgba(3, 85, 3, 0.418);
+}
+
+.infoparcela{
+    width: 49%;
+    padding: 10px;
+    margin-right: 10px;
+    margin-top: 10px;
+    -webkit-box-shadow: 0px 0px 12px -2px rgba(80, 214, 18, 0.575);  
+     box-shadow: 0px 0px 12px -2px rgba(3, 85, 3, 0.418);
+}
+
+.descripciongeneral{
+    width: 49%;
+    padding: 10px;
+    margin-top: 10px;
+    -webkit-box-shadow: 0px 0px 12px -2px rgba(80, 214, 18, 0.575);  
+     box-shadow: 0px 0px 12px -2px rgba(3, 85, 3, 0.418);
+}
+
+
+
