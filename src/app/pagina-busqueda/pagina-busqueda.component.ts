@@ -37,4 +37,6 @@ export class PaginaBusquedaComponent implements OnInit {
     this.router.navigate([pRuta])
   }
 
+
+
 }

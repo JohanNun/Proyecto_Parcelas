@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-huertos-comunitarios',
@@ -7,9 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HuertosComunitariosComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
   }
+
+  onClick(pRuta: string) {
+    this.router.navigate([pRuta]);
+  }
+
 
 }

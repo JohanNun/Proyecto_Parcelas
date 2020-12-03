@@ -20,7 +20,7 @@ navbar {
     background-position: center;
     background-repeat: no-repeat;
     background-blend-mode: multiply;
-    background-color: rgb(71, 212, 236);
+    background-color: rgba(16, 197, 113, 0.342);
     height: 100vh;
     /* width: fit-content; */
 }

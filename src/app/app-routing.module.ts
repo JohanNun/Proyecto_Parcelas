@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { FormularioParcelaComponent } from './formulario-parcela/formulario-parcela.component';
 import { FormularioComponent } from './formulario/formulario.component';
 import { HomeComponent } from './home/home.component';
+import { HuertoPublicoComponent } from './huerto-publico/huerto-publico.component';
 import { HuertosComunitariosComponent } from './huertos-comunitarios/huertos-comunitarios.component';
 import { InfoCultivoComponent } from './info-cultivo/info-cultivo.component';
 import { LoginGuard } from './login.guard';
@@ -26,6 +27,7 @@ const routes: Routes = [
   { path: 'form-parcela', component: FormularioParcelaComponent },
   { path: 'perfil-usuario', component: PerfilUsuarioComponent },
   { path: 'mensaje', component: MensajeComponent, canActivate: [LoginGuard] },
+  { path: 'huerto-publico', component: HuertoPublicoComponent },
   { path: '**', redirectTo: '/home' }
 ];
 

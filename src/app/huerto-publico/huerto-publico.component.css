@@ -1,0 +1,57 @@
+.mainContent{
+    padding: 40px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.mainContent h2{
+    font-weight: 700;
+}
+
+.mainContent h5{
+    font-weight: 700;
+}
+
+.imagenPrincipal{
+    width: 100%;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 50px;
+    
+}
+
+.imagenprincipal img{
+    width: 100%;
+}
+
+.mainContent h2{
+    width: 100%;
+    margin-bottom: 40px;
+    text-decoration: underline;
+}
+
+.infogeneral{
+    width: 40%;
+    margin-right: 10px;
+    margin-bottom: 50px;
+}
+
+.infogeneral2{
+    width: 40%;
+    margin-bottom: 50px;
+}
+
+.mapa{
+    width: 100%;
+    margin-top: 40px;
+}
+
+@media (max-width:48em){
+    .mainContent{
+        justify-content: center;
+    }
+}
+
+
+
