@@ -1,39 +1,50 @@
 <navbar></navbar>
 
 
-<div class="mainContent container">
+<div class="mainContent">
+
     <div class="imagenPrincipal">
         <img src="../../assets/images/huertos.jpg" alt="">
     </div>
-    <h2>Nombre del huerto</h2>
-    <div class="infogeneral">
 
-        <h5>Dirección</h5>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptas?</p>
-        <h5>Entidad responsable</h5>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptas?</p>
-        <h5>Email de contacto</h5>
-        <p>asamblea@gmail.com</p>
-        <h5>Sitio web</h5>
-        <a href="#"> http://www.asamblea.com</a>
+    <div class="segundoCont">
+        <h2>Nombre del huerto</h2>
+        <div class="infogeneral">
+
+            <h5>Dirección</h5>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptas?</p>
+            <h5>Entidad responsable</h5>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptas?</p>
+            <h5>Email de contacto</h5>
+            <p>asamblea@gmail.com</p>
+            <h5>Sitio web</h5>
+            <a href="#"> http://www.asamblea.com</a>
+        </div>
+
+        <div class="infogeneral2">
+            <h5>Modelo de gestión</h5>
+            <p>Comunitario</p>
+            <h5>Días y hora de apertura</h5>
+            <p>De Lunes a Viernes de 8:00 a 22:00</p>
+            <h5>Tamaño</h5>
+            <p>200 m2</p>
+        </div>
+
+        <div class="equipamiento">
+            <ul>
+                <li>Caseta de heramientas</li>
+                <li>Valla alta</li>
+            </ul>
+        </div>
+
     </div>
-    <div class="infogeneral2">
-        <h5>Modelo de gestión</h5>
-        <p>Comunitario</p>
-        <h5>Días y hora de apertura</h5>
-        <p>De Lunes a Viernes de 8:00 a 22:00</p>
-        <h5>Tamaño</h5>
-        <p>200 m2</p>
+
+    <div class="galeria">
+        <galeria></galeria>
     </div>
-    <div class="equipamiento">
-        <ul>
-            <li>Caseta de heramientas</li>
-            <li>Valla alta</li>
-        </ul>
-    </div>
-    <galeria></galeria>
+
     <div class="mapa">
-        <app-mapa></app-mapa>
+        <app-mapa [buscador]="false"></app-mapa>
     </div>
+
 </div>
-<footer></footer>

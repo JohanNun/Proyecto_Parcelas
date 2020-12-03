@@ -1,7 +1,17 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+navbar{
+    width: 100%;
+}
+
 .mainContent{
-    padding: 40px;
-    display: flex;
-    flex-wrap: wrap;
+    width: 90%;
+    padding: 20px;
+    margin: 0 auto; 
 }
 
 .mainContent h2{
@@ -14,14 +24,10 @@
 
 .imagenPrincipal{
     width: 100%;
-    height: 400px;
-    display: flex;
-    justify-content: center;
     margin-bottom: 50px;
-    
 }
 
-.imagenprincipal img{
+.imagenPrincipal img{
     width: 100%;
 }
 
@@ -31,15 +37,27 @@
     text-decoration: underline;
 }
 
+.segundoCont {
+    flex-wrap: wrap;
+    display: flex;
+    justify-content: left;
+    width: 100%;
+}
+
 .infogeneral{
-    width: 40%;
+    width: 35%;
     margin-right: 10px;
     margin-bottom: 50px;
 }
 
 .infogeneral2{
-    width: 40%;
+    width: 35%;
     margin-bottom: 50px;
+}
+
+.equipamiento {
+    width: 20%;
+    margin-left: 25px;
 }
 
 .mapa{
@@ -47,9 +65,35 @@
     margin-top: 40px;
 }
 
+.galeria {
+    width: 100%;
+    margin-left: -10px;
+}
+
 @media (max-width:48em){
-    .mainContent{
-        justify-content: center;
+  
+    .mapa {
+        width: 100%;
+    }
+
+    .galeria {
+        width: 100%;
+        margin-left: -30px;
+    }
+
+    .infogeneral{
+        width: 47%;
+        margin-right: 10px;
+        margin-bottom: 50px;
+    }
+    
+    .infogeneral2{
+        width: 47%;
+        margin-bottom: 50px;
+    }
+    
+    .equipamiento {
+        width: 100%;
     }
 }
 
