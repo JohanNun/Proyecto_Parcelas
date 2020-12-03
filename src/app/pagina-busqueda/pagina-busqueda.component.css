@@ -8,10 +8,10 @@
 
 
 .mainCont {
-    width: 100%;
+	width: 100%;
     flex-wrap: wrap;
 	display: flex;
-    margin-top: 50px;
+    margin-top: 20px;
     margin-bottom: 50px;
     padding: 20px;
    /*   -webkit-box-shadow: 0px 0px 12px -2px rgba(0,0,0,0.34);  
@@ -20,14 +20,10 @@
 
 .busqueda{
 	width: 40%;
-	margin-top: 20px;
 	margin-right: 25px;
-	margin-left: 70px;
-	padding-top: 50px;
+	margin-left: 25px;
+	padding-top: 30px;
 }
-
-
-
 
 
 .lista {
@@ -39,8 +35,17 @@
 @media(max-width: 72em){
 	 
 	.lista {
-		width: 48%;
-		margin-left: 80px;
+		width: 50%;
+		margin-left: 20px;
+	}
+
+	.columna {
+		width: 100%;
+	}
+
+	.busqueda {
+		width: 40%;
+		margin-left: -5px; 
 	}
 }
 
@@ -48,25 +53,50 @@
 @media(max-width: 62em){
 
 	.busqueda {
-		width: 100%; 
+		width: 45%; 
 	 }
 
 	 .lista {
-		 width: 100%;
+		 width: 48%;
 		 margin-left: 10px;
 	 }
 }
 
+
+@media(max-width: 52em){
+
+	.busqueda {
+		margin-top: 15px;
+		width: 45%; 
+	 }
+
+	 .lista {
+		 width: 50%;
+		 margin-left: 10px;
+		 margin-top: 25px;
+	 }
+
+	 .fila {
+		 margin-left: 10px;
+	 }
+}
+
+
 @media(max-width: 48em){
 
     .busqueda {
-       width: 100%; 
+	   width: 100%; 
+	   padding: 0px;
+	   margin-left: 5px;
+	   margin-right: 5px;
     }
  
     .lista {
 		width: 100%;
-		margin-left: 0px;
-    }
+		margin-top: 25px;
+		padding: 0px;  
+	}
+
 
 }
 
@@ -228,7 +258,12 @@ input[type="radio"]:checked ~ label {
 
 
 
-@media(max-width: 62em){
+@media(max-width: 70em){
+
+	.fila {
+		width: 95%;
+		padding: 0px; 
+	}
 
 	.columna{
 		width: 100%;
@@ -240,25 +275,33 @@ input[type="radio"]:checked ~ label {
 	}
 
 	.corazoncito {
-		margin-left: -10px;
+		padding-left: 150px;
 	}
 }
 
 
 @media(max-width: 48em){
 
+	.fila {
+		width: 95%;
+		padding-left: 0px;
+	}
+
 	.columna{
 		width: 100%;
+		padding-left: 0px;
 	}
 
 	.columna2{
 		width: 100%;
-		margin-left: 5px;
+		margin-left: 0px;
 	}
 
 	.corazoncito {
-		margin-left: -10px;
+		padding-left: 150px;
 	}
+
+	
 }
 
 
