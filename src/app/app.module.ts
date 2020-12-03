@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { AgmCoreModule } from '@agm/core';
+import { RatingModule } from 'primeng/rating';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -51,6 +52,7 @@ import { PerfilUsuarioComponent } from './perfil-usuario/perfil-usuario.componen
     HttpClientModule,
     FormsModule,
     GalleriaModule,
+    RatingModule,
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyD8sl9A2I_jgowz5eVHdM8szV9wRMR7WIw'
     })
