@@ -24,6 +24,7 @@ import { MensajeComponent } from './mensaje/mensaje.component';
 import { GaleriaComponent } from './galeria/galeria.component';
 import { GalleriaModule } from 'primeng/galleria';
 import { PerfilUsuarioComponent } from './perfil-usuario/perfil-usuario.component';
+import { HuertoPublicoComponent } from './huerto-publico/huerto-publico.component';
 
 @NgModule({
   declarations: [
@@ -43,7 +44,8 @@ import { PerfilUsuarioComponent } from './perfil-usuario/perfil-usuario.componen
     FormularioParcelaComponent,
     MensajeComponent,
     GaleriaComponent,
-    PerfilUsuarioComponent
+    PerfilUsuarioComponent,
+    HuertoPublicoComponent
   ],
   imports: [
     BrowserModule,
