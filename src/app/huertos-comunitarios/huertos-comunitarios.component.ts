@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { HuertComService } from '../services/huert-com.service';
 
 @Component({
   selector: 'app-huertos-comunitarios',
@@ -8,13 +9,24 @@ import { Router } from '@angular/router';
 })
 export class HuertosComunitariosComponent implements OnInit {
 
-  constructor(private router: Router) { }
+  titulos: any[];
+  urlSeleccionado: string;
+
+  constructor(private router: Router,
+    private huertCom: HuertComService,) { }
+
 
   ngOnInit(): void {
+    this.huertCom.getAll()
+      .then(result => {
+        this.titulos = result;
+      })
+
+
   }
 
-  onClick(pRuta: string) {
-    this.router.navigate([pRuta]);
+  onClick(pRuta) {
+    this.router.navigate(['/huertos-colectivos', pRuta.id]);
   }
 
 

@@ -11,15 +11,8 @@
     <div class="lista ">
         <h3 class="text-success">Lista huertos</h3>
 
-        <ul>
-            <li (click)="onClick('huerto-publico')">Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus,
-                quod.</li>
-            <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda, dicta.</li>
-            <li>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Incidunt, consequuntur!</li>
-            <li>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Corporis, nulla!</li>
-            <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum, rem!</li>
-            <li>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Rem, odio.</li>
-            <li>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tenetur, dolorum?</li>
+        <ul *ngFor="let titulo of titulos">
+            <li (click)="onClick(titulo)">{{ titulo.title }}</li>
         </ul>
     </div>
 

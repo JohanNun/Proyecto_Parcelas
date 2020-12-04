@@ -18,6 +18,8 @@ const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: '/home' },
   { path: 'home', component: HomeComponent },
   { path: 'huertos-colectivos', component: HuertosComunitariosComponent },
+  /* { path: 'huerto-publico', component: HuertoPublicoComponent }, */
+  { path: 'huertos-colectivos/:huertoId', component: HuertoPublicoComponent },
   { path: 'info-cultivo', component: InfoCultivoComponent },
   { path: 'form', component: FormularioComponent },
   { path: 'login', component: LoginComponent },
@@ -27,7 +29,6 @@ const routes: Routes = [
   { path: 'form-parcela', component: FormularioParcelaComponent },
   { path: 'perfil-usuario', component: PerfilUsuarioComponent },
   { path: 'mensaje', component: MensajeComponent, canActivate: [LoginGuard] },
-  { path: 'huerto-publico', component: HuertoPublicoComponent },
   { path: '**', redirectTo: '/home' }
 ];
 
