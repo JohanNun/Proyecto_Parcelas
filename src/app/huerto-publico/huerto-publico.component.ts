@@ -9,25 +9,28 @@ import { HuertComService } from '../services/huert-com.service';
 })
 export class HuertoPublicoComponent implements OnInit {
 
-  public idHuerto;
-  titulos: any[];
+  idHuerto: any;
+  titulos: any;
 
   constructor(private activatedRoute: ActivatedRoute,
     private huertCom: HuertComService) { }
 
   ngOnInit(): void {
 
-    this.huertCom.getAll()
-      .then(result => {
-        this.titulos = result;
+
+
+    let id = this.activatedRoute.snapshot.params['huertoId'];
+
+
+    this.titulos = this.huertCom.getById(id)
+      .then(huerto => {
+        this.titulos = huerto;
+        console.log(huerto);
       })
+      .catch(error => console.log(error))
 
-    /* let id = parseInt(this.activatedRoute.snapshot.paramMap.get('id'));
-    this.idHuerto = id; */
 
-    this.activatedRoute.params.subscribe(params => {
-      this.idHuerto = params.huertoId;
-    })
+
   }
 
 }

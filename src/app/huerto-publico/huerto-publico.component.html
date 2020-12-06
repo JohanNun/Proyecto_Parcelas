@@ -1,46 +1,47 @@
 <navbar></navbar>
 
 
-<div class="mainContent" *ngFor="let titulo of titulos">
+<div class="mainContent">
 
     <div class="imagenPrincipal">
-        <img src="../../assets/images/huertos.jpg" alt="">
+        <img src="{{ titulos.image }}">
     </div>
 
     <div class="segundoCont">
-        <h2>{{ titulo.title }}</h2>
+        <h2>{{ titulos.title }}</h2>
         <div class="infogeneral">
 
             <h5>Dirección</h5>
-            <p>{{ titulo.address }}</p>
+            <p>{{ titulos.address }}</p>
             <h5>Entidad responsable</h5>
-            <p>{{ titulo.entity }}</p>
+            <p>{{ titulos.entity }}</p>
             <h5>Email de contacto</h5>
-            <p>{{ titulo.email }}</p>
+            <p>{{ titulos.email }}</p>
             <h5>Sitio web</h5>
-            <a href="#"> http://www.asamblea.com</a>
+            <a href="#"> {{ titulos.website }} </a>
         </div>
 
         <div class="infogeneral2">
             <h5>Modelo de gestión</h5>
-            <p> {{ titulo.governance }}</p>
+            <p> {{ titulos.governance }}</p>
             <h5>Días y hora de apertura</h5>
-            <p> {{ titulo.timetable }} </p>
+            <p> {{ titulos.timetable }} </p>
             <h5>Tamaño</h5>
-            <p> {{ titulo.area }} m2</p>
+            <p> {{ titulos.area }} m2</p>
         </div>
 
-        <div class="equipamiento">
+        <!-- <div class="equipamiento">
             <ul>
                 <li>Caseta de heramientas</li>
                 <li>Valla alta</li>
             </ul>
-        </div>
+        </div> -->
 
     </div>
 
     <div class="galeria">
-        <galeria></galeria>
+        <!-- <galeria></galeria> -->
+        <p> {{ titulos.descripcion }} </p>
     </div>
 
     <div class="mapa">

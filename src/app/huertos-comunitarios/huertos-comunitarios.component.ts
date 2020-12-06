@@ -10,7 +10,7 @@ import { HuertComService } from '../services/huert-com.service';
 export class HuertosComunitariosComponent implements OnInit {
 
   titulos: any[];
-  urlSeleccionado: string;
+  public urlSeleccionado: string;
 
   constructor(private router: Router,
     private huertCom: HuertComService,) { }
@@ -23,10 +23,16 @@ export class HuertosComunitariosComponent implements OnInit {
       })
 
 
+
   }
 
-  onClick(pRuta) {
+  async onClick(pRuta) {
     this.router.navigate(['/huertos-colectivos', pRuta.id]);
+  }
+
+  async onSelect(pId) {
+    this.titulos = await this.huertCom.getById(pId);
+    return this.titulos;
   }
 
 
