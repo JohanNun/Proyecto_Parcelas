@@ -9,7 +9,7 @@ import { HuertComService } from '../services/huert-com.service';
 })
 export class HuertosComunitariosComponent implements OnInit {
 
-  titulos: any[];
+  public titulos: any[];
   public urlSeleccionado: string;
 
   constructor(private router: Router,
@@ -23,8 +23,8 @@ export class HuertosComunitariosComponent implements OnInit {
       })
 
 
-
   }
+
 
   async onClick(pRuta) {
     this.router.navigate(['/huertos-colectivos', pRuta.id]);

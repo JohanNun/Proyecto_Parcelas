@@ -16,13 +16,15 @@
 
 .lista {
     width: 48%;
+    height: 85vh;
     padding-left: 10px; 
+    overflow-y: scroll;
 }
 
 .lista h3 {
     font-family: var(--fuentePrincipal);
     font-weight: 800;
-    margin-bottom: 15px;
+    margin-bottom: 25px;
     font-size: 2.5em;
     border-bottom: 3px solid green;
 }
@@ -30,11 +32,11 @@
 .lista ul {
     
     padding: 5px; 
-    margin-top: 40px;
+    margin-top: 20px;
 }
 
 .lista ul li {
-    margin-bottom: 15px;
+    /* margin-bottom: 5px; */
     margin-left: 10px;
     cursor: pointer;   
 }

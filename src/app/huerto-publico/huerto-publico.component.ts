@@ -17,8 +17,6 @@ export class HuertoPublicoComponent implements OnInit {
 
   ngOnInit(): void {
 
-
-
     let id = this.activatedRoute.snapshot.params['huertoId'];
 
 
@@ -28,7 +26,6 @@ export class HuertoPublicoComponent implements OnInit {
         console.log(huerto);
       })
       .catch(error => console.log(error))
-
 
 
   }

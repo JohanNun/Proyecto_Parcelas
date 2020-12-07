@@ -1,8 +1,8 @@
-/* *{
+ *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-} */
+} 
 
 /* navbar {
     width: 100%;
@@ -12,6 +12,8 @@
 
 
 .mainCont {
+    width: 75%;
+    margin: 0 auto; 
     background-color: white;
     flex-wrap: wrap;
     display: flex;
@@ -48,7 +50,7 @@
     margin-top: -60px;
     height: 250px;
     opacity: 0.78;
-    background-color: rgb(45, 182, 130);
+    background-color: rgb(34, 102, 76);
     background-blend-mode: multiply;
     border: 1px solid var(--color-secundario);
     border-radius: 3px;
@@ -63,7 +65,7 @@
     margin-top: -60px;
     height: 250px;
     opacity: 0.78;
-    background-color: rgb(45, 182, 130);
+    background-color: rgb(34, 102, 76);
     background-blend-mode: multiply;
     border: 1px solid var(--color-secundario);
     border-radius: 3px;
@@ -94,12 +96,6 @@
 }
 
 
-/* .infoCultivo {
-    background-image: url('/assets/images/cultivos.jpg');
-    background-size: cover;
-    width: 40%;
-    height: 250px;
-} */
 
 
 @media(max-width: 200em){
@@ -108,7 +104,14 @@
     }
 }
 
+
+
+
 @media(max-width: 48em){
+
+    .mainCont {
+        width: 100%;    
+    }
 
     .texto h3 {
         font-size: 16px; 
@@ -123,10 +126,14 @@
     }
 }
 
-@media(max-width: 30em){
 
+@media(max-width: 38em){
+
+    .mainCont {
+        width: 100%;
+    }
 
     .infoCultivo, .comunitarios{
         margin-top: 30px;
-            }
-}
+    }
+} 

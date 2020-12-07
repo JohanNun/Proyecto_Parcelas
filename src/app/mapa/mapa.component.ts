@@ -10,9 +10,9 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class MapaComponent implements OnInit {
 
-  latitud: number;
-  longitud: number;
-  zoom: number;
+  @Input() latitud: number;
+  @Input() longitud: number;
+  @Input() zoom: number;
   @Input() buscador: boolean = true;
 
   constructor() { }
