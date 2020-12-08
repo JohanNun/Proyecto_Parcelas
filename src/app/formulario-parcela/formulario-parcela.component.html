@@ -4,7 +4,7 @@
     <h2>Registra aquí tu parcela</h2>
 </div>
 
-<form id="formparcela" class="form-group row" [formGroup]="formularioParcela" (ngSubmit)="onSubmit()">
+<form id="formparcela" class="form-group row col-10" [formGroup]="formularioParcela" (ngSubmit)="onSubmit()">
     <div class="form-group col-12">
         <label>Título</label>
         <input type="text" class="form-control" formControlName="titulo">
@@ -13,27 +13,37 @@
             Introduce un titulo para ofrecer la parcela.
         </p>
     </div>
-    <div class="form-group col-6">
-        <label>Tamaño</label>
-        <input type="number" class="form-control" formControlName="tamaño">
-        <p class="text-danger"
-            *ngIf="formularioParcela.get('tamaño').hasError('required') && formularioParcela.get('tamaño').touched">
-            Introduce el tamaño en m2 de la parcela.
-        </p>
-    </div>
-    <div class="form-group col-6">
-        <label>Precio</label>
-        <input type="number" class="form-control" formControlName="precio">
-        <p class="text-danger"
-            *ngIf="formularioParcela.get('precio').hasError('required') && formularioParcela.get('precio').touched">
-            Introduce un precio en € del m2.
-        </p>
+    <div class="numeros">
+        <div class="form-group tamtot">
+            <label>Tamaño total</label>
+            <input type="number" class="form-control" formControlName="tamano_total">
+            <p class="text-danger"
+                *ngIf="formularioParcela.get('tamano_total').hasError('required') && formularioParcela.get('tamano_total').touched">
+                Introduce el tamaño de la parcela en m2.
+            </p>
+        </div>
+        <div class="form-group tamdis">
+            <label>Tamaño disponible</label>
+            <input type="number" class="form-control" formControlName="tamano_disponible">
+            <p class="text-danger"
+                *ngIf="formularioParcela.get('tamano_disponible').hasError('required') && formularioParcela.get('tamano_disponible').touched">
+                Introduce el tamaño disponible de la parcela en m2.
+            </p>
+        </div>
+        <div class="form-group precio">
+            <label>Precio</label>
+            <input type="number" class="form-control" formControlName="precio_metro">
+            <p class="text-danger"
+                *ngIf="formularioParcela.get('precio_metro').hasError('required') && formularioParcela.get('precio_metro').touched">
+                Introduce un precio en € del m2.
+            </p>
+        </div>
     </div>
     <div class="form-group col-12">
         <label>Imagenes</label>
-        <input type="text" class="form-control" formControlName="imagenes">
+        <input type="text" class="form-control" formControlName="images">
         <p class="text-danger"
-            *ngIf="formularioParcela.get('imagenes').hasError('required') && formularioParcela.get('imagenes').touched">
+            *ngIf="formularioParcela.get('images').hasError('required') && formularioParcela.get('images').touched">
             Añade imagenes de la parcela.
         </p>
     </div>
@@ -54,11 +64,12 @@
         </p>
     </div>
     <div class="form-group col-12 boton">
-        <input class="btn btn-success" type="submit" value="Registrar Parcela"
+        <input class="btn btn-block btn-success" type="submit" value="Registrar Parcela"
             [disabled]="!formularioParcela.valid || !usuariosService.isLogged()">
         <p *ngIf="!usuariosService.isLogged() && formularioParcela.touched" class="warn text-success"
             (click)="redirigir('login')">Inicia sesion para
             registrar tu parcela</p>
 
+        <p-toast position="top-right"></p-toast>
     </div>
 </form>

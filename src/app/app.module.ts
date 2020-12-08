@@ -3,6 +3,8 @@ import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { AgmCoreModule } from '@agm/core';
 import { RatingModule } from 'primeng/rating';
+import { ToastModule } from 'primeng/toast';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -55,6 +57,8 @@ import { HuertoPublicoComponent } from './huerto-publico/huerto-publico.componen
     FormsModule,
     GalleriaModule,
     RatingModule,
+    ToastModule,
+    BrowserAnimationsModule,
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyD8sl9A2I_jgowz5eVHdM8szV9wRMR7WIw'
     })

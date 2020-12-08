@@ -52,25 +52,25 @@ export class FormularioComponent implements OnInit {
   }
 
 
-  dniValidator(control: FormControl) {
-    const dni = control.value;
-
-    const conjuntoLetras = 'TRWAGMYFPDXBNJZSQVHLCKET';
-
-    if (/^\d{8}[a-zA-Z]$/.test(dni) == true) {
-      let numero = (dni.substr(0, dni.length - 1)) % 23;
-      let letraDni = dni.substr(dni.length - 1, 1);
-
-      let letraCorrecta = conjuntoLetras.substring(numero, numero + 1);
-      if (letraCorrecta != letraDni.toUpperCase()) {
-        return { dnivalidator: 'La letra no coincide' };
+  /*   dniValidator(control: FormControl) {
+      const dni = control.value;
+  
+      const conjuntoLetras = 'TRWAGMYFPDXBNJZSQVHLCKET';
+  
+      if (/^\d{8}[a-zA-Z]$/.test(dni) == true) {
+        let numero = (dni.substr(0, dni.length - 1)) % 23;
+        let letraDni = dni.substr(dni.length - 1, 1);
+  
+        let letraCorrecta = conjuntoLetras.substring(numero, numero + 1);
+        if (letraCorrecta != letraDni.toUpperCase()) {
+          return { dnivalidator: 'La letra no coincide' };
+        } else {
+          return null;
+        }
       } else {
-        return null;
+        return { dnivalidator: 'El formato del DNI es incorrecto' };
       }
-    } else {
-      return { dnivalidator: 'El formato del DNI es incorrecto' };
-    }
-  }
+    } */
 
   passwordValidator(form: FormGroup) {
     const passwordValue = form.get('password').value;

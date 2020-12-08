@@ -15,43 +15,43 @@
 
     <div class="desplegable ">
       <h3 class="text-success">Huertos cerca de tí</h3>
-      <select name="" id="" class="btn btn-block btn-outline-success">
+      <select class="btn btn-block btn-outline-success" (click)="onSelect($event)">
         <option value="" value="none" selected disabled hidden>Filtros </option>
-        <option value="">Precio ascendente</option>
-        <option value="">Precio descendente</option>
-        <option value="">Tamaño disponible</option>
-        <option value="">Localización</option>
+        <option value="pA">Precio ascendente</option>
+        <option value="pD">Precio descendente</option>
+        <option value="tD">Tamaño disponible</option>
+        <option value="L">Localización</option>
       </select>
     </div>
 
     <div class="scroll">
 
 
-      <div class="fila">
+      <div class="fila" *ngFor="let parcela of parcelitas">
 
         <div class="columna">
-          <p-galleria [(value)]="imagenes" [responsiveOptions]="responsiveOptions"
+          <!-- <p-galleria [(value)]="imagenes" [responsiveOptions]="responsiveOptions"
             [containerStyle]="{'max-width': '640px'}" [numVisible]="5" [showThumbnails]="false" [showIndicators]="true">
             <ng-template pTemplate="item" let-item>
-              <img [src]="item.previewImageSrc" style="width: 100%; display: block;" />
+              <img [src]="item.previewImageSrc " style="width: 100%; display: block;" />
             </ng-template>
             <ng-template pTemplate="thumbnail" let-item>
               <div class="p-grid p-nogutter p-justify-center">
                 <img [src]="item.thumbnailImageSrc" style="display: block;" />
               </div>
             </ng-template>
-          </p-galleria>
+          </p-galleria> -->
+
+          <img src="{{ parcela.images }}" alt="">
         </div>
 
 
         <div class="columna2">
           <div class="card-body">
-            <h5 class="card-title" (click)="onClick('pagina-anuncio')">Titulo anuncio</h5>
-            <h6>Precio por m2</h6>
-            <p class="card-text">Descripción breve: Lorem ipsum dolor sit, amet consectetur adipisicing
-              elit.
-              Eveniet numquam molestias, consequatur officia nobis rerum.</p>
-            <p class="card-text text-muted">Información addicional localizacion (barrio, metro, etc.)</p>
+            <h5 class="card-title" (click)="onClick('pagina-anuncio')">{{ parcela.titulo }}</h5>
+            <h6>{{ parcela.precio_metro}} / m2</h6>
+            <p class="card-text"> {{ parcela.descripcion }} </p>
+            <p class="card-text text-muted"> {{ parcela.localizacion }}</p>
           </div>
         </div>
 
@@ -70,96 +70,6 @@
           <p-rating [(ngModel)]="val" [cancel]="false"></p-rating>
         </div>
 
-      </div>
-
-
-
-
-
-
-      <div class="fila">
-        <div class="columna">
-          <p-galleria [(value)]="imagenes" [responsiveOptions]="responsiveOptions"
-            [containerStyle]="{'max-width': '640px'}" [numVisible]="5" [showThumbnails]="false" [showIndicators]="true">
-            <ng-template pTemplate="item" let-item>
-              <img [src]="item.previewImageSrc" style="width: 100%; display: block;" />
-            </ng-template>
-            <ng-template pTemplate="thumbnail" let-item>
-              <div class="p-grid p-nogutter p-justify-center">
-                <img [src]="item.thumbnailImageSrc" style="display: block;" />
-              </div>
-            </ng-template>
-          </p-galleria>
-        </div>
-        <div class="columna2">
-          <div class="card-body">
-            <h5 class="card-title">Titulo anuncio</h5>
-            <p class="card-text">Descripción breve: Lorem ipsum dolor sit, amet consectetur adipisicing
-              elit.
-              Eveniet numquam molestias, consequatur officia nobis rerum.</p>
-            <p class="card-text text-muted">Información addicional localizacion (barrio, metro, etc.)</p>
-          </div>
-        </div>
-
-        <div class="rate">
-          <div class="corazoncito">
-            <input type="checkbox" id="like" />
-            <label for="like">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                <path
-                  d="M12 21.35l-1.45-1.32c-5.15-4.67-8.55-7.75-8.55-11.53 0-3.08 2.42-5.5 5.5-5.5 1.74 0 3.41.81 4.5 2.09 1.09-1.28 2.76-2.09 4.5-2.09 3.08 0 5.5 2.42 5.5 5.5 0 3.78-3.4 6.86-8.55 11.54l-1.45 1.31z" />
-              </svg>
-            </label>
-          </div>
-
-          <p-rating [(ngModel)]="val" [cancel]="false"></p-rating>
-        </div>
-
-      </div>
-
-
-      <div class="fila">
-
-        <div class="columna">
-          <p-galleria [(value)]="imagenes" [responsiveOptions]="responsiveOptions"
-            [containerStyle]="{'max-width': '640px'}" [numVisible]="5" [showThumbnails]="false" [showIndicators]="true">
-            <ng-template pTemplate="item" let-item>
-              <img [src]="item.previewImageSrc" style="width: 100%; display: block;" />
-            </ng-template>
-            <ng-template pTemplate="thumbnail" let-item>
-              <div class="p-grid p-nogutter p-justify-center">
-                <img [src]="item.thumbnailImageSrc" style="display: block;" />
-              </div>
-            </ng-template>
-          </p-galleria>
-        </div>
-
-
-        <div class="columna2">
-          <div class="card-body">
-            <h5 class="card-title" (click)="onClick('pagina-anuncio')">Titulo anuncio</h5>
-            <h6>Precio por m2</h6>
-            <p class="card-text">Descripción breve: Lorem ipsum dolor sit, amet consectetur adipisicing
-              elit.
-              Eveniet numquam molestias, consequatur officia nobis rerum.</p>
-            <p class="card-text text-muted">Información addicional localizacion (barrio, metro, etc.)</p>
-          </div>
-        </div>
-
-
-        <div class="rate">
-          <div class="corazoncito">
-            <input type="checkbox" id="like" />
-            <label for="like">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                <path
-                  d="M12 21.35l-1.45-1.32c-5.15-4.67-8.55-7.75-8.55-11.53 0-3.08 2.42-5.5 5.5-5.5 1.74 0 3.41.81 4.5 2.09 1.09-1.28 2.76-2.09 4.5-2.09 3.08 0 5.5 2.42 5.5 5.5 0 3.78-3.4 6.86-8.55 11.54l-1.45 1.31z" />
-              </svg>
-            </label>
-          </div>
-
-          <p-rating [(ngModel)]="val" [cancel]="false"></p-rating>
-        </div>
 
 
 
