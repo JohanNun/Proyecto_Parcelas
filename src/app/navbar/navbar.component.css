@@ -124,6 +124,7 @@
     background-color: white;
     width: 200px;  
     margin-top: 2px;
+    z-index: 1;
 }
 
 .contenido-desplegable ul li{
@@ -165,6 +166,7 @@
 
 .desplegable:hover .contenido-desplegable{
     display: block;
+    
 }
 
 

@@ -137,3 +137,13 @@
         margin-top: 30px;
     }
 } 
+
+@media(max-width: 27em){
+    .mainCont{
+        width: 100%;
+    }
+
+    .infoCultivo, .comunitarios{
+        margin-top: 30px;
+    }
+}
