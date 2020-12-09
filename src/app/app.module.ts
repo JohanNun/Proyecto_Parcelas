@@ -27,6 +27,7 @@ import { GaleriaComponent } from './galeria/galeria.component';
 import { GalleriaModule } from 'primeng/galleria';
 import { PerfilUsuarioComponent } from './perfil-usuario/perfil-usuario.component';
 import { HuertoPublicoComponent } from './huerto-publico/huerto-publico.component';
+import { MapaParcelasComponent } from './mapa-parcelas/mapa-parcelas.component';
 
 @NgModule({
   declarations: [
@@ -47,7 +48,8 @@ import { HuertoPublicoComponent } from './huerto-publico/huerto-publico.componen
     MensajeComponent,
     GaleriaComponent,
     PerfilUsuarioComponent,
-    HuertoPublicoComponent
+    HuertoPublicoComponent,
+    MapaParcelasComponent
   ],
   imports: [
     BrowserModule,

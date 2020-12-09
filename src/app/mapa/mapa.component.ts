@@ -10,7 +10,6 @@ import { HuertComService } from '../services/huert-com.service';
 export class MapaComponent implements OnInit {
 
   huertosLocalizacion: any[];
-  huertos2: any;
 
   @Input() latitud: number;
   @Input() longitud: number;
