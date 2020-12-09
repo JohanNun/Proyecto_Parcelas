@@ -12,7 +12,9 @@ export class PaginaBusquedaComponent implements OnInit {
 
   val: number[];
   parcelitas: parcela[];
-  imagenes: any[]
+  imagenes: any[];
+  parcelas: any[];
+
 
   responsiveOptions: any[] = [
     {
@@ -31,16 +33,53 @@ export class PaginaBusquedaComponent implements OnInit {
 
   constructor(private router: Router,
     private imagenesService: ImagenesgaleriaService,
-    private parcelasService: ParcelasService) { }
+    private parcelasService: ParcelasService) {
+
+    this.parcelas = [];
+
+  }
 
   ngOnInit(): void {
     /* this.imagenesService.getImagenes()
       .then(imagenes => this.imagenes = imagenes) */
+
+
     this.parcelasService.getAll()
       .then(result => {
         this.parcelitas = result
+        console.log(this.parcelitas);
+
+
+        const positionParcelas = new Array();
+
+        for (let parcela of this.parcelitas) {
+
+
+          var geocoder = new google.maps.Geocoder();
+          geocoder.geocode({ address: parcela.localizacion }, function (result, status) {
+
+            if (status === google.maps.GeocoderStatus.OK) {
+              let position = result[0].geometry.location;
+              positionParcelas.push({ latitud: position.lat(), longitud: position.lng() });
+
+            }
+
+          });
+        }
+
+        this.parcelas = positionParcelas;
+        console.log(this.parcelas);
+
+
+
+
       })
       .catch(error => console.log(error))
+
+
+
+
+
 
   }
 
@@ -74,6 +113,11 @@ export class PaginaBusquedaComponent implements OnInit {
   onClick(pRuta: string) {
     this.router.navigate([pRuta])
   }
+
+
+
+
+
 
 
 

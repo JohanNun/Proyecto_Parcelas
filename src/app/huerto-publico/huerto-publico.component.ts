@@ -23,7 +23,6 @@ export class HuertoPublicoComponent implements OnInit {
     this.titulos = this.huertCom.getById(id)
       .then(huerto => {
         this.titulos = huerto;
-        console.log(huerto);
       })
       .catch(error => console.log(error))
 

@@ -4,7 +4,13 @@
 <div class="mainCont container col-12">
 
   <div class="busqueda">
-    <app-mapa [buscador]="false"></app-mapa>
+
+
+    <agm-map>
+      <agm-marker *ngFor="let parcela of parcelas" [latitude]="parcela.latitud" [longitude]="parcela.longitud">
+      </agm-marker>
+    </agm-map>
+
   </div>
 
 
