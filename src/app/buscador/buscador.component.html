@@ -6,7 +6,8 @@
         <span>o</span></h1>
 
     <div class="busca">
-        <input type="text" placeholder="Codigo postal..."><button class="boton btn-success"
-            (click)="onBusqueda('pagina-busqueda')"><i class="fas fa-search"></i></button>
+
+        <input type="text" [(ngModel)]="busqueda" placeholder="Ciudad..."><button class="boton btn-success"
+            (click)="onClick()"><i class="fas fa-search"></i></button>
     </div>
 </div>

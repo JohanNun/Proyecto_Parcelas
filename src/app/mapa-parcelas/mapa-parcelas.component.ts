@@ -28,43 +28,65 @@ export class MapaParcelasComponent implements OnInit {
 
       this.latitud = position.coords.latitude;
       this.longitud = position.coords.longitude;
-      this.zoom = 10;
+      this.zoom = 5;
 
     });
 
 
 
-    this.parcelasService.getAll()
-      .then(result => {
-        this.parcelitas = result
-        console.log(this.parcelitas);
+    let ciudad = this.activatedRoute.snapshot.params['ciudad'];
 
+    if (!ciudad) {
+      this.parcelasService.getAll()
+        .then(result => {
+          this.parcelitas = result
 
-        const positionParcelas = new Array();
+          const positionParcelas = new Array();
 
-        for (let parcela of this.parcelitas) {
+          for (let parcela of this.parcelitas) {
 
-          var geocoder = new google.maps.Geocoder();
-          geocoder.geocode({ address: parcela.localizacion }, function (result, status) {
+            var geocoder = new google.maps.Geocoder();
+            geocoder.geocode({ address: parcela.calle }, function (result, status) {
 
-            if (status === google.maps.GeocoderStatus.OK) {
-              let position = result[0].geometry.location;
-              positionParcelas.push({ latitud: position.lat(), longitud: position.lng() });
+              if (status === google.maps.GeocoderStatus.OK) {
+                let position = result[0].geometry.location;
+                positionParcelas.push({ latitud: position.lat(), longitud: position.lng() });
+              }
 
-            }
+            });
+          }
 
-          });
-        }
+          this.parcelas = positionParcelas;
 
-        this.parcelas = positionParcelas;
-        console.log(this.parcelas);
+        })
+        .catch(error => console.log(error))
 
+    } else {
+      this.parcelasService.getCiudad(ciudad)
+        .then(result => {
+          this.parcelitas = result
 
+          const positionParcelas = new Array();
 
+          for (let parcela of this.parcelitas) {
 
-      })
-      .catch(error => console.log(error))
+            var geocoder = new google.maps.Geocoder();
+            geocoder.geocode({ address: parcela.calle }, function (result, status) {
 
+              if (status === google.maps.GeocoderStatus.OK) {
+                let position = result[0].geometry.location;
+                positionParcelas.push({ latitud: position.lat(), longitud: position.lng() });
+              }
+
+            });
+          }
+
+          this.parcelas = positionParcelas;
+          console.log(this.parcelas);
+
+        })
+    }
   }
+
 
 }

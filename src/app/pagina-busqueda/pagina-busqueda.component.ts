@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ImagenesgaleriaService } from '../services/imagenesgaleria.service';
 import { parcela, ParcelasService } from '../services/parcelas.service';
 
@@ -33,7 +33,8 @@ export class PaginaBusquedaComponent implements OnInit {
 
   constructor(private router: Router,
     private imagenesService: ImagenesgaleriaService,
-    private parcelasService: ParcelasService) {
+    private parcelasService: ParcelasService,
+    private activatedRoute: ActivatedRoute) {
 
     this.parcelas = [];
 
@@ -43,43 +44,27 @@ export class PaginaBusquedaComponent implements OnInit {
     /* this.imagenesService.getImagenes()
       .then(imagenes => this.imagenes = imagenes) */
 
+    let ciudad = this.activatedRoute.snapshot.params['ciudad'];
+    console.log(ciudad);
 
-    this.parcelasService.getAll()
-      .then(result => {
-        this.parcelitas = result
-        console.log(this.parcelitas);
+    if (!ciudad) {
+      this.parcelasService.getAll()
+        .then(result => {
+          this.parcelitas = result
+          console.log(this.parcelitas);
 
-      })
+        })
+    } else {
+      this.parcelasService.getCiudad(ciudad)
+        .then(result => {
+          this.parcelitas = result;
+        })
+
+    }
+
+
+
   }
-  /*  const positionParcelas = new Array();
- 
-   for (let parcela of this.parcelitas) {
- 
- 
-     var geocoder = new google.maps.Geocoder();
-     geocoder.geocode({ address: parcela.localizacion }, function (result, status) {
- 
-       if (status === google.maps.GeocoderStatus.OK) {
-         let position = result[0].geometry.location;
-         positionParcelas.push({ latitud: position.lat(), longitud: position.lng() });
- 
-       }
- 
-     });
-   }
- 
-   this.parcelas = positionParcelas;
-   console.log(this.parcelas);
- 
- 
- 
- 
- })
- .catch(error => console.log(error))
-*/
-
-
-
 
 
 
@@ -111,12 +96,6 @@ export class PaginaBusquedaComponent implements OnInit {
   onClick(pRuta: string) {
     this.router.navigate([pRuta])
   }
-
-
-
-
-
-
 
 
 }

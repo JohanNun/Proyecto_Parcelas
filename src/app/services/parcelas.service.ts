@@ -44,6 +44,11 @@ export class ParcelasService {
   }
 
 
+  getCiudad(pCiudad): Promise<parcela[]> {
+    return this.httpClient.get<parcela[]>(`${this.baseUrl}/${pCiudad}`).toPromise();
+  }
+
+
   getById(pId): Promise<parcela> {
     return this.httpClient.get<parcela>(`${this.baseUrl}/${pId}`).toPromise();
   }

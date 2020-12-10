@@ -24,6 +24,7 @@ const routes: Routes = [
   { path: 'form', component: FormularioComponent },
   { path: 'login', component: LoginComponent },
   { path: 'pagina-busqueda', component: PaginaBusquedaComponent },
+  { path: 'pagina-busqueda/:ciudad', component: PaginaBusquedaComponent },
   { path: 'pagina-anuncio', component: PaginaAnuncioComponent },
   { path: 'pagina-usuario', component: PaginaUsuarioComponent },
   { path: 'form-parcela', component: FormularioParcelaComponent },
