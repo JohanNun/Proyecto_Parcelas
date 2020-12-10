@@ -22,6 +22,11 @@
     padding: 0px 15px;
 }
 
+.calle, .codigopos, .ciudad{
+    width: 33.33%;
+    padding: 0px 15px;
+}
+
 .btn{
     width: 250px;
     margin-top: 20px;
@@ -36,6 +41,10 @@
 @media(max-width: 40em){
     
     .tamtot, .tamdis, .precio{
+        width: 100%;
+    }
+
+    .calle, .codigopos, .ciudad{
         width: 100%;
     }
 
