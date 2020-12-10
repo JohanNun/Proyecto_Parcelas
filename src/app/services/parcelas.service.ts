@@ -7,7 +7,9 @@ export interface parcela {
   tamano_disponible: number,
   precio_metro: number,
   images: string,
-  localizacion: string,
+  calle: string,
+  CP: number;
+  ciudad: string;
   descripcion: string
 }
 

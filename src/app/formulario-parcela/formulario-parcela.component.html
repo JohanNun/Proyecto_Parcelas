@@ -47,12 +47,28 @@
             Añade imagenes de la parcela.
         </p>
     </div>
-    <div class="form-group col-12">
-        <label>Localizacion</label>
-        <input type="text" class="form-control" formControlName="localizacion">
+    <div class="form-group col-4">
+        <label>Calle</label>
+        <input type="text" class="form-control" formControlName="calle">
         <p class="text-danger"
-            *ngIf="formularioParcela.get('localizacion').hasError('required') && formularioParcela.get('localizacion').touched">
-            Indica la localización de la parcela.
+            *ngIf="formularioParcela.get('calle').hasError('required') && formularioParcela.get('calle').touched">
+            Indica la calle de la parcela.
+        </p>
+    </div>
+    <div class="form-group col-4">
+        <label>Código Postal</label>
+        <input type="number" class="form-control" formControlName="codigopostal">
+        <p class="text-danger"
+            *ngIf="formularioParcela.get('codigopostal').hasError('required') && formularioParcela.get('codigopostal').touched">
+            Indica el código postal de la parcela.
+        </p>
+    </div>
+    <div class="form-group col-4">
+        <label>Ciudad</label>
+        <input type="text" class="form-control" formControlName="ciudad">
+        <p class="text-danger"
+            *ngIf="formularioParcela.get('ciudad').hasError('required') && formularioParcela.get('ciudad').touched">
+            Indica la ciudad de la parcela.
         </p>
     </div>
     <div class="form-group col-12">
