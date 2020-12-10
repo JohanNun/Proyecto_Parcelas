@@ -5,7 +5,7 @@
     <div class="top">
 
         <div class="foto">
-            <img src="/assets/images/imagenusuario.png" alt="foto del usuario">
+            <img src="{{ usuario?.imagen}}" alt="foto del usuario">
         </div>
 
 
@@ -14,48 +14,19 @@
 
 
     <div class="campos">
-        <h4>Nombre Usuario</h4>
+        <h4>{{ usuario?.nombre}} {{ usuario?.apellidos}}</h4>
         <h5>Role - Dueño o busca huertos</h5>
 
-        <p>Descripcion usuario, qué busca ... Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum qui
-            dicta unde laborum reiciendis reprehenderit deserunt dolores necessitatibus, maxime, velit, nostrum
-            natus omnis fuga! Ratione? Va usté muy cargadoo al ataquerl diodeno no puedor a wan no te digo trigo
-            por
-            no llamarte Rodrigor te voy a borrar el cerito la caidita </p>
+        <p> {{ usuario?.descripcion}}</p>
 
 
         <button class="btn btn-success" type="submit" [routerLink]="['/mensaje']">Enviar
             mensaje</button>
 
-        <p *ngIf="!usuariosService.isLogged()" class=" warn text-success" (click)="onClick('login')">Inicia sesion para
+        <p *ngIf="!usuariosService.isLogged()" class=" warn text-success">Inicia sesion para
             mandar un mensaje</p>
 
     </div>
 
-
-
-
-    <div class="galeria">
-        <p-galleria [(value)]="imagenes" [responsiveOptions]="responsiveOptions"
-            [containerStyle]="{'max-width': '640px'}" [numVisible]="5" [showThumbnails]="false" [showIndicators]="true">
-            <ng-template pTemplate="item" let-item>
-                <img [src]="item.previewImageSrc" style="width: 100%; display: block;" />
-            </ng-template>
-            <ng-template pTemplate="thumbnail" let-item>
-                <div class="p-grid p-nogutter p-justify-center">
-                    <img [src]="item.thumbnailImageSrc" style="display: block;" />
-                </div>
-            </ng-template>
-        </p-galleria>
-
-    </div>
-
-
-
-
-    <!--  <div class="pie">
-        <button class="cancelbtn btn btn-danger" type="button">Cancel</button>
-        <span class="contrasenaOlvidada">Has olvidado tu <a href="#">contraseña?</a></span>
-    </div> -->
 
 </div>

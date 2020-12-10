@@ -14,6 +14,7 @@ export class PaginaBusquedaComponent implements OnInit {
   parcelitas: parcela[];
   imagenes: any[];
   parcelas: any[];
+  parcela: parcela;
 
 
   responsiveOptions: any[] = [
@@ -45,7 +46,6 @@ export class PaginaBusquedaComponent implements OnInit {
       .then(imagenes => this.imagenes = imagenes) */
 
     let ciudad = this.activatedRoute.snapshot.params['ciudad'];
-    console.log(ciudad);
 
     if (!ciudad) {
       this.parcelasService.getAll()
@@ -93,8 +93,18 @@ export class PaginaBusquedaComponent implements OnInit {
 
 
 
-  onClick(pRuta: string) {
-    this.router.navigate([pRuta])
+  onClick(pRuta) {
+
+    /*  let id = this.activatedRoute.snapshot.params['idParcela']; */
+    /* this.parcelasService.getById(this.parcela)
+      .then(result => {
+        this.parcela = result;
+      }) */
+
+    console.log(pRuta.id);
+
+
+    this.router.navigate(['pagina-anuncio', pRuta.id])
   }
 
 
