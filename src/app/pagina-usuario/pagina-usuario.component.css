@@ -22,9 +22,14 @@
 
 
 .foto {
-    width: 85%;
+    width: 35%;
     text-align: left;
     background-color: white;
+}
+
+.foto img {
+    width: 100%;
+    border-radius: 50%;
 }
 
 .campos{

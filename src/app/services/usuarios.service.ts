@@ -32,6 +32,12 @@ export class UsuariosService {
 
   }
 
+  getUsuario(pId): Promise<usuario> {
+    return this.httpClient.get<usuario>(`${this.baseUrl}/parcela/${pId}`).toPromise();
+  }
+
+
+
 
   create(pFormValue): Promise<usuario> {
     return this.httpClient.post<usuario>(this.baseUrl, pFormValue).toPromise();

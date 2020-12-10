@@ -4,13 +4,13 @@
 
     <div class="cabecera">
         <div class="foto">
-            <img src="/assets/images/goku.jpg">
-            <h5 (click)="onClick('pagina-usuario')">Enlace a perfil del usuario</h5>
+            <img src="{{usuario.imagen}}">
+            <h5 (click)="onClick(usuario)">Enlace a perfil del usuario</h5>
         </div>
 
         <div class="texto">
-            <h5>Titulo del anuncio</h5>
-            <p>Zona - Location</p>
+            <h5>{{parcela?.titulo}}</h5>
+            <p>{{parcela?.calle}}, {{parcela?.ciudad}}</p>
 
 
             <div class="caracteristicas">
@@ -18,8 +18,8 @@
                 <h5>Caracteristicas</h5>
 
                 <ul>
-                    <li>Tamaño total: </li>
-                    <li>Tamaño disponible: </li>
+                    <li>Tamaño total: {{ parcela?.tamano_total}}</li>
+                    <li>Tamaño disponible: {{ parcela?.tamano_disponible}} </li>
                     <li>Se puede o no encargar el anunciante</li>
                 </ul>
             </div>
@@ -35,13 +35,7 @@
 
         <h5>Comentarios del anunciante</h5>
 
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad repudiandae quos velit optio maxime deserunt
-            tempore nesciunt numquam asperiores voluptatibus sint, quas nemo ipsam sapiente, eveniet ducimus nobis autem
-            id quo iste recusandae alias et? Laudantium vitae at fugiat suscipit doloribus expedita quis itaque, maxime,
-            quasi facere nulla quae libero dignissimos! Sint alias corporis totam expedita cumque sequi deleniti, minima
-            eaque ipsum inventore recusandae est esse iusto placeat ad. Eligendi enim expedita sint vel tempore
-            accusantium cumque tempora. Esse doloribus quam, impedit iusto itaque ex, hic rerum culpa temporibus dolorum
-            est voluptatem possimus atque magnam et dolore dolores labore neque.</p>
+        <p>{{ parcela?.descripcion}}</p>
 
     </div>
 
@@ -57,7 +51,7 @@
 
 
         <div class="galeria">
-            <p-galleria [(value)]="imagenes" [responsiveOptions]="responsiveOptions"
+            <!-- <p-galleria [(value)]="imagenes" [responsiveOptions]="responsiveOptions"
                 [containerStyle]="{'max-width': '640px'}" [numVisible]="5" [showThumbnails]="false"
                 [showIndicators]="true">
                 <ng-template pTemplate="item" let-item>
@@ -68,7 +62,11 @@
                         <img [src]="item.thumbnailImageSrc" style="display: block;" />
                     </div>
                 </ng-template>
-            </p-galleria>
+            </p-galleria> -->
+            <img src="{{ parcela?.images}}" alt="">
+
+
+
             <!-- <ul>
                 <li>
                     <img src="/assets/images/huertito.jpeg" (click)="onClickImagen($event)">

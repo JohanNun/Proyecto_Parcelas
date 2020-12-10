@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Component, Input, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ImagenesgaleriaService } from '../services/imagenesgaleria.service';
-import { UsuariosService } from '../services/usuarios.service';
+import { parcela, ParcelasService } from '../services/parcelas.service';
+import { usuario, UsuariosService } from '../services/usuarios.service';
 
 @Component({
   selector: 'app-pagina-anuncio',
@@ -11,6 +12,8 @@ import { UsuariosService } from '../services/usuarios.service';
 export class PaginaAnuncioComponent implements OnInit {
 
   imagenes: any[];
+  parcela: parcela;
+  usuario: usuario;
 
   responsiveOptions: any[] = [
     {
@@ -29,19 +32,53 @@ export class PaginaAnuncioComponent implements OnInit {
 
   constructor(private router: Router,
     public usuariosService: UsuariosService,
-    private imagenesService: ImagenesgaleriaService) { }
+    private imagenesService: ImagenesgaleriaService,
+    private parcelasService: ParcelasService,
+    private activatedRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
     this.imagenesService.getImagenes()
       .then(imagenes => this.imagenes = imagenes)
+
+
+    let id = this.activatedRoute.snapshot.params['idParcela'];
+    console.log(id);
+
+    this.parcelasService.getById(id)
+      .then(result => {
+        this.parcela = result;
+        console.log(this.parcela);
+
+      })
+
+
+    this.parcelasService.getUsuarioByParcelaId(id)
+      .then(result => {
+        this.usuario = result;
+        console.log(this.usuario)
+
+      })
+      .catch(error => console.log(error))
+
   }
 
 
-  onClick(pRuta: string) {
-    this.router.navigate([pRuta])
+
+  onClick(pRuta) {
+
+    let id = this.activatedRoute.snapshot.params['idParcela'];
+
+    this.parcelasService.getUsuarioByParcelaId(id)
+      .then(result => {
+        this.usuario = result;
+        console.log(this.usuario);
+
+      })
+
+
+    this.router.navigate(['pagina-usuario', id]);
+
   }
 
-  /* onClickImagen($event) {
-    $event.target.classList.toggle('grande');
-  } */
+
 }

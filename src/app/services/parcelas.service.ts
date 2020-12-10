@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { usuario } from './usuarios.service';
 
 export interface parcela {
   titulo: string,
@@ -50,7 +51,11 @@ export class ParcelasService {
 
 
   getById(pId): Promise<parcela> {
-    return this.httpClient.get<parcela>(`${this.baseUrl}/${pId}`).toPromise();
+    return this.httpClient.get<parcela>(`${this.baseUrl}/parcela/${pId}`).toPromise();
+  }
+
+  getUsuarioByParcelaId(pParcelaId): Promise<usuario> {
+    return this.httpClient.get<usuario>(`${this.baseUrl}/user/${pParcelaId}`).toPromise();
   }
 
   create(pFormValue): Promise<parcela> {
