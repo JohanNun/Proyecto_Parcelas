@@ -1,3 +1,4 @@
+import { mapToMapExpression } from '@angular/compiler/src/render3/util';
 import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ImagenesgaleriaService } from '../services/imagenesgaleria.service';
@@ -14,6 +15,8 @@ export class PaginaAnuncioComponent implements OnInit {
   imagenes: any[];
   parcela: parcela;
   usuario: usuario;
+
+
 
   responsiveOptions: any[] = [
     {
@@ -48,19 +51,22 @@ export class PaginaAnuncioComponent implements OnInit {
       .then(result => {
         this.parcela = result;
         console.log(this.parcela);
-
       })
+
 
 
     this.parcelasService.getUsuarioByParcelaId(id)
       .then(result => {
         this.usuario = result;
-        console.log(this.usuario)
+        console.log(this.usuario);
+
+
 
       })
       .catch(error => console.log(error))
 
   }
+
 
 
 

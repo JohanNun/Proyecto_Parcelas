@@ -4,7 +4,7 @@
 
     <div class="cabecera">
         <div class="foto">
-            <img src="{{usuario.imagen}}">
+            <img src="{{usuario?.imagen}}">
             <h5 (click)="onClick(usuario)">Enlace a perfil del usuario</h5>
         </div>
 
@@ -45,7 +45,9 @@
 
         <div class="mapa">
             <h5>Ubicación</h5>
-            <app-mapa [buscador]="false"></app-mapa>
+            <app-mapa-parcelas>
+
+            </app-mapa-parcelas>
         </div>
 
 

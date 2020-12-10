@@ -95,12 +95,6 @@ export class PaginaBusquedaComponent implements OnInit {
 
   onClick(pRuta) {
 
-    /*  let id = this.activatedRoute.snapshot.params['idParcela']; */
-    /* this.parcelasService.getById(this.parcela)
-      .then(result => {
-        this.parcela = result;
-      }) */
-
     console.log(pRuta.id);
 
 
