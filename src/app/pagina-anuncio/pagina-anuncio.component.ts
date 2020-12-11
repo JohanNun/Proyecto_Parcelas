@@ -15,7 +15,6 @@ export class PaginaAnuncioComponent implements OnInit {
   imagenes: any[];
   parcela: parcela;
   usuario: usuario;
-  parcelitas: parcela[];
   parcelas: any[];
 
 
@@ -108,10 +107,9 @@ export class PaginaAnuncioComponent implements OnInit {
 
       })
 
-
     this.router.navigate(['pagina-usuario', id]);
-
   }
+
 
 
 }

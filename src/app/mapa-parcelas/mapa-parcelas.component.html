@@ -2,14 +2,15 @@
 
     <div class="busqueda" *ngIf="buscador">
 
-        <input type="text" placeholder="Codigo postal, dirección, ...">
-        <button class="boton btn-success"><i class="fas fa-search"></i></button>
+        <input type="text" [(ngModel)]="busqueda" placeholder="Codigo postal, dirección, ...">
+        <button type="submit" class="boton btn-success" (click)="onSearch()"><i class="fas fa-search"></i></button>
     </div>
 
     <div class="mapa">
 
-        <agm-map [latitude]="latitud" [longitude]="longitud" [zoom]="zoom">
-            <agm-marker *ngFor="let parcela of parcelas" [latitude]="parcela.latitud" [longitude]="parcela.longitud">
+        <agm-map [latitude]="latitud" [longitude]="longitud" [zoom]="10" [fitBounds]="true">
+            <agm-marker *ngFor="let parcela of parcelas" [latitude]="parcela.latitud" [longitude]="parcela.longitud"
+                [agmFitBounds]=true>
 
             </agm-marker>
 

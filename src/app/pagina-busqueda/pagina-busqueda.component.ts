@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { Subscription } from 'rxjs';
 import { ImagenesgaleriaService } from '../services/imagenesgaleria.service';
 import { parcela, ParcelasService } from '../services/parcelas.service';
 
@@ -15,22 +16,25 @@ export class PaginaBusquedaComponent implements OnInit {
   imagenes: any[];
   parcelas: any[];
 
+  busqueda: string;
+  subscripcion: Subscription
 
 
-  responsiveOptions: any[] = [
-    {
-      breakpoint: '1024px',
-      numVisible: 5
-    },
-    {
-      breakpoint: '768px',
-      numVisible: 3
-    },
-    {
-      breakpoint: '560px',
-      numVisible: 1
-    }
-  ];
+
+  /*   responsiveOptions: any[] = [
+      {
+        breakpoint: '1024px',
+        numVisible: 5
+      },
+      {
+        breakpoint: '768px',
+        numVisible: 3
+      },
+      {
+        breakpoint: '560px',
+        numVisible: 1
+      }
+    ]; */
 
   constructor(private router: Router,
     private imagenesService: ImagenesgaleriaService,
@@ -44,29 +48,33 @@ export class PaginaBusquedaComponent implements OnInit {
   ngOnInit(): void {
 
     // Recuperar las parcelas (todas o por ciudad introducida)
-    let ciudad = this.activatedRoute.snapshot.params['ciudad'];
+    this.subscripcion = this.activatedRoute.paramMap.subscribe(params => {
+      let ciudad = params.get('ciudad');
 
-    if (!ciudad) {
-      this.parcelasService.getAll()
-        .then(result => {
-          this.parcelitas = result
-          console.log(this.parcelitas);
+      if (!ciudad) {
+        this.parcelasService.getAll()
+          .then(result => {
+            this.parcelitas = result
+            console.log(this.parcelitas);
 
-        })
-    } else {
-      this.parcelasService.getCiudad(ciudad)
-        .then(result => {
-          this.parcelitas = result;
-        })
-    }
+          })
+      } else {
+        this.parcelasService.getCiudad(ciudad)
+          .then(result => {
+            this.parcelitas = result;
+          })
+      }
+
+    });
 
 
+    let ciudadita = this.activatedRoute.snapshot.params['ciudad'];
 
     //Recuperar mapas 
 
-    if (ciudad !== '') {
+    if (ciudadita !== '') {
 
-      this.parcelasService.getCiudad(ciudad)
+      this.parcelasService.getCiudad(ciudadita)
         .then(result => {
           this.parcelitas = result
 
@@ -89,7 +97,6 @@ export class PaginaBusquedaComponent implements OnInit {
           console.log(this.parcelas);
 
         })
-
 
     } else {
 
@@ -114,14 +121,11 @@ export class PaginaBusquedaComponent implements OnInit {
 
           this.parcelas = positionParcelas;
           console.log(this.parcelas);
-
         })
         .catch(error => console.log(error))
     }
 
-
   }
-
 
 
   onSelect($event) {
@@ -152,7 +156,10 @@ export class PaginaBusquedaComponent implements OnInit {
   onClick(pRuta) {
 
     this.router.navigate(['pagina-anuncio', pRuta.id])
+
   }
+
+
 
 
 }
