@@ -38,8 +38,12 @@ export class BuscadorComponent implements OnInit {
 
   onClick() {
     console.log(this.busqueda);
+    if (!this.busqueda) {
+      this.router.navigate(['/pagina-busqueda', ""]);
+    } else {
+      this.router.navigate(['/pagina-busqueda', this.busqueda]);
+    }
 
-    this.router.navigate(['/pagina-busqueda', this.busqueda]);
   }
 
 

@@ -14,7 +14,7 @@ export class PaginaBusquedaComponent implements OnInit {
   parcelitas: parcela[];
   imagenes: any[];
   parcelas: any[];
-  parcela: parcela;
+
 
 
   responsiveOptions: any[] = [
@@ -42,9 +42,8 @@ export class PaginaBusquedaComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    /* this.imagenesService.getImagenes()
-      .then(imagenes => this.imagenes = imagenes) */
 
+    // Recuperar las parcelas (todas o por ciudad introducida)
     let ciudad = this.activatedRoute.snapshot.params['ciudad'];
 
     if (!ciudad) {
@@ -59,9 +58,66 @@ export class PaginaBusquedaComponent implements OnInit {
         .then(result => {
           this.parcelitas = result;
         })
-
     }
 
+
+
+    //Recuperar mapas 
+
+    if (ciudad !== '') {
+
+      this.parcelasService.getCiudad(ciudad)
+        .then(result => {
+          this.parcelitas = result
+
+          const positionParcelas = new Array();
+
+          for (let parcela of this.parcelitas) {
+
+            var geocoder = new google.maps.Geocoder();
+            geocoder.geocode({ address: parcela.calle }, function (result, status) {
+
+              if (status === google.maps.GeocoderStatus.OK) {
+                let position = result[0].geometry.location;
+                positionParcelas.push({ latitud: position.lat(), longitud: position.lng() });
+              }
+
+            });
+          }
+
+          this.parcelas = positionParcelas;
+          console.log(this.parcelas);
+
+        })
+
+
+    } else {
+
+      this.parcelasService.getAll()
+        .then(result => {
+          this.parcelitas = result
+
+          const positionParcelas = new Array();
+
+          for (let parcela of this.parcelitas) {
+
+            var geocoder = new google.maps.Geocoder();
+            geocoder.geocode({ address: parcela.calle }, function (result, status) {
+
+              if (status === google.maps.GeocoderStatus.OK) {
+                let position = result[0].geometry.location;
+                positionParcelas.push({ latitud: position.lat(), longitud: position.lng() });
+              }
+
+            });
+          }
+
+          this.parcelas = positionParcelas;
+          console.log(this.parcelas);
+
+        })
+        .catch(error => console.log(error))
+    }
 
 
   }
@@ -94,9 +150,6 @@ export class PaginaBusquedaComponent implements OnInit {
 
 
   onClick(pRuta) {
-
-    console.log(pRuta.id);
-
 
     this.router.navigate(['pagina-anuncio', pRuta.id])
   }

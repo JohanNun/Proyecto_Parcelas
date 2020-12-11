@@ -22,7 +22,6 @@ const routes: Routes = [
   { path: 'info-cultivo', component: InfoCultivoComponent },
   { path: 'form', component: FormularioComponent },
   { path: 'login', component: LoginComponent },
-  { path: 'pagina-busqueda', component: PaginaBusquedaComponent },
   { path: 'pagina-busqueda/:ciudad', component: PaginaBusquedaComponent },
   { path: 'pagina-anuncio/:idParcela', component: PaginaAnuncioComponent },
   { path: 'pagina-usuario/:id', component: PaginaUsuarioComponent },

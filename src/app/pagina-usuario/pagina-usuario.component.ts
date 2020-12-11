@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ImagenesgaleriaService } from '../services/imagenesgaleria.service';
-import { ParcelasService } from '../services/parcelas.service';
+import { parcela, ParcelasService } from '../services/parcelas.service';
 import { usuario, UsuariosService } from '../services/usuarios.service';
 
 @Component({
@@ -32,13 +32,15 @@ export class PaginaUsuarioComponent implements OnInit {
   constructor(public usuariosService: UsuariosService,
     private parcelasService: ParcelasService,
     private imagenesService: ImagenesgaleriaService,
-    private activatedRoute: ActivatedRoute) { }
+    private activatedRoute: ActivatedRoute) {
+
+  }
 
   ngOnInit(): void {
     this.imagenesService.getImagenes()
       .then(imagenes => this.imagenes = imagenes)
 
-
+    //Recuperar parcelas
     let usuario = this.activatedRoute.snapshot.params['id'];
     this.parcelasService.getUsuarioByParcelaId(usuario)
       .then(result => {
@@ -48,9 +50,6 @@ export class PaginaUsuarioComponent implements OnInit {
       })
       .catch(error => console.log(error))
   }
-
-
-
 
 
 

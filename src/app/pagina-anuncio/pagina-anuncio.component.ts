@@ -15,7 +15,8 @@ export class PaginaAnuncioComponent implements OnInit {
   imagenes: any[];
   parcela: parcela;
   usuario: usuario;
-
+  parcelitas: parcela[];
+  parcelas: any[];
 
 
   responsiveOptions: any[] = [
@@ -37,7 +38,9 @@ export class PaginaAnuncioComponent implements OnInit {
     public usuariosService: UsuariosService,
     private imagenesService: ImagenesgaleriaService,
     private parcelasService: ParcelasService,
-    private activatedRoute: ActivatedRoute) { }
+    private activatedRoute: ActivatedRoute) {
+    this.parcelas = [];
+  }
 
   ngOnInit(): void {
     this.imagenesService.getImagenes()
@@ -45,7 +48,31 @@ export class PaginaAnuncioComponent implements OnInit {
 
 
     let id = this.activatedRoute.snapshot.params['idParcela'];
-    console.log(id);
+
+    this.parcelasService.getById(id)
+      .then(result => {
+        this.parcela = result
+        console.log(result);
+
+        const positionParcelas = new Array();
+
+
+        var geocoder = new google.maps.Geocoder();
+        geocoder.geocode({ address: this.parcela.calle }, function (result, status) {
+
+          if (status === google.maps.GeocoderStatus.OK) {
+            let position = result[0].geometry.location;
+            positionParcelas.push({ latitud: position.lat(), longitud: position.lng() });
+          }
+
+        });
+
+
+        this.parcelas = positionParcelas;
+
+      })
+
+
 
     this.parcelasService.getById(id)
       .then(result => {
