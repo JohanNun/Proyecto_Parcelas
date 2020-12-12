@@ -111,9 +111,12 @@
 
 
 
-input {
+.boton {
     width: 120px;
     height: 40px;
+    border-radius: 3px;
+    background-color: rgb(28, 172, 124);
+    color: white;
     margin-top: 30px;
     margin-left: 20px;
     margin-bottom: 20px;

@@ -10,7 +10,7 @@
 
 
     <div class="lista ">
-        <h3 class="text-success">Lista huertos</h3>
+        <h3>Lista huertos</h3>
 
         <ul *ngFor="let titulo of titulos">
             <li (click)="onClick(titulo)" (click)="onSelect(titulo.id)">{{ titulo.title }}</li>

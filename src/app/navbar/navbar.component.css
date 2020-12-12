@@ -6,7 +6,7 @@
 
 
 .mainCont {
-    background-color: rgb(255, 255, 255);
+    background-color: rgb(65, 126, 100);
 }
 
 .mainCont2 {
@@ -19,12 +19,12 @@
     /* border-bottom:1px ridge rgb(102, 5, 45); */
     
         border-bottom: 2px solid;
-        border-image-source: linear-gradient(45deg, rgb(0,143,104), rgb(250,224,66));
+        border-image-source: linear-gradient(45deg, rgb(52, 124, 105), rgb(51, 27, 56));
         border-image-slice: 1;
         
     
     
-    background-color: rgba(177, 233, 225, 0.137);
+    background-color: rgba(239, 245, 244, 0.137);
 }
 
 
@@ -35,7 +35,7 @@
 .logo i{
     margin-top: 6px;
     font-size: 2.4em;
-    color: black;
+    color: rgb(243, 241, 241);
     text-decoration: none;
 }
 
@@ -60,20 +60,18 @@
     height: 50px;
     padding: 5px;
     border: none;
-    color: var(--color-secundario);
+    background-color: rgb(236, 226, 236);
+    color: rgb(24, 23, 23);
     font-family: var(--fuentePrimaria);
     font-size: 1.2em;
+    font-weight: 600;
     border-radius: 20px 20px;
-    border: 1px solid rgba(0, 128, 0, 0.11);
-    -webkit-box-shadow: 0px 0px 12px -2px rgba(0,0,0,0.34); 
+    border: 1px solid rgba(255, 255, 255, 0.3);
+     -webkit-box-shadow: 0px 0px 12px -2px rgba(0,0,0,0.34); 
     box-shadow: 0px 5px 12px -5px rgba(0,0,0,0.34); 
 }
 
-.venta button a{
-    text-decoration: none;
-    color: var(--color-secundario);
-    width: 100%;
-}
+
 
 .venta button:hover{
     transform: scale(1.1);
@@ -92,9 +90,10 @@
 .desplegable button{
     width: 80px;
     height: 50px;
+    background-color:  rgb(236, 226, 236);
     border: none;
     border-radius: 20px 20px;
-    border: 1px solid rgba(0, 128, 0, 0.11);
+    border: 1px solid rgba(255, 255, 255, 0.3);
     -webkit-box-shadow: 0px 0px 12px -2px rgba(0,0,0,0.34); 
     box-shadow: 0px 5px 12px -5px rgba(0,0,0,0.34);  
 
@@ -102,7 +101,7 @@
 
 .desplegable button i:first-child{
     font-size: 20px;
-    color: var(--color-secundario);
+    color: rgb(24, 23, 23);
     margin-right: 5px;
     text-align: center;
     padding: 3px;
@@ -110,12 +109,12 @@
 
 .desplegable button i:last-child{
     font-size: 35px;
-    color: var(--color-secundario);
+    color: rgb(24, 23, 23);
     
 }
 
 .contenido-desplegable{
-    border: 2px solid green;
+    border: 2px solid rgb(44, 128, 93);
     border-radius: 10px 10px;
     display: none;
     right: 80px;
@@ -137,7 +136,7 @@
 }
 
 .contenido-desplegable ul li:hover{
-    background-color: #44f18c46;
+    background-color: #35ad8546;
     border-radius: 10px 10px;
     
 } 
@@ -145,7 +144,7 @@
 .contenido-desplegable ul li a{
     text-decoration: none;
     width: 100%;
-    color: green;
+    color: rgb(44, 128, 93);
 }
 
 .contenido-desplegable ul li i{
@@ -154,9 +153,6 @@
     font-size: 20px;
 }
 
-/*  .contenido-desplegable ul li a:hover{
-    text-decoration: underline;   
-}  */
 
 .desplegable button:hover{
     transform: scale(1.1);

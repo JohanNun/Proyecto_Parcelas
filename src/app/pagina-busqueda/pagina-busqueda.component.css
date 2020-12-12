@@ -108,6 +108,7 @@
 }
 
 .desplegable h3 {
+	color: rgb(65, 126, 100);
 	margin-bottom: 20px;
 	font-family: var(--fuentePrimaria);
 	font-weight: 700;
@@ -122,6 +123,19 @@
 	font-family: var(--fuentePrimaria);
 	font-weight: 700;
 }
+
+
+.boton {
+	color: rgb(32, 31, 31);
+	background-color: rgb(236, 226, 236);
+    border-color: #28a772;
+}
+
+.boton:hover{
+	color: white;
+	background-color: rgb(65, 126, 100);
+}
+
 
 .desplegable option {
 	background-color: white;

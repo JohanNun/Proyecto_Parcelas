@@ -69,37 +69,11 @@
 
 
 
-            <!-- <ul>
-                <li>
-                    <img src="/assets/images/huertito.jpeg" (click)="onClickImagen($event)">
-                </li>
-
-                <li>
-                    <img src="/assets/images/huertos.jpg" (click)="onClickImagen($event)">
-                </li>
-
-                <li>
-                    <img src="/assets/images/cultivos.jpg" (click)="onClickImagen($event)">
-                </li>
-
-                <li>
-                    <img src="/assets/images/huertos.jpg" (click)="onClickImagen($event)">
-                </li>
-
-                <li>
-                    <img src="/assets/images/huertito.jpeg" (click)="onClickImagen($event)">
-                </li>
-
-                <li>
-                    <img src="/assets/images/cultivos.jpg" (click)="onClickImagen($event)">
-                </li>
-
-            </ul> -->
         </div>
 
 
     </div>
-    <input class="btn btn-success" type="submit" value="Enviar mensaje" [routerLink]="['/mensaje']">
+    <input class="btn boton" type="submit" value="Enviar mensaje" [routerLink]="['/mensaje']">
 
     <p *ngIf="!usuariosService.isLogged()" class=" warn text-success" (click)="onClick('login')">Inicia sesion para
         mandar un mensaje</p>
