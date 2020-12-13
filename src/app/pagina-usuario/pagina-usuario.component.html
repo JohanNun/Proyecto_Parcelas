@@ -20,7 +20,7 @@
         <p> {{ usuario?.descripcion}}</p>
 
 
-        <button class="btn btn-success" type="submit" [routerLink]="['/mensaje']">Enviar
+        <button class="boton btn" type="submit" [routerLink]="['/mensaje']">Enviar
             mensaje</button>
 
         <p *ngIf="!usuariosService.isLogged()" class=" warn text-success">Inicia sesion para

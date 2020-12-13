@@ -26,8 +26,6 @@ export class FormularioComponent implements OnInit {
       repite_password: new FormControl('', [Validators.required]),
       email: new FormControl('', [Validators.required, Validators.pattern(/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/)]),
       locacion: new FormControl('', [Validators.required]),
-      /* dni: new FormControl('', [Validators.required, this.dniValidator]),
-      numerotelefono: new FormControl(), */
       fecha_nacimiento: new FormControl(),
       imagen: new FormControl(),
       experiencia: new FormControl(),
@@ -51,26 +49,6 @@ export class FormularioComponent implements OnInit {
     this.formulario.reset();
   }
 
-
-  /*   dniValidator(control: FormControl) {
-      const dni = control.value;
-  
-      const conjuntoLetras = 'TRWAGMYFPDXBNJZSQVHLCKET';
-  
-      if (/^\d{8}[a-zA-Z]$/.test(dni) == true) {
-        let numero = (dni.substr(0, dni.length - 1)) % 23;
-        let letraDni = dni.substr(dni.length - 1, 1);
-  
-        let letraCorrecta = conjuntoLetras.substring(numero, numero + 1);
-        if (letraCorrecta != letraDni.toUpperCase()) {
-          return { dnivalidator: 'La letra no coincide' };
-        } else {
-          return null;
-        }
-      } else {
-        return { dnivalidator: 'El formato del DNI es incorrecto' };
-      }
-    } */
 
   passwordValidator(form: FormGroup) {
     const passwordValue = form.get('password').value;

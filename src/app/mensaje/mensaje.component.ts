@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
+
 
 @Component({
   selector: 'app-mensaje',
@@ -7,9 +9,25 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MensajeComponent implements OnInit {
 
-  constructor() { }
+  formularioMensaje: FormGroup;
+
+  constructor() {
+
+    this.formularioMensaje = new FormGroup({
+      mensaje: new FormControl('', [Validators.required]),
+      email: new FormControl('', [Validators.required, Validators.pattern(/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/)])
+    })
+  }
 
   ngOnInit(): void {
+  }
+
+
+  onSubmit() {
+    console.log(this.formularioMensaje.value);
+
+    this.formularioMensaje.reset();
+
   }
 
 }

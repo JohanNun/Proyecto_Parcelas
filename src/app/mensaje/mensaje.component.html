@@ -1,1 +1,34 @@
-<p>mensaje works!</p>
+<navbar></navbar>
+
+<div class="mainCont container">
+
+    <h3>Titulo del anuncio (parcela)</h3>
+
+    <form [formGroup]="formularioMensaje" (ngSubmit)="onSubmit()">
+
+        <div class="mensaje col-md-12">
+            <label class="form-label">Mensaje</label>
+            <textarea class="form-control" placeholder="Hola, me interesa esta parcela, ..." rows="4"
+                formControlName="mensaje"></textarea>
+        </div>
+
+        <div class="email col-md-6">
+            <label class="form-label">Email</label>
+            <input type="text" class="form-control" formControlName="email">
+
+            <p class="text-danger"
+                *ngIf="formularioMensaje.get('email').hasError('pattern') && formularioMensaje.get('email').touched">
+                El email debe tener un formato correcto
+            </p>
+            <p class="text-danger"
+                *ngIf="formularioMensaje.get('email').hasError('required') && formularioMensaje.get('email').touched">
+                Introduce un email
+            </p>
+        </div>
+
+        <div class="mb-3">
+            <button class="boton btn" type="submit">Enviar consulta</button>
+        </div>
+
+    </form>
+</div>

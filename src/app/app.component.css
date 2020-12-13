@@ -5,6 +5,7 @@
 }
 
 .pie {
+    bottom: 0;
     width: 100%; 
     color: white;
     justify-content: space-around;
