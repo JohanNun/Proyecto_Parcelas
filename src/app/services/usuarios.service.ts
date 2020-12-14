@@ -33,7 +33,7 @@ export class UsuariosService {
   }
 
   getUsuario(pId): Promise<usuario> {
-    return this.httpClient.get<usuario>(`${this.baseUrl}/parcela/${pId}`).toPromise();
+    return this.httpClient.get<usuario>(`${this.baseUrl}/${pId}`).toPromise();
   }
 
 
@@ -59,6 +59,10 @@ export class UsuariosService {
     } else {
       return false;
     }
+  }
+
+  logOut() {
+    localStorage.removeItem('login_usuario')
   }
 
 }

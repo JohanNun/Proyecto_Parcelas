@@ -12,12 +12,11 @@
             <p><span>Nombre: </span>Juan</p>
             <p><span>Apellidos: </span>Perez Sanchez</p>
             <p><span>Fecha de nacimiento: </span>1986/05/09</p>
-            <p><span>DNI: </span>50903939K</p>
         </div>
         <div class="contacto">
-            <p><span>Ciudad: </span>Madrid</p>
+            <p><span>Dirección: </span>Madrid</p>
             <p><span>Email: </span>juan@gmail.com</p>
-            <p><span>Número de teleéfono: </span>657890908</p>
+            <p><span>Número de teléfono: </span>657890908</p>
         </div>
         <div class="infoparcela">
             <galeria></galeria>
@@ -26,13 +25,22 @@
                 nesciunt quod exercitationem laudantium, ipsam dolorum?</p>
         </div>
         <div class="descripciongeneral">
-            <p><span>Información general: </span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium
-                odit debitis distinctio accusantium, reiciendis perspiciatis voluptates ullam delectus assumenda.
-                Distinctio eligendi placeat excepturi et! Placeat omnis deserunt possimus. Dolor, nihil accusamus
-                incidunt sed, dolore perspiciatis, quisquam ab deleniti vitae iure porro laboriosam corrupti facere ipsa
-                voluptate obcaecati. Non, doloremque adipisci!</p>
+            <span>Mis anuncios: </span>
+            <div class="fila" *ngFor="let parcela of parcelitas">
+
+                <div class="columna">
+                    <img src="{{ parcela.images }}" alt="">
+                </div>
+
+
+                <div class="columna2">
+                    <div class="card-body">
+                        <h5 class="card-title" (click)="onClick(parcela)">{{ parcela.titulo }}</h5>
+                        <h6>{{ parcela.precio_metro}}€ / m2</h6>
+                        <p class="card-text"> {{ parcela.descripcion }} </p>
+                        <p class="card-text text-muted"> {{ parcela.calle }}</p>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
-</div>
-
-<footer></footer>

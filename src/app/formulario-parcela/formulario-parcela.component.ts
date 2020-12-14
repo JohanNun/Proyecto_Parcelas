@@ -27,10 +27,10 @@ export class FormularioParcelaComponent implements OnInit {
       tamano_total: new FormControl('', [Validators.required]),
       tamano_disponible: new FormControl('', [Validators.required]),
       precio_metro: new FormControl('', [Validators.required]),
-      images: new FormControl('', [Validators.required]),
+      images: new FormControl(''),
       calle: new FormControl('', [Validators.required]),
       ciudad: new FormControl('', [Validators.required]),
-      codigopostal: new FormControl('', [Validators.required]),
+      CP: new FormControl('', [Validators.required]),
       descripcion: new FormControl('', [Validators.required])
     })
 

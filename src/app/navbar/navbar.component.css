@@ -133,6 +133,7 @@
     width: 100%;
     padding: 5px;
     font-family: var(--fuentePrimaria);
+    color: rgb(44, 128, 93);
 }
 
 .contenido-desplegable ul li:hover{
@@ -141,11 +142,6 @@
     
 } 
 
-.contenido-desplegable ul li a{
-    text-decoration: none;
-    width: 100%;
-    color: rgb(44, 128, 93);
-}
 
 .contenido-desplegable ul li i{
     padding: 0 10px;
