@@ -15,7 +15,8 @@
                 <button class="btn">Ofrece tú parcela</button>
             </div>
             <div class="desplegable">
-                <button class="btn"><i class="fas fa-bars"></i><i class="fas fa-user-circle"></i></button>
+                <button class="btn"><i class="fas fa-bars"></i><i class="fas fa-user-circle" *ngIf="imagen==='' "></i>
+                    <img *ngIf="imagen !== '' " [src]="imagen" alt=""></button>
                 <div class="contenido-desplegable">
                     <ul>
                         <li *ngIf="!usuariosService.isLogged()" (click)="onClick('login')"><i

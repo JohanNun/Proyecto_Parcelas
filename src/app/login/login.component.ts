@@ -43,7 +43,7 @@ export class LoginComponent implements OnInit {
 
         } else {
           localStorage.setItem('login_usuario', response['token']);
-
+          localStorage.setItem('imagen_usuario', response['imagen']);
           this.router.navigate(['/home']);  //Cuando el login este hecho manda a la pagina home
         }
 

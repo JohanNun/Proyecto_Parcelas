@@ -62,7 +62,8 @@ export class UsuariosService {
   }
 
   logOut() {
-    localStorage.removeItem('login_usuario')
+    localStorage.removeItem('login_usuario');
+    localStorage.removeItem('imagen_usuario');
   }
 
 }

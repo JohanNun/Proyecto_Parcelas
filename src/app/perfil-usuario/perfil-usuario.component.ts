@@ -23,14 +23,6 @@ export class PerfilUsuarioComponent implements OnInit {
     /* this.usuarioService.getUsuario() */
 
 
-    let usuario = this.activatedRoute.snapshot.params['id'];
-    this.parcelasService.getUsuarioByParcelaId(usuario)
-      .then(result => {
-        this.usuario = result;
-        console.log(this.usuario)
-
-      })
-      .catch(error => console.log(error))
   }
 
 

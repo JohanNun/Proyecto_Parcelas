@@ -87,6 +87,11 @@
     margin-left: 10px;
 }
 
+.desplegable img {
+    width: 25px;
+    height: 25px;
+}
+
 .desplegable button{
     width: 80px;
     height: 50px;
