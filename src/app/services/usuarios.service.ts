@@ -12,6 +12,7 @@ export interface usuario {
   repite_password: string;
   sexo: string;
   locacion: string;
+  telefono: number;
   fecha_nacimiento: Date;
   experiencia: string;
   imagen: string;
@@ -36,6 +37,15 @@ export class UsuariosService {
     return this.httpClient.get<usuario>(`${this.baseUrl}/${pId}`).toPromise();
   }
 
+
+  getByUserName(pUserName): Promise<usuario> {
+    return this.httpClient.get<usuario>(`${this.baseUrl}/perfil/${pUserName}`).toPromise();
+  }
+
+
+  getUserByParcela(pIdParcela): Promise<usuario> {
+    return this.httpClient.get<usuario>(`${this.baseUrl}/user/${pIdParcela}`).toPromise();
+  }
 
 
 

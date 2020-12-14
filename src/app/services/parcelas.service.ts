@@ -54,9 +54,20 @@ export class ParcelasService {
     return this.httpClient.get<parcela>(`${this.baseUrl}/parcela/${pId}`).toPromise();
   }
 
-  getUsuarioByParcelaId(pParcelaId): Promise<usuario> {
-    return this.httpClient.get<usuario>(`${this.baseUrl}/user/${pParcelaId}`).toPromise();
+  getParcelaByUsuarioId(pUsuarioId): Promise<parcela[]> {
+    return this.httpClient.get<parcela[]>(`${this.baseUrl}/user/${pUsuarioId}`).toPromise();
   }
+
+
+  getParcelasByUserName(pUserName): Promise<parcela[]> {
+    return this.httpClient.get<parcela[]>(`${this.baseUrl}/user/parcela/${pUserName}`).toPromise();
+  }
+
+
+
+
+
+
 
   create(pFormValue): Promise<parcela> {
     return this.httpClient.post<parcela>(this.baseUrl, pFormValue).toPromise();

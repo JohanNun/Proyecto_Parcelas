@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { UsuariosService } from '../services/usuarios.service';
+import { usuario, UsuariosService } from '../services/usuarios.service';
 import { ProgressSpinnerModule } from 'primeng/progressspinner';
 
 
@@ -13,6 +13,7 @@ export class NavbarComponent implements OnInit {
 
   progress: ProgressSpinnerModule;
   imagen: string;
+  usuario: any;
 
 
   constructor(private router: Router,
@@ -21,12 +22,22 @@ export class NavbarComponent implements OnInit {
 
   ngOnInit(): void {
     this.imagen = (localStorage.getItem('imagen_usuario') !== null) ? localStorage.getItem('imagen_usuario') : "";
+    this.usuario = localStorage.getItem('usuario')
+    console.log(this.usuario);
+
   }
 
 
 
   onClick(pRuta: string) {
     this.router.navigate([pRuta])
+  }
+
+
+  onClick2(pRuta: string) {
+
+    this.router.navigate([pRuta, this.usuario])
+
   }
 
   onCancel() {

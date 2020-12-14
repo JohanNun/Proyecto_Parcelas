@@ -81,15 +81,13 @@ export class PaginaAnuncioComponent implements OnInit {
 
 
 
-    this.parcelasService.getUsuarioByParcelaId(id)
+
+    this.usuariosService.getUserByParcela(id)
       .then(result => {
         this.usuario = result;
         console.log(this.usuario);
 
-
-
       })
-      .catch(error => console.log(error))
 
   }
 
@@ -100,7 +98,8 @@ export class PaginaAnuncioComponent implements OnInit {
 
     let id = this.activatedRoute.snapshot.params['idParcela'];
 
-    this.parcelasService.getUsuarioByParcelaId(id)
+
+    this.usuariosService.getUserByParcela(id)
       .then(result => {
         this.usuario = result;
         console.log(this.usuario);

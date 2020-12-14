@@ -20,7 +20,27 @@ export class PerfilUsuarioComponent implements OnInit {
 
   ngOnInit(): void {
 
-    /* this.usuarioService.getUsuario() */
+    let nombre_usuario = this.activatedRoute.snapshot.params['nombre_usuario']
+    this.usuarioService.getByUserName(nombre_usuario)
+      .then(response => {
+        this.usuario = response;
+        console.log(this.usuario);
+
+      })
+      .catch(error => console.log(error)
+      )
+
+
+
+    /* Recibir parcelas por ID del usuario */
+
+    this.parcelasService.getParcelasByUserName(nombre_usuario)
+      .then(result => {
+        this.parcelitas = result;
+      })
+      .catch(error => console.log(error)
+      )
+
 
 
   }

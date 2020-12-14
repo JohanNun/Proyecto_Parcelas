@@ -40,9 +40,9 @@ export class PaginaUsuarioComponent implements OnInit {
     this.imagenesService.getImagenes()
       .then(imagenes => this.imagenes = imagenes)
 
-    //Recuperar parcelas
-    let usuario = this.activatedRoute.snapshot.params['id'];
-    this.parcelasService.getUsuarioByParcelaId(usuario)
+    //Recuperar usuario
+    let id = this.activatedRoute.snapshot.params['id'];
+    this.usuariosService.getUserByParcela(id)
       .then(result => {
         this.usuario = result;
         console.log(this.usuario)

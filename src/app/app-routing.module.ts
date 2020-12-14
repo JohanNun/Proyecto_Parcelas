@@ -26,7 +26,7 @@ const routes: Routes = [
   { path: 'pagina-anuncio/:idParcela', component: PaginaAnuncioComponent },
   { path: 'pagina-usuario/:id', component: PaginaUsuarioComponent },
   { path: 'form-parcela', component: FormularioParcelaComponent },
-  { path: 'perfil-usuario', component: PerfilUsuarioComponent },
+  { path: 'perfil-usuario/:nombre_usuario', component: PerfilUsuarioComponent },
   { path: 'mensaje', component: MensajeComponent, canActivate: [LoginGuard] },
   { path: '**', redirectTo: '/home' }
 ];

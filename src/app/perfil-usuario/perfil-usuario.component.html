@@ -2,27 +2,25 @@
 
 <div class="perfilusuario container">
     <div class="nombre">
-        <h2>Nombre de usuario</h2>
+        <h2>{{ usuario.nombre_usuario }}</h2>
     </div>
     <div class="imagenusuario">
-        <img src="../../assets/images/usuario3.jpg" alt="">
+        <img src="{{usuario.imagen}}" alt="">
     </div>
     <div class="todainfo">
         <div class="infogeneral">
-            <p><span>Nombre: </span>Juan</p>
-            <p><span>Apellidos: </span>Perez Sanchez</p>
-            <p><span>Fecha de nacimiento: </span>1986/05/09</p>
+            <p><span>Nombre: </span>{{ usuario.nombre }}</p>
+            <p><span>Apellidos: </span> {{ usuario.apellidos }} </p>
+            <p><span>Sexo: </span> {{ usuario.sexo }} </p>
+            <p><span>Fecha de nacimiento: </span> {{ usuario.fecha_nacimiento | date: 'dd/MM/yyyy' }}</p>
         </div>
         <div class="contacto">
-            <p><span>Dirección: </span>Madrid</p>
-            <p><span>Email: </span>juan@gmail.com</p>
-            <p><span>Número de teléfono: </span>657890908</p>
+            <p><span>Dirección: </span> {{usuario.locacion }}</p>
+            <p><span>Email: </span> {{usuario.email}} </p>
+            <p><span>Teléfono: </span> {{ usuario.telefono }} </p>
         </div>
         <div class="infoparcela">
-            <galeria></galeria>
-            <p><span>Descripción: </span>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vero itaque dolorum
-                consectetur consequatur, nostrum labore? Aspernatur, illum iure ad dicta, labore ex deserunt sint
-                nesciunt quod exercitationem laudantium, ipsam dolorum?</p>
+            <p><span>Descripción: </span> {{usuario.descripcion}} </p>
         </div>
         <div class="descripciongeneral">
             <span>Mis anuncios: </span>
