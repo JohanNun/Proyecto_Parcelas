@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { usuario } from './usuarios.service';
 
 export interface parcela {
+  id: number;
   titulo: string,
   tamano_total: number,
   tamano_disponible: number,
@@ -11,7 +12,8 @@ export interface parcela {
   calle: string,
   CP: number;
   ciudad: string;
-  descripcion: string
+  descripcion: string;
+  fk_usuario: number;
 }
 
 @Injectable({

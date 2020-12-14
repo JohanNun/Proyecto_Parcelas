@@ -1,83 +1,117 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+.mainCont{
+    width: 90%;
+    margin: 0 auto;
+    flex-wrap: wrap;
+    display: flex;
+}
+
+
 .perfilusuario{
+    width: 100%;
     display: flex;
     flex-wrap: wrap;
     margin-top: 50px;
     margin-bottom: 50px;
-    padding: 20px;
-    -webkit-box-shadow: 0px 0px 12px -2px rgba(80, 214, 18, 0.575);  
-    box-shadow: 0px 0px 12px -2px rgba(3, 85, 3, 0.418);
+    padding: 15px;
+    -webkit-box-shadow: 0px 0px 9px -2px rgba(80, 214, 18, 0.575);  
+    box-shadow: 0px 0px 9px -2px rgba(3, 85, 3, 0.418);
 }
 
-.nombre{
-    width: 74%;
-    margin-top: 50px;
-    margin-left: 30px;
-    
+.cabeza {
+    width: 100%;
+    flex-wrap: wrap;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    margin-bottom: 15px;
+    padding-left: 30px;
+    padding-right: 30px;
 }
+
+.nombre {
+    width: 70%;
+}
+
 
 .nombre h2{
     font-size: 3em;
     font-family: var(--fuentePrincipal);
+    font-weight: 600;
+    margin-left: 10px;
 }
+
+.edita {
+    width: 120px;
+    height: 40px;
+    border: 1px solid black;
+    border-radius: 5px;
+    background-color: rgb(206, 175, 74);
+    color: white;
+}
+
 
 .imagenusuario{
     width: 20%;
-    margin-right: 30px;
-    
 }
 
 .imagenusuario img{
-    width: 100%;
+    width: 190px;
     border-radius: 50%;
-    -webkit-box-shadow: 0px 0px 12px -2px rgba(80, 214, 18, 0.575);  
-    box-shadow: 0px 0px 12px -2px rgba(3, 85, 3, 0.418);
+    -webkit-box-shadow: 0px 0px 7px -2px rgba(80, 214, 18, 0.575);  
+    box-shadow: 0px 0px 7px -2px rgba(3, 85, 3, 0.418);
 }
 
 .todainfo{
-    width: 100%;
+    width: 50%;
     display: flex;
     flex-wrap: wrap;
     margin-top: 20px;
 }
 
 .todainfo span{
-    font-size: 1.2em;
+    font-size: 1.1em;
     font-family: var(--fuentePrincipal);
-    color: green;
+    color: rgb(65, 126, 100);
+font-weight: 600;
 }
 
 .infogeneral{
-    width: 49%;
+    width: 100%;
     padding: 10px;
     margin-right: 10px;
     -webkit-box-shadow: 0px 0px 12px -2px rgba(80, 214, 18, 0.575);  
      box-shadow: 0px 0px 12px -2px rgba(3, 85, 3, 0.418);
 }
 
-.contacto{
-    width: 49%;
-    padding: 10px;
-    -webkit-box-shadow: 0px 0px 12px -2px rgba(80, 214, 18, 0.575);  
-     box-shadow: 0px 0px 12px -2px rgba(3, 85, 3, 0.418);
+.infogeneral h3 {
+    margin-bottom: 8px;
+    margin-top: 16px;
 }
 
-.infoparcela{
-    width: 49%;
-    padding: 10px;
-    margin-right: 10px;
-    margin-top: 10px;
-    -webkit-box-shadow: 0px 0px 12px -2px rgba(80, 214, 18, 0.575);  
-     box-shadow: 0px 0px 12px -2px rgba(3, 85, 3, 0.418);
-}
+
+
+
 
 .descripciongeneral{
-    width: 49%;
+    width: 50%;
     padding: 10px;
-    margin-top: 10px;
+    margin-top: 20px;
     -webkit-box-shadow: 0px 0px 12px -2px rgba(80, 214, 18, 0.575);  
      box-shadow: 0px 0px 12px -2px rgba(3, 85, 3, 0.418);
 }
 
+.descripciongeneral span {
+    margin-top: 15px;
+    font-weight: 600;
+    font-size: 25px;
+}
 
 
 .fila {
@@ -105,7 +139,8 @@
 	width: 50%;
 	padding: 5px;
 	margin-left: 15px;
-	/* margin-top: 10px; */
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
 .columna2 h5 {
@@ -124,4 +159,101 @@
 	color: teal;
 }
 
+
+
+@media(max-width: 70em){
+
+	.fila {
+		width: 95%;
+		padding: 0px; 
+	}
+
+	.columna{
+		width: 100%;
+	}
+
+	.columna2{
+		width: 100%;
+		margin-left: 5px;
+	}
+
+
+}
+
+
+@media(max-width: 48em){
+
+    .descripciongeneral{
+        width: 100%;
+        padding: 10px; 
+    }
+
+	.fila {
+		width: 95%;
+		padding-left: 0px;
+	}
+
+	.columna{
+		width: 100%;
+		padding-left: 0px;
+	}
+
+	.columna2{
+		width: 100%;
+		margin-left: 0px;
+	}
+
+
+    .mainCont {
+        width: 100%; 
+    }
+
+    .perfilusuario{
+       padding: 0px; 
+       -webkit-box-shadow: none; 
+       box-shadow: none;
+    }
+    
+
+    .cabeza {
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .todainfo{
+        width: 100%;
+        padding: 0px; 
+        
+    }
+
+    .infogeneral {
+        width: 100%; 
+        -webkit-box-shadow: none;
+        box-shadow: none; 
+        margin-bottom: 20px;
+        padding: 15px;
+    }
+
+    .nombre{
+        width: 100%;
+         text-align: center;
+        margin-bottom: 25px;
+       
+    }
+
+    .nombre h2 {
+        margin-left: 5px;
+        font-size: 20px;
+    }
+
+    .imagenusuario {
+        width: 100%;
+        text-align: center;
+    }
+    .imagenusuario img{
+
+        width: 90px;
+    }
+	
+}
 

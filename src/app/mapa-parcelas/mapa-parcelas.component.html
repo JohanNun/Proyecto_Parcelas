@@ -8,7 +8,7 @@
 
     <div class="mapa">
 
-        <agm-map [latitude]="latitud" [longitude]="longitud" [zoom]="5" [fitBounds]="true">
+        <agm-map [latitude]="latitud" [longitude]="longitud" [zoom]="zoom" [fitBounds]="fitBounds">
             <agm-marker *ngFor="let parcela of parcelas" [latitude]="parcela.latitud" [longitude]="parcela.longitud"
                 [agmFitBounds]=true>
 

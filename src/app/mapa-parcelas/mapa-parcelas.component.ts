@@ -13,6 +13,7 @@ export class MapaParcelasComponent implements OnInit {
   @Input() longitud: number;
   @Input() zoom: number;
   @Input() buscador: boolean = true;
+  @Input() fitBounds: boolean = true;
 
   @Input() parcelas: any[];
   busqueda: string;
@@ -21,6 +22,10 @@ export class MapaParcelasComponent implements OnInit {
     private activatedRoute: ActivatedRoute,
     private router: Router) {
     this.parcelas = [];
+
+    this.latitud = 0;
+    this.longitud = 0;
+
   }
 
   ngOnInit(): void {
@@ -29,7 +34,7 @@ export class MapaParcelasComponent implements OnInit {
 
       this.latitud = position.coords.latitude;
       this.longitud = position.coords.longitude;
-      this.zoom = 10;
+      this.zoom = 14;
 
     });
 

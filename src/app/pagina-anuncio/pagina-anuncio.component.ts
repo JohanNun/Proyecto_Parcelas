@@ -76,18 +76,18 @@ export class PaginaAnuncioComponent implements OnInit {
     this.parcelasService.getById(id)
       .then(result => {
         this.parcela = result;
-        console.log(this.parcela);
+        this.usuariosService.getUsuario(this.parcela.fk_usuario)
+          .then(result => {
+            this.usuario = result;
+            console.log(this.usuario);
+
+          })
       })
 
 
 
 
-    this.usuariosService.getUserByParcela(id)
-      .then(result => {
-        this.usuario = result;
-        console.log(this.usuario);
 
-      })
 
   }
 
