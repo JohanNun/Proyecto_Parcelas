@@ -1,6 +1,7 @@
 import { mapToMapExpression } from '@angular/compiler/src/render3/util';
 import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { comentario, ComentariosService } from '../services/comentarios.service';
 import { ImagenesgaleriaService } from '../services/imagenesgaleria.service';
 import { parcela, ParcelasService } from '../services/parcelas.service';
 import { usuario, UsuariosService } from '../services/usuarios.service';
@@ -15,7 +16,9 @@ export class PaginaAnuncioComponent implements OnInit {
   imagenes: any[];
   parcela: parcela;
   usuario: usuario;
+  usuario2: usuario[];
   parcelas: any[];
+  comentarios: comentario[];
 
 
   responsiveOptions: any[] = [
@@ -37,8 +40,11 @@ export class PaginaAnuncioComponent implements OnInit {
     public usuariosService: UsuariosService,
     private imagenesService: ImagenesgaleriaService,
     private parcelasService: ParcelasService,
+    private comentariosService: ComentariosService,
     private activatedRoute: ActivatedRoute) {
     this.parcelas = [];
+    this.comentarios = [];
+    this.usuario2 = [];
   }
 
   ngOnInit(): void {
@@ -47,6 +53,14 @@ export class PaginaAnuncioComponent implements OnInit {
 
 
     let id = this.activatedRoute.snapshot.params['idParcela'];
+
+    this.comentariosService.getComentariosByParcelaId(id)
+      .then(result => {
+        this.comentarios = result
+        console.log(this.comentarios)
+
+
+      })
 
     this.parcelasService.getById(id)
       .then(result => {
