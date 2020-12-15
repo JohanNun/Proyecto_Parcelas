@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { EditaPerfilComponent } from './edita-perfil/edita-perfil.component';
 import { FormularioParcelaComponent } from './formulario-parcela/formulario-parcela.component';
 import { FormularioComponent } from './formulario/formulario.component';
 import { HomeComponent } from './home/home.component';
@@ -27,9 +28,10 @@ const routes: Routes = [
   { path: 'pagina-anuncio/:idParcela', component: PaginaAnuncioComponent },
   { path: 'pagina-usuario/:id', component: PaginaUsuarioComponent },
   { path: 'form-parcela', component: FormularioParcelaComponent, canActivate: [LoginGuard] },
-  { path: 'perfil-usuario/:nombre_usuario', component: PerfilUsuarioComponent },
+  { path: 'perfil-usuario/:id', component: PerfilUsuarioComponent },
   { path: 'mensaje', component: MensajeComponent, canActivate: [LoginGuard] },
   { path: 'mensajes-privados', component: MensajesPrivadosComponent },
+  { path: 'edita-perfil/:id', component: EditaPerfilComponent },
   { path: '**', redirectTo: '/home' }
 ];
 

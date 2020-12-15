@@ -66,7 +66,6 @@ export class PaginaAnuncioComponent implements OnInit {
 
         });
 
-
         this.parcelas = positionParcelas;
 
       })
@@ -83,11 +82,6 @@ export class PaginaAnuncioComponent implements OnInit {
 
           })
       })
-
-
-
-
-
 
   }
 

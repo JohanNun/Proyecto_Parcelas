@@ -20,11 +20,13 @@ export class PerfilUsuarioComponent implements OnInit {
 
   ngOnInit(): void {
 
-    let nombre_usuario = this.activatedRoute.snapshot.params['nombre_usuario']
-    this.usuarioService.getByUserName(nombre_usuario)
+    let id = this.activatedRoute.snapshot.params['id']
+    console.log(id);
+
+    this.usuarioService.getUsuario(id)
       .then(response => {
         this.usuario = response;
-        console.log(this.usuario);
+
 
       })
       .catch(error => console.log(error)
@@ -34,7 +36,7 @@ export class PerfilUsuarioComponent implements OnInit {
 
     /* Recibir parcelas por ID del usuario */
 
-    this.parcelasService.getParcelasByUserName(nombre_usuario)
+    this.parcelasService.getParcelaByUsuarioId(id)
       .then(result => {
         this.parcelitas = result;
       })
@@ -51,6 +53,12 @@ export class PerfilUsuarioComponent implements OnInit {
 
     this.router.navigate(['pagina-anuncio', pRuta.id])
 
+  }
+
+
+  onClickUpdate(pRuta) {
+    let id = this.activatedRoute.snapshot.params['id']
+    this.router.navigate([pRuta, id]);
   }
 
 
