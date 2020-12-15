@@ -139,6 +139,7 @@
     padding: 5px;
     font-family: var(--fuentePrimaria);
     color: rgb(44, 128, 93);
+    cursor: pointer;
 }
 
 .contenido-desplegable ul li:hover{

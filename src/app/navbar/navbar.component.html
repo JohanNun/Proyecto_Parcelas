@@ -28,6 +28,10 @@
                         <li (click)="onClick2('perfil-usuario')"><i class="fas fa-address-book"></i>Perfil de
                             usuario
                         </li>
+
+
+                        <li *ngIf="usuariosService.isLogged()" (click)="onClick('mensajes-privados')"><i
+                                class="far fa-envelope"></i>Mis Mensajes</li>
                         <li *ngIf="usuariosService.isLogged()" (click)="onCancel()"><i
                                 class="fas fa-sign-out-alt"></i>LogOut </li>
 
