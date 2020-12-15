@@ -26,7 +26,7 @@ const routes: Routes = [
   { path: 'pagina-busqueda/:ciudad', component: PaginaBusquedaComponent },
   { path: 'pagina-anuncio/:idParcela', component: PaginaAnuncioComponent },
   { path: 'pagina-usuario/:id', component: PaginaUsuarioComponent },
-  { path: 'form-parcela', component: FormularioParcelaComponent },
+  { path: 'form-parcela', component: FormularioParcelaComponent, canActivate: [LoginGuard] },
   { path: 'perfil-usuario/:nombre_usuario', component: PerfilUsuarioComponent },
   { path: 'mensaje', component: MensajeComponent, canActivate: [LoginGuard] },
   { path: 'mensajes-privados', component: MensajesPrivadosComponent },

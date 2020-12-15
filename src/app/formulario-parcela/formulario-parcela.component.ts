@@ -3,7 +3,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { MessageService } from 'primeng/api';
 import { ParcelasService } from '../services/parcelas.service';
-import { UsuariosService } from '../services/usuarios.service';
+import { usuario, UsuariosService } from '../services/usuarios.service';
 
 @Component({
   selector: 'app-formulario-parcela',
@@ -14,6 +14,7 @@ import { UsuariosService } from '../services/usuarios.service';
 export class FormularioParcelaComponent implements OnInit {
 
   formularioParcela: FormGroup;
+  usuario: any;
 
 
   constructor(public parcelasService: ParcelasService,
@@ -31,12 +32,16 @@ export class FormularioParcelaComponent implements OnInit {
       calle: new FormControl('', [Validators.required]),
       ciudad: new FormControl('', [Validators.required]),
       CP: new FormControl('', [Validators.required]),
-      descripcion: new FormControl('', [Validators.required])
+      descripcion: new FormControl('', [Validators.required]),
+      fk_usuario: new FormControl('')
     })
 
   }
 
   ngOnInit(): void {
+    this.usuario = localStorage.getItem('idUsuario');
+    console.log(this.usuario);
+
   }
 
   onSubmit() {

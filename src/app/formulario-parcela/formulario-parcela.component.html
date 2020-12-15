@@ -59,7 +59,7 @@
         <label>Código Postal</label>
         <input type="text" class="form-control" formControlName="CP">
         <p class="text-danger"
-            *ngIf="formularioParcela.get('codigopostal').hasError('required') && formularioParcela.get('codigopostal').touched">
+            *ngIf="formularioParcela.get('CP').hasError('required') && formularioParcela.get('CP').touched">
             Indica el código postal de la parcela.
         </p>
     </div>
@@ -79,9 +79,11 @@
             Añade una descripción de la parcela.
         </p>
     </div>
+
+    <input type="hidden" formControlName="fk_usuario" [(ngModel)]="usuario">
     <div class="form-group col-12 boton">
         <input class="btn btn-block btn-success" type="submit" value="Registrar Parcela"
-            [disabled]="!formularioParcela.valid || !usuariosService.isLogged()">
+            [disabled]="!formularioParcela.valid && !usuariosService.isLogged()">
         <p *ngIf="!usuariosService.isLogged() && formularioParcela.touched" class="warn text-success"
             (click)="redirigir('login')">Inicia sesion para
             registrar tu parcela</p>

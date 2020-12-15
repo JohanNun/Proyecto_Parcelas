@@ -30,6 +30,7 @@ import { PerfilUsuarioComponent } from './perfil-usuario/perfil-usuario.componen
 import { HuertoPublicoComponent } from './huerto-publico/huerto-publico.component';
 import { MapaParcelasComponent } from './mapa-parcelas/mapa-parcelas.component';
 import { MensajesPrivadosComponent } from './mensajes-privados/mensajes-privados.component';
+import { ConvesarcionComponent } from './convesarcion/convesarcion.component';
 
 @NgModule({
   declarations: [
@@ -52,7 +53,8 @@ import { MensajesPrivadosComponent } from './mensajes-privados/mensajes-privados
     PerfilUsuarioComponent,
     HuertoPublicoComponent,
     MapaParcelasComponent,
-    MensajesPrivadosComponent
+    MensajesPrivadosComponent,
+    ConvesarcionComponent
   ],
   imports: [
     BrowserModule,

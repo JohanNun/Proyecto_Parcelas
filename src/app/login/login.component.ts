@@ -31,9 +31,9 @@ export class LoginComponent implements OnInit {
   onSubmit() {
     this.usuariosService.login(this.formularioLogin.value)
 
+
       .then(response => {
         console.log(response);
-
         if (response['error']) {
           this.mensajeError = response['error']
 
@@ -45,6 +45,7 @@ export class LoginComponent implements OnInit {
           localStorage.setItem('login_usuario', response['token']);
           localStorage.setItem('imagen_usuario', response['imagen']);
           localStorage.setItem('usuario', response['usuario']);
+          localStorage.setItem('idUsuario', response['idUsuario'])
 
           this.router.navigate(['/home']);  //Cuando el login este hecho manda a la pagina home
         }
