@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 
 
 export interface usuario {
+  id: number;
   nombre: string;
   apellidos: string;
   nombre_usuario: string;
@@ -12,7 +13,7 @@ export interface usuario {
   repite_password: string;
   sexo: string;
   locacion: string;
-  telefono: number;
+  telefono: string;
   fecha_nacimiento: Date;
   experiencia: string;
   imagen: string;
@@ -55,6 +56,14 @@ export class UsuariosService {
 
 
 
+  //Actualizar usuario
+  update(pFormValue): Promise<usuario> {
+    return this.httpClient.put<usuario>(this.baseUrl, pFormValue).toPromise();
+  }
+
+
+
+
 
   login(pFormularioValue): Promise<usuario> {
     return this.httpClient.post<usuario>(`${this.baseUrl}/login`, pFormularioValue).toPromise();
@@ -74,6 +83,8 @@ export class UsuariosService {
   logOut() {
     localStorage.removeItem('login_usuario');
     localStorage.removeItem('imagen_usuario');
+    localStorage.removeItem('idUsuario');
+    localStorage.removeItem('usuario');
   }
 
 }

@@ -7,11 +7,11 @@
         <div class="cabeza">
 
             <div class="nombre">
-                <h2>{{ usuario.nombre_usuario }}</h2>
-                <button class="edita">Editar Perfil</button>
+                <h2>{{ usuario?.nombre_usuario }}</h2>
+                <button class="edita" (click)="onClickUpdate('edita-perfil')">Editar Perfil</button>
             </div>
             <div class="imagenusuario">
-                <img src="{{usuario.imagen}}" alt="">
+                <img src="{{usuario?.imagen}}" alt="">
             </div>
         </div>
 
@@ -21,18 +21,18 @@
 
             <div class="infogeneral">
                 <h3>Info general</h3>
-                <p><span>Nombre: </span>{{ usuario.nombre }}</p>
-                <p><span>Apellidos: </span> {{ usuario.apellidos }} </p>
-                <p><span>Sexo: </span> {{ usuario.sexo }} </p>
-                <p><span>Fecha de nacimiento: </span> {{ usuario.fecha_nacimiento | date: 'dd/MM/yyyy' }}</p>
+                <p><span>Nombre: </span>{{ usuario?.nombre }}</p>
+                <p><span>Apellidos: </span> {{ usuario?.apellidos }} </p>
+                <p><span>Sexo: </span> {{ usuario?.sexo }} </p>
+                <p><span>Fecha de nacimiento: </span> {{ usuario?.fecha_nacimiento | date: 'dd/MM/yyyy' }}</p>
 
                 <h3>Contacto</h3>
-                <p><span>Dirección: </span> {{usuario.locacion }}</p>
-                <p><span>Email: </span> {{usuario.email}} </p>
-                <p><span>Teléfono: </span> {{ usuario.telefono }} </p>
+                <p><span>Dirección: </span> {{usuario?.locacion }}</p>
+                <p><span>Email: </span> {{usuario?.email}} </p>
+                <p><span>Teléfono: </span> {{ usuario?.telefono }} </p>
 
                 <h3>About</h3>
-                <p><span>Descripción: </span> {{usuario.descripcion}} </p>
+                <p><span>Descripción: </span> {{usuario?.descripcion}} </p>
             </div>
         </div>
 
@@ -41,18 +41,20 @@
 
         <div class="descripciongeneral">
             <h3>Mis anuncios:</h3>
-            <div class="fila" *ngFor="let parcela of parcelitas">
+            <div class="filita">
+                <div class="fila" *ngFor="let parcela of parcelitas">
 
-                <div class="columna">
-                    <img src="{{ parcela.images }}" alt="">
-                </div>
+                    <div class="columna">
+                        <img src="{{ parcela?.images }}" alt="">
+                    </div>
 
-                <div class="columna2">
-                    <div class="card-body">
-                        <h5 class="card-title" (click)="onClick(parcela)">{{ parcela.titulo }}</h5>
-                        <h6>{{ parcela.precio_metro}}€ / m2</h6>
-                        <p class="card-text"> {{ parcela.descripcion }} </p>
-                        <p class="card-text text-muted"> {{ parcela.calle }}</p>
+                    <div class="columna2">
+                        <div class="card-body">
+                            <h5 class="card-title" (click)="onClick(parcela)">{{ parcela?.titulo }}</h5>
+                            <h6>{{ parcela?.precio_metro}}€ / m2</h6>
+                            <p class="card-text"> {{ parcela?.descripcion }} </p>
+                            <p class="card-text text-muted"> {{ parcela?.calle }}</p>
+                        </div>
                     </div>
                 </div>
             </div>

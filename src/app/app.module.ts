@@ -31,6 +31,7 @@ import { HuertoPublicoComponent } from './huerto-publico/huerto-publico.componen
 import { MapaParcelasComponent } from './mapa-parcelas/mapa-parcelas.component';
 import { MensajesPrivadosComponent } from './mensajes-privados/mensajes-privados.component';
 import { ConvesarcionComponent } from './convesarcion/convesarcion.component';
+import { EditaPerfilComponent } from './edita-perfil/edita-perfil.component';
 
 @NgModule({
   declarations: [
@@ -54,7 +55,8 @@ import { ConvesarcionComponent } from './convesarcion/convesarcion.component';
     HuertoPublicoComponent,
     MapaParcelasComponent,
     MensajesPrivadosComponent,
-    ConvesarcionComponent
+    ConvesarcionComponent,
+    EditaPerfilComponent
   ],
   imports: [
     BrowserModule,

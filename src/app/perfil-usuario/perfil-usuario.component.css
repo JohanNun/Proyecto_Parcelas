@@ -112,15 +112,19 @@
     color: rgb(65, 126, 100);
 }
 
+.filita {
+    height: 400px;
+    overflow-y: scroll;
+}
 
 .fila {
-	width: 100%;
+    width: 100%;
     flex-wrap: wrap;
 	display: flex;
 	border-bottom: 1px solid rgb(112, 110, 110);
 	margin-top: 5px;
 	margin-bottom: 5px;
-	padding: 5px;
+    padding: 5px;
 }
 
 .columna {
@@ -137,7 +141,7 @@
 .columna2 {
 	width: 50%;
 	padding: 5px;
-	margin-left: 15px;
+	margin-left: 35px;
     margin-top: 10px;
     margin-bottom: 10px;
 }

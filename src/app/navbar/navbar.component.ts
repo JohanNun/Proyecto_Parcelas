@@ -22,7 +22,7 @@ export class NavbarComponent implements OnInit {
 
   ngOnInit(): void {
     this.imagen = (localStorage.getItem('imagen_usuario') !== null) ? localStorage.getItem('imagen_usuario') : "";
-    this.usuario = localStorage.getItem('usuario')
+    this.usuario = localStorage.getItem('idUsuario')
     console.log(this.usuario);
 
   }
