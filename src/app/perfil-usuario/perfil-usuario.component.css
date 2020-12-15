@@ -76,10 +76,9 @@
 }
 
 .todainfo span{
-    font-size: 1.1em;
+    font-size: 1.05em;
     font-family: var(--fuentePrincipal);
-    color: rgb(65, 126, 100);
-font-weight: 600;
+    font-weight: 600;
 }
 
 .infogeneral{
@@ -91,6 +90,7 @@ font-weight: 600;
 }
 
 .infogeneral h3 {
+    color: rgb(65, 126, 100);
     margin-bottom: 8px;
     margin-top: 16px;
 }
@@ -107,10 +107,9 @@ font-weight: 600;
      box-shadow: 0px 0px 12px -2px rgba(3, 85, 3, 0.418);
 }
 
-.descripciongeneral span {
+.descripciongeneral h3 {
     margin-top: 15px;
-    font-weight: 600;
-    font-size: 25px;
+    color: rgb(65, 126, 100);
 }
 
 

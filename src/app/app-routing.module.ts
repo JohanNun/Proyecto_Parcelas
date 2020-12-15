@@ -9,6 +9,7 @@ import { InfoCultivoComponent } from './info-cultivo/info-cultivo.component';
 import { LoginGuard } from './login.guard';
 import { LoginComponent } from './login/login.component';
 import { MensajeComponent } from './mensaje/mensaje.component';
+import { MensajesPrivadosComponent } from './mensajes-privados/mensajes-privados.component';
 import { PaginaAnuncioComponent } from './pagina-anuncio/pagina-anuncio.component';
 import { PaginaBusquedaComponent } from './pagina-busqueda/pagina-busqueda.component';
 import { PaginaUsuarioComponent } from './pagina-usuario/pagina-usuario.component';
@@ -28,6 +29,7 @@ const routes: Routes = [
   { path: 'form-parcela', component: FormularioParcelaComponent },
   { path: 'perfil-usuario/:nombre_usuario', component: PerfilUsuarioComponent },
   { path: 'mensaje', component: MensajeComponent, canActivate: [LoginGuard] },
+  { path: 'mensajes-privados', component: MensajesPrivadosComponent },
   { path: '**', redirectTo: '/home' }
 ];
 

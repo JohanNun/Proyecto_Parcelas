@@ -29,6 +29,7 @@ import { GalleriaModule } from 'primeng/galleria';
 import { PerfilUsuarioComponent } from './perfil-usuario/perfil-usuario.component';
 import { HuertoPublicoComponent } from './huerto-publico/huerto-publico.component';
 import { MapaParcelasComponent } from './mapa-parcelas/mapa-parcelas.component';
+import { MensajesPrivadosComponent } from './mensajes-privados/mensajes-privados.component';
 
 @NgModule({
   declarations: [
@@ -50,7 +51,8 @@ import { MapaParcelasComponent } from './mapa-parcelas/mapa-parcelas.component';
     GaleriaComponent,
     PerfilUsuarioComponent,
     HuertoPublicoComponent,
-    MapaParcelasComponent
+    MapaParcelasComponent,
+    MensajesPrivadosComponent
   ],
   imports: [
     BrowserModule,
