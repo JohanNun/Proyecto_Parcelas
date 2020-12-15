@@ -35,7 +35,7 @@
 
         <h5>Comentarios del anunciante</h5>
 
-        <p>{{ parcela?.descripcion}}</p>
+        <p></p>
 
     </div>
 
@@ -48,6 +48,18 @@
             <app-mapa-parcelas [parcelas]="parcelas" [buscador]="false" [fitBounds]="false">
 
             </app-mapa-parcelas>
+        </div>
+        <div>
+
+
+            <div class="comentarios" *ngFor="let comentario of comentarios">
+                <h5>{{comentario.nombre_usuario}}</h5>
+                <p>{{comentario.texto_comentario}}</p>
+
+
+            </div>
+
+
         </div>
 
 
