@@ -42,7 +42,7 @@ export class ComentariosService {
   create(pTexto, pIdUsuario, pIdParcela): Promise<comentario> {
     const httpOptions = {
       headers: new HttpHeaders({
-        'Authorization': localStorage.getItem('login_usuario')
+        'authorization': localStorage.getItem('login_usuario')
       })
     }
 

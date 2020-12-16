@@ -57,6 +57,7 @@
                     <div class="comentarios" *ngFor="let comentario of comentarios">
                         <img src="{{comentario.imagen}}" alt="">
                         <h5>{{comentario.nombre_usuario}}:</h5>
+                        <span>{{comentario.fecha | date: 'dd/mm/yyyy'}}</span>
                         <p>{{comentario.texto_comentario}}</p>
                     </div>
                 </div>
