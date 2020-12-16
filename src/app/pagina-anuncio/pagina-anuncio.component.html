@@ -52,9 +52,20 @@
         <div>
 
 
-            <div class="comentarios" *ngFor="let comentario of comentarios">
-                <h5>{{comentario.nombre_usuario}}</h5>
-                <p>{{comentario.texto_comentario}}</p>
+            <div class="tablacomentarios">
+                <div class="listacomentarios">
+                    <div class="comentarios" *ngFor="let comentario of comentarios">
+                        <img src="{{comentario.imagen}}" alt="">
+                        <h5>{{comentario.nombre_usuario}}</h5>
+                        <p>{{comentario.texto_comentario}}</p>
+                    </div>
+                </div>
+                <div class="escribircomentario">
+                    <textarea [(ngModel)]="nuevocomentario" cols="90" rows="4"></textarea>
+                    <input type="submit" class="btn btn-success" value="Enviar comentario"
+                        (click)="onClickComentario()">
+                </div>
+
 
 
             </div>

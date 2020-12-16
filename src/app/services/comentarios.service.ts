@@ -7,6 +7,7 @@ export interface comentario {
   texto_comentario: string;
   fecha: Date;
   nombre_usuario: string;
+  imagen: string;
   fk_usuario: number;
   fk_parcela: number;
 }
@@ -34,7 +35,11 @@ export class ComentariosService {
     return this.httpClient.get<comentario[]>(`${this.baseUrl}/parcela/${pParcelaId}`).toPromise();
   }
 
-  getComentariosBysuarioId(pUsuarioId): Promise<comentario[]> {
+  getComentariosByUsuarioId(pUsuarioId): Promise<comentario[]> {
     return this.httpClient.get<comentario[]>(`${this.baseUrl}/user/${pUsuarioId}`).toPromise();
+  }
+
+  create(pTexto): Promise<comentario> {
+    return this.httpClient.post<comentario>(this.baseUrl, pTexto).toPromise();
   }
 }
