@@ -133,13 +133,6 @@ export class PaginaAnuncioComponent implements OnInit {
     let id = this.activatedRoute.snapshot.params['idParcela'];
 
 
-    /*   this.usuariosService.getUserByParcela(id)
-        .then(result => {
-          this.usuario = result;
-          console.log(this.usuario);
-  
-        }) */
-
     this.router.navigate(['pagina-usuario', id]);
   }
 
