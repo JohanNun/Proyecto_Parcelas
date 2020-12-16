@@ -154,3 +154,49 @@
         width: 100%;
     }
 }
+
+
+/* comentarios */
+
+.tablacomentarios{
+    margin:40px 20px;
+    padding: 10px;
+    border: 1px solid black;
+}
+
+.listacomentarios{
+    max-height: 300px;
+    margin: 30px 20px;
+    overflow-y: scroll;
+}
+
+.comentarios{
+    border: 1px solid black;
+    margin-bottom: 10px;
+    padding: 10px 5px;
+    height: 100px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.comentarios h5{
+    margin-bottom: 10px;
+    color: green;
+    width: 90%;
+    margin-left: 5px;
+    font-weight: 700;
+}
+
+.comentarios img{
+    width: 15px;
+    height: 20px;
+    padding-top: 5px;
+}
+.escribircomentario textarea{
+    padding: 10px;
+    width: 100%;
+}
+.escribircomentario input{
+    margin-top: 20px;
+    padding: 10px;
+}

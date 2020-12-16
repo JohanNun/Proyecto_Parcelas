@@ -19,6 +19,7 @@ export class PaginaAnuncioComponent implements OnInit {
   usuario2: usuario[];
   parcelas: any[];
   comentarios: comentario[];
+  nuevocomentario: string;
 
 
   responsiveOptions: any[] = [
@@ -103,6 +104,13 @@ export class PaginaAnuncioComponent implements OnInit {
 
 
 
+  }
+
+
+  onClickComentario() {
+    console.log(this.nuevocomentario);
+    this.comentariosService.create(this.nuevocomentario)
+      .then(response => console.log(response))
   }
 
 
