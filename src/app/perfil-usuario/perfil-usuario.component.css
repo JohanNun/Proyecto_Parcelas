@@ -109,6 +109,7 @@
 
 .descripciongeneral h3 {
     margin-top: 15px;
+    margin-bottom: 10px;
     color: rgb(65, 126, 100);
 }
 
@@ -164,21 +165,99 @@
 
 
 
-@media(max-width: 70em){
+@media(max-width: 74em){
 
-	.fila {
-		width: 95%;
-		padding: 0px; 
+    .descripciongeneral{
+        width: 50%;
+        padding: 10px; 
+        /* flex-wrap: wrap;
+        display: flex;
+        justify-content: space-between; */
+    }
+
+	.filita {
+		width: 100%;
+		padding-left: 0px;
+	}
+
+    .fila {
+		width: 100%;
+		padding-left: 0px;
 	}
 
 	.columna{
-		width: 100%;
-	}
+		width: 45%;
+        margin-left: 5px;
+        margin-right: 10px;
+    }
+
+    .columna img {
+        width: 150px;
+        height: 110px;
+    }
+    
 
 	.columna2{
-		width: 100%;
-		margin-left: 5px;
+        width: 100%;
+        
+        margin-left: 5px;
 	}
+
+
+
+    .mainCont {
+        width: 100%; 
+        margin: 0 auto;
+    }
+
+    .perfilusuario{
+        width: 100%;
+       padding: 0px; 
+       -webkit-box-shadow: none; 
+       box-shadow: none;
+    }
+    
+
+    .cabeza {
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .todainfo{
+        width: 50%;
+        padding: 0px; 
+        
+    }
+
+    .infogeneral {
+        width: 100%; 
+        -webkit-box-shadow: none;
+        box-shadow: none; 
+        margin-bottom: 20px;
+        padding: 15px;
+    }
+
+    .nombre{
+        width: 100%;
+         text-align: center;
+        margin-bottom: 25px;
+       
+    }
+
+    .nombre h2 {
+        margin-left: 5px;
+        font-size: 25px;
+    }
+
+    .imagenusuario {
+        width: 100%;
+        text-align: center;
+    }
+    .imagenusuario img{
+
+        width: 130px;
+    }
+
 
 
 }
