@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 
@@ -39,7 +39,13 @@ export class ComentariosService {
     return this.httpClient.get<comentario[]>(`${this.baseUrl}/user/${pUsuarioId}`).toPromise();
   }
 
-  create(pTexto): Promise<comentario> {
-    return this.httpClient.post<comentario>(this.baseUrl, pTexto).toPromise();
+  create(pTexto, pIdUsuario, pIdParcela): Promise<comentario> {
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Authorization': localStorage.getItem('login_usuario')
+      })
+    }
+
+    return this.httpClient.post<comentario>(`${this.baseUrl}/nuevo_comentario/${pIdParcela}`, { texto_comentario: pTexto, fk_usuario: pIdUsuario, fk_parcela: pIdParcela }, httpOptions).toPromise();
   }
 }

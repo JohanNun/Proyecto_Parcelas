@@ -102,24 +102,43 @@ export class PaginaAnuncioComponent implements OnInit {
 
 
   onClickComentario() {
-    console.log(this.nuevocomentario);
-    this.comentariosService.create(this.nuevocomentario)
-      .then(response => console.log(response))
+    let id = this.activatedRoute.snapshot.params['idParcela'];
+
+
+    let idUsuario = localStorage.getItem('idUsuario');
+
+
+    this.comentariosService.create(this.nuevocomentario, idUsuario, id)
+      .then(response => {
+        this.comentariosService.getComentariosByParcelaId(id)
+          .then(result => {
+            this.comentarios = result
+            this.nuevocomentario = '';
+
+
+
+
+          })
+      })
+    setTimeout(() => {
+      this.router.navigate(['/pagina-anuncio', id])
+    }, 1000)
   }
 
 
 
 
-  onClick(pRuta) {
+  onClick() {
 
     let id = this.activatedRoute.snapshot.params['idParcela'];
 
-    /* this.usuariosService.getUserByParcela(id)
-      .then(result => {
-        this.usuario = result;
-        console.log(this.usuario);
 
-      }) */
+    /*   this.usuariosService.getUserByParcela(id)
+        .then(result => {
+          this.usuario = result;
+          console.log(this.usuario);
+  
+        }) */
 
     this.router.navigate(['pagina-usuario', id]);
   }
