@@ -1,12 +1,23 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
+
 export interface Mensaje {
+  fecha: string;
+  fk_conversacion: number;
+  fk_usuario_id: number;
+  fk_usuario_recibe: number;
   id: number;
   texto: string;
-  fk_usuario_manda: number;
-  fk_usuario_recibe: number;
-  fecha: Date
+}
+
+export interface Conversacion {
+  id: number;
+  mensajes: Mensaje[];
+  usuario1: number;
+  usuario2: number;
+  nombre_usuario_1: string;
+  nombre_usuario_2: string;
 }
 
 
@@ -44,23 +55,39 @@ export class MensajesService {
   }
 
 
-  getNombreUsuarioPorFKRecibe(fkUsuarioRecibe): Promise<Mensaje[]> {
-    return this.httpClient.get<Mensaje[]>(`${this.baserUrl}/nombreUsuarioRecibe/${fkUsuarioRecibe}`).toPromise();
-  }
-
-  getNombreUsuarioPorFKManda(fkUsuarioManda): Promise<Mensaje[]> {
-    return this.httpClient.get<Mensaje[]>(`${this.baserUrl}/nombreUsuarioManda/${fkUsuarioManda}`).toPromise();
-  }
-
-
-  create(pTexto, pUsuarioManda, pUsuarioRecibe): Promise<Mensaje> {
+  getAllConversaciones(): Promise<Conversacion[]> {
     const httpOptions = {
       headers: new HttpHeaders({
         'authorization': localStorage.getItem('login_usuario')
       })
     }
 
-    return this.httpClient.post<Mensaje>(`${this.baserUrl}/nuevo_mensaje/${pUsuarioManda}`, { texto: pTexto, fk_usuario_manda: pUsuarioManda, fk_usuario_recibe: pUsuarioRecibe }, httpOptions).toPromise();
+    return this.httpClient.get<Conversacion[]>(`${this.baserUrl}/conversacion`, httpOptions).toPromise();
+  }
+
+
+
+  getConversacion(pId): Promise<Conversacion> {
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'authorization': localStorage.getItem('login_usuario')
+      })
+    }
+
+    return this.httpClient.get<Conversacion>(`${this.baserUrl}/conversacion/${pId}`, httpOptions).toPromise();
+  }
+
+
+
+
+  create(pTexto, pUsuario, pIdConversacion): Promise<Mensaje> {
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'authorization': localStorage.getItem('login_usuario')
+      })
+    }
+
+    return this.httpClient.post<Mensaje>(`${this.baserUrl}/nuevo_mensaje/${pIdConversacion}`, { texto: pTexto, fk_usuario_manda: pUsuario, fk_conversacion: pIdConversacion }, httpOptions).toPromise();
   }
 
 

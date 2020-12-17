@@ -1,0 +1,23 @@
+<div class="mainCont">
+
+    <div class="cabeza">
+        <h5>{{ usuario?.nombre_usuario === conversacion?.nombre_usuario_1 ? conversacion?.nombre_usuario_2 :
+            conversacion?.nombre_usuario_1}}</h5>
+
+    </div>
+
+    <div class="chat">
+        <ul *ngFor="let convo of conversacion?.mensajes">
+            <li>{{convo.texto}}</li>
+        </ul>
+    </div>
+
+    <div class="nuevoMensaje">
+        <div class="campo">
+            <textarea cols="90" rows="5" placeholder="Escribe tu mensaje..." [(ngModel)]="texto"></textarea>
+        </div>
+
+        <button class="btn btn-outline-dark" (click)="onClickEnviar()">Enviar</button>
+    </div>
+
+</div>

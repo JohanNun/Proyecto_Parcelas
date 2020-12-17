@@ -15,6 +15,8 @@ export class PaginaBusquedaComponent implements OnInit {
   parcelitas: parcela[];
   imagenes: any[];
   parcelas: any[];
+  cora: boolean;
+  arrCora: any[];
 
   busqueda: string;
   subscripcion: Subscription
@@ -42,6 +44,8 @@ export class PaginaBusquedaComponent implements OnInit {
     private activatedRoute: ActivatedRoute) {
 
     this.parcelas = [];
+    this.cora = false;
+    this.arrCora = [];
 
   }
 
@@ -160,6 +164,16 @@ export class PaginaBusquedaComponent implements OnInit {
   }
 
 
+  agregarFav(pCora) {
 
+    if (pCora === false) {
+      pCora = true;
+    } else {
+      pCora = false;
+    }
+    console.log(pCora);
+
+
+  }
 
 }

@@ -30,8 +30,9 @@ import { PerfilUsuarioComponent } from './perfil-usuario/perfil-usuario.componen
 import { HuertoPublicoComponent } from './huerto-publico/huerto-publico.component';
 import { MapaParcelasComponent } from './mapa-parcelas/mapa-parcelas.component';
 import { MensajesPrivadosComponent } from './mensajes-privados/mensajes-privados.component';
-import { ConvesarcionComponent } from './convesarcion/convesarcion.component';
 import { EditaPerfilComponent } from './edita-perfil/edita-perfil.component';
+import { ConversacionComponent } from './conversacion/conversacion.component';
+
 
 @NgModule({
   declarations: [
@@ -55,8 +56,8 @@ import { EditaPerfilComponent } from './edita-perfil/edita-perfil.component';
     HuertoPublicoComponent,
     MapaParcelasComponent,
     MensajesPrivadosComponent,
-    ConvesarcionComponent,
-    EditaPerfilComponent
+    EditaPerfilComponent,
+    ConversacionComponent,
   ],
   imports: [
     BrowserModule,

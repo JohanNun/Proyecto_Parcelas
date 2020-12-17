@@ -35,18 +35,18 @@
 
     <div class="mensajeria">
 
-        <div class="convo card" *ngFor="let mensaje of mensajes">
+        <div class="convo card" *ngFor="let conversacion of conversaciones">
             <div class="nombre card-header">
                 <h5 class="card-title">
-                    {{ usuario?.id === mensaje?.fk_usuario_recibe ? mensaje.fk_usuario_manda :
-                    mensaje.fk_usuario_recibe}}
+                    {{ usuario?.id === conversacion?.usuario1 ? conversacion.nombre_usuario_2 :
+                    conversacion.nombre_usuario_1}}
                 </h5>
 
             </div>
             <div class="contenido card-body">
-                <p class="card-text">{{mensaje.texto}}</p>
-                <small>{{mensaje.fecha |date: "dd/MM/yyyy"}}</small>
-                <button class="btn boton">Ver conversación</button>
+                <p class="card-text">{{conversacion.mensajes[conversacion.mensajes.length - 1].texto}}</p>
+                <small>{{conversacion.mensajes[conversacion.mensajes.length - 1].fecha |date: "dd/MM/yyyy"}}</small>
+                <button class="btn boton" (click)="onClick(conversacion.id)">Ver conversación</button>
             </div>
         </div>
 

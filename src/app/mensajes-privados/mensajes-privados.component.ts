@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
-import { Mensaje, MensajesService } from '../services/mensajes.service';
+import { ActivatedRoute, Router } from '@angular/router';
+import { Conversacion, Mensaje, MensajesService } from '../services/mensajes.service';
 import { usuario, UsuariosService } from '../services/usuarios.service';
 
 @Component({
@@ -10,35 +10,26 @@ import { usuario, UsuariosService } from '../services/usuarios.service';
 })
 export class MensajesPrivadosComponent implements OnInit {
 
-  mensajes: Mensaje[];
+  conversaciones: Conversacion[];
   usuario: usuario;
 
   constructor(private mensajesService: MensajesService,
     private usuariosService: UsuariosService,
+    private router: Router,
     private activatedRoute: ActivatedRoute) {
-    this.mensajes = [];
+    this.conversaciones = [];
   }
 
   async ngOnInit() {
 
     let id = localStorage.getItem('idUsuario');
 
+    const mensajesUsuario = await this.mensajesService.getAllConversaciones();
+    this.conversaciones = mensajesUsuario
+    console.log(this.conversaciones);
 
 
-    const mensajesEnviados = await this.mensajesService.getMisMensajes(id)
-    for (let miMensaje of mensajesEnviados) {
-      this.mensajes.push(miMensaje);
 
-    }
-
-
-    const mensajesRecibidos = await this.mensajesService.getMensajesReceptor(id)
-    for (let miMensaje of mensajesRecibidos) {
-      this.mensajes.push(miMensaje);
-
-    }
-
-    console.log(this.mensajes);
 
 
     this.usuariosService.getUsuario(id)
@@ -47,11 +38,14 @@ export class MensajesPrivadosComponent implements OnInit {
       })
 
 
-    //Recibir nombre usuario 
+  }
 
 
 
 
+  onClick(pId) {
+
+    this.router.navigate(['conversacion', pId])
   }
 
 }
