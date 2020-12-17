@@ -160,13 +160,9 @@ export class PaginaAnuncioComponent implements OnInit {
     console.log(pIdUsuario);
 
 
-<<<<<<< HEAD
-    this.router.navigate(['pagina-usuario', id]);
-=======
     /* let id = this.activatedRoute.snapshot.params['idParcela']; */
 
     this.router.navigate(['pagina-usuario', pIdUsuario]);
->>>>>>> feature
   }
 
 
