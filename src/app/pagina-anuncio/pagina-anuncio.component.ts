@@ -20,6 +20,7 @@ export class PaginaAnuncioComponent implements OnInit {
   parcelas: any[];
   comentarios: comentario[];
   nuevocomentario: string;
+  idUsuario: number;
 
 
   responsiveOptions: any[] = [
@@ -92,6 +93,7 @@ export class PaginaAnuncioComponent implements OnInit {
         this.parcela = result;
         this.usuariosService.getUsuario(this.parcela.fk_usuario)
           .then(result => {
+            this.idUsuario = localStorage.getItem('idUsuario');
             this.usuario = result;
             console.log(this.usuario);
 
@@ -106,6 +108,8 @@ export class PaginaAnuncioComponent implements OnInit {
 
 
     let idUsuario = localStorage.getItem('idUsuario');
+    console.log(idUsuario);
+
 
 
     this.comentariosService.create(this.nuevocomentario, idUsuario, id)

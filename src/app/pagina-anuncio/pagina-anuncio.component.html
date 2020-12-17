@@ -57,9 +57,9 @@
                 <div class="comentarios" *ngFor="let comentario of comentarios">
                     <img src="{{comentario.imagen}}" alt="">
                     <h5 (click)="onClickPaginaUsuario(comentario.fk_usuario)">{{comentario.nombre_usuario}}:</h5>
-                    <span>{{comentario.fecha | date: 'dd/mm/yyyy'}}</span>
+                    <span>{{comentario.fecha | date: 'dd/MM/yyyy'}}</span>
                     <button (click)="onClickDelete(comentario.id)"
-                        *ngIf="usuariosService.isLogged() && comentario.fk_usuario === usuario?.id"><i
+                        *ngIf="usuariosService.isLogged() && comentario.fk_usuario == idUsuario"><i
                             class="fas fa-times"></i></button>
                     <p>{{comentario.texto_comentario}}</p>
 
