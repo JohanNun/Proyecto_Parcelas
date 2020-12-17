@@ -5,7 +5,7 @@
     <div class="cabecera">
         <div class="foto">
             <img src="{{usuario?.imagen}}">
-            <h5 (click)="onClick()">Enlace a perfil del usuario</h5>
+            <h5 (click)="onClick(usuario?.id)">Enlace a perfil del usuario</h5>
         </div>
 
         <div class="texto">
@@ -49,31 +49,35 @@
 
             </app-mapa-parcelas>
         </div>
-        <div>
 
 
-            <div class="tablacomentarios">
-                <div class="listacomentarios">
-                    <div class="comentarios" *ngFor="let comentario of comentarios">
-                        <img src="{{comentario.imagen}}" alt="">
-                        <h5>{{comentario.nombre_usuario}}:</h5>
-                        <span>{{comentario.fecha | date: 'dd/mm/yyyy'}}</span>
-                        <p>{{comentario.texto_comentario}}</p>
-                    </div>
+
+        <div class="tablacomentarios">
+            <div class="listacomentarios">
+                <div class="comentarios" *ngFor="let comentario of comentarios">
+                    <img src="{{comentario.imagen}}" alt="">
+                    <h5 (click)="onClickPaginaUsuario(comentario.fk_usuario)">{{comentario.nombre_usuario}}:</h5>
+                    <span>{{comentario.fecha | date: 'dd/mm/yyyy'}}</span>
+                    <button (click)="onClickDelete(comentario.id)"
+                        *ngIf="usuariosService.isLogged() && comentario.fk_usuario === usuario?.id"><i
+                            class="fas fa-times"></i></button>
+                    <p>{{comentario.texto_comentario}}</p>
+
+
                 </div>
-                <div class="escribircomentario">
-                    <textarea placeholder="Escribe aquí un comentario..." [(ngModel)]="nuevocomentario" cols="90"
-                        rows="4"></textarea>
-                    <input type="submit" class="btn btn-success" value="Enviar comentario"
-                        (click)="onClickComentario()">
-                </div>
-
-
-
+            </div>
+            <div class="escribircomentario">
+                <textarea placeholder="Escribe aquí un comentario..." [(ngModel)]="nuevocomentario" cols="90"
+                    rows="4"></textarea>
+                <input type="submit" class="btn btn-success" value="Enviar comentario" (click)="onClickComentario()">
             </div>
 
 
+
         </div>
+
+
+
 
 
 

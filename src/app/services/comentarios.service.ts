@@ -48,4 +48,8 @@ export class ComentariosService {
 
     return this.httpClient.post<comentario>(`${this.baseUrl}/nuevo_comentario/${pIdParcela}`, { texto_comentario: pTexto, fk_usuario: pIdUsuario, fk_parcela: pIdParcela }, httpOptions).toPromise();
   }
+
+  delete(pIdComentario): Promise<comentario> {
+    return this.httpClient.delete<comentario>(`${this.baseUrl}/${pIdComentario}`).toPromise();
+  }
 }
