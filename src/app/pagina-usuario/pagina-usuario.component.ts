@@ -44,15 +44,12 @@ export class PaginaUsuarioComponent implements OnInit {
     //Recuperar usuario
     let id = this.activatedRoute.snapshot.params['id'];
 
-    this.parcelasService.getById(id)
-      .then(result => {
-        this.parcela = result;
-        this.usuariosService.getUsuario(this.parcela.fk_usuario)
-          .then(result => {
-            this.usuario = result;
-            console.log(this.usuario);
 
-          })
+    this.usuariosService.getUsuario(id)
+      .then(result => {
+        this.usuario = result;
+        console.log(this.usuario);
+
       })
 
 
