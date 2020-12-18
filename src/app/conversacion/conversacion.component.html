@@ -1,6 +1,10 @@
-<div class="mainCont">
+<navbar></navbar>
+
+<div class="mainCont col-md-10">
 
     <div class="cabeza">
+        <img src="{{ usuario?.id === conversacion?.usuario1 ? conversacion.imagen_2 :
+            conversacion.imagen_1 }}">
         <h5>{{ usuario?.nombre_usuario === conversacion?.nombre_usuario_1 ? conversacion?.nombre_usuario_2 :
             conversacion?.nombre_usuario_1}}</h5>
 
@@ -8,16 +12,22 @@
 
     <div class="chat">
         <ul *ngFor="let convo of conversacion?.mensajes">
-            <li>{{convo.texto}}</li>
+            <li [className]="usuario?.id === convo?.fk_usuario_id ? 'sender' : 'reciver'">
+                <span>{{convo.texto}}</span>
+                <button class="borrar" (click)="borrar(convo.id)"
+                    *ngIf="usuariosService.isLogged() && usuario?.id === convo?.fk_usuario_id"><i
+                        class="fas fa-times"></i></button>
+            </li>
         </ul>
     </div>
 
     <div class="nuevoMensaje">
         <div class="campo">
-            <textarea cols="90" rows="5" placeholder="Escribe tu mensaje..." [(ngModel)]="texto"></textarea>
+            <textarea rows="3" placeholder="Escribe tu mensaje..." [(ngModel)]="texto"></textarea>
         </div>
 
-        <button class="btn btn-outline-dark" (click)="onClickEnviar()">Enviar</button>
+        <button class="boton btn btn-outline-success" (click)="onClickEnviar()"><i
+                class="fab fa-telegram-plane"></i></button>
     </div>
 
 </div>

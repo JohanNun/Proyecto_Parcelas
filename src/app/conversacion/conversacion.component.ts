@@ -15,9 +15,12 @@ export class ConversacionComponent implements OnInit {
   usuario: usuario;
   texto: string;
 
+
   constructor(private activatedRoute: ActivatedRoute,
     private mensajesService: MensajesService,
-    private usuariosService: UsuariosService) { }
+    public usuariosService: UsuariosService) {
+
+  }
 
 
 
@@ -29,13 +32,11 @@ export class ConversacionComponent implements OnInit {
       .then(result => {
         this.conversacion = result;
         console.log(this.conversacion);
-
       })
 
 
 
     let idUsuario = localStorage.getItem('idUsuario');
-
 
     this.usuariosService.getUsuario(idUsuario)
       .then(result => {
@@ -60,6 +61,27 @@ export class ConversacionComponent implements OnInit {
           })
       })
       .catch()
+  }
+
+
+
+  borrar(mensajeId) {
+
+
+    let id = this.activatedRoute.snapshot.params['id'];
+
+    this.mensajesService.borrar(mensajeId)
+      .then(result => {
+        this.mensajesService.getConversacion(id)
+          .then(result => {
+            this.conversacion = result;
+            console.log(this.conversacion);
+          })
+      })
+
+
+
+
   }
 
 }

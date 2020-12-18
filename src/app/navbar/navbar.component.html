@@ -25,7 +25,8 @@
                         <li *ngIf="!usuariosService.isLogged()" (click)="onClick('form')"><i
                                 class="fas fa-sign-in-alt"></i>Regístrate
                         </li>
-                        <li (click)="onClick2('perfil-usuario')"><i class="fas fa-address-book"></i>Perfil de
+                        <li *ngIf="usuariosService.isLogged()" (click)="onClick2('perfil-usuario')"><i
+                                class="fas fa-address-book"></i>Perfil de
                             usuario
                         </li>
 

@@ -37,12 +37,14 @@
 
         <div class="convo card" *ngFor="let conversacion of conversaciones">
             <div class="nombre card-header">
+                <img src="{{ usuario?.id === conversacion?.usuario1 ? conversacion.imagen_2 :
+                    conversacion.imagen_1 }}">
                 <h5 class="card-title">
                     {{ usuario?.id === conversacion?.usuario1 ? conversacion.nombre_usuario_2 :
                     conversacion.nombre_usuario_1}}
                 </h5>
-
             </div>
+
             <div class="contenido card-body">
                 <p class="card-text">{{conversacion.mensajes[conversacion.mensajes.length - 1].texto}}</p>
                 <small>{{conversacion.mensajes[conversacion.mensajes.length - 1].fecha |date: "dd/MM/yyyy"}}</small>

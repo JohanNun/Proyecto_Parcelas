@@ -18,6 +18,8 @@ export interface Conversacion {
   usuario2: number;
   nombre_usuario_1: string;
   nombre_usuario_2: string;
+  imagen_1: string;
+  imagen_2: string
 }
 
 
@@ -92,7 +94,12 @@ export class MensajesService {
 
 
   borrar(idMensaje): Promise<Mensaje> {
-    return this.httpClient.delete<Mensaje>(`${this.baserUrl}/${idMensaje}`).toPromise();
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'authorization': localStorage.getItem('login_usuario')
+      })
+    }
+    return this.httpClient.delete<Mensaje>(`${this.baserUrl}/${idMensaje}`, httpOptions).toPromise();
   }
 
 

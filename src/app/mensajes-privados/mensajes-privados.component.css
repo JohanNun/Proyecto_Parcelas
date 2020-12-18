@@ -16,6 +16,8 @@
     padding: 15px;
 }
 
+
+
 .elementos {
     width: 100%;
     display: flex;
@@ -75,9 +77,22 @@
     margin-bottom: 5px;
 }
 
+.convo img {
+    width: 25px;
+    height: 25px; 
+}
+
+
 .nombre {
     height: 50px;
     padding: 12px;
+    flex-wrap: wrap;
+    display: flex;
+}
+
+.nombre h5 {
+    width: 90%;
+    margin-left: 10px;
 }
 
 .contenido {
@@ -105,4 +120,13 @@
     border-radius: 5px;
     color: white;
     display: block;
+}
+
+
+@media(max-width: 48em) {
+
+    .nombre h5 {
+        width: 80%;
+        margin-left: 10px;
+    }
 }
