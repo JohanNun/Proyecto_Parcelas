@@ -3,6 +3,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { comentario, ComentariosService } from '../services/comentarios.service';
 import { ImagenesgaleriaService } from '../services/imagenesgaleria.service';
+import { MensajesService } from '../services/mensajes.service';
 import { parcela, ParcelasService } from '../services/parcelas.service';
 import { usuario, UsuariosService } from '../services/usuarios.service';
 
@@ -43,7 +44,8 @@ export class PaginaAnuncioComponent implements OnInit {
     private imagenesService: ImagenesgaleriaService,
     private parcelasService: ParcelasService,
     private comentariosService: ComentariosService,
-    private activatedRoute: ActivatedRoute) {
+    private activatedRoute: ActivatedRoute,
+    private mensajesService: MensajesService) {
     this.parcelas = [];
     this.comentarios = [];
     this.usuario2 = [];
@@ -169,6 +171,15 @@ export class PaginaAnuncioComponent implements OnInit {
     this.router.navigate(['pagina-usuario', pIdUsuario]);
   }
 
+
+  createConversacion(pUsuarioId) {
+    let idUsuario = localStorage.getItem('idUsuario');
+
+    this.mensajesService.createConversacion(idUsuario, pUsuarioId)
+      .then(result => {
+        this.router.navigate(['conversacion', pUsuarioId]);
+      })
+  }
 
 
 }

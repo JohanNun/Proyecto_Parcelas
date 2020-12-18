@@ -10,7 +10,6 @@ import { HuertosComunitariosComponent } from './huertos-comunitarios/huertos-com
 import { InfoCultivoComponent } from './info-cultivo/info-cultivo.component';
 import { LoginGuard } from './login.guard';
 import { LoginComponent } from './login/login.component';
-import { MensajeComponent } from './mensaje/mensaje.component';
 import { MensajesPrivadosComponent } from './mensajes-privados/mensajes-privados.component';
 import { PaginaAnuncioComponent } from './pagina-anuncio/pagina-anuncio.component';
 import { PaginaBusquedaComponent } from './pagina-busqueda/pagina-busqueda.component';
@@ -30,10 +29,9 @@ const routes: Routes = [
   { path: 'pagina-usuario/:id', component: PaginaUsuarioComponent },
   { path: 'form-parcela', component: FormularioParcelaComponent, canActivate: [LoginGuard] },
   { path: 'perfil-usuario/:id', component: PerfilUsuarioComponent },
-  { path: 'mensaje', component: MensajeComponent, canActivate: [LoginGuard] },
-  { path: 'mensajes-privados', component: MensajesPrivadosComponent },
+  { path: 'mensajes-privados', component: MensajesPrivadosComponent, canActivate: [LoginGuard] },
   { path: 'edita-perfil/:id', component: EditaPerfilComponent },
-  { path: 'conversacion/:id', component: ConversacionComponent },
+  { path: 'conversacion/:id', component: ConversacionComponent, canActivate: [LoginGuard] },
   { path: '**', redirectTo: '/home' }
 ];
 

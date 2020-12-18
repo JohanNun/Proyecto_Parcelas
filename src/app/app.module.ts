@@ -23,7 +23,6 @@ import { PaginaBusquedaComponent } from './pagina-busqueda/pagina-busqueda.compo
 import { PaginaUsuarioComponent } from './pagina-usuario/pagina-usuario.component';
 import { PaginaAnuncioComponent } from './pagina-anuncio/pagina-anuncio.component';
 import { FormularioParcelaComponent } from './formulario-parcela/formulario-parcela.component';
-import { MensajeComponent } from './mensaje/mensaje.component';
 import { GaleriaComponent } from './galeria/galeria.component';
 import { GalleriaModule } from 'primeng/galleria';
 import { PerfilUsuarioComponent } from './perfil-usuario/perfil-usuario.component';
@@ -50,7 +49,6 @@ import { ConversacionComponent } from './conversacion/conversacion.component';
     PaginaUsuarioComponent,
     PaginaAnuncioComponent,
     FormularioParcelaComponent,
-    MensajeComponent,
     GaleriaComponent,
     PerfilUsuarioComponent,
     HuertoPublicoComponent,

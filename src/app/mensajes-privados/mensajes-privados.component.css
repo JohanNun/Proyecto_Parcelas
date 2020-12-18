@@ -8,22 +8,15 @@
    width: 95%; 
    padding: 15px;
    margin: 0 auto;
+   min-height: 76.4vh;
 }
 
 .navi {
     width: 100%;
-    height: 80px;
     padding: 15px;
 }
 
 
-
-.elementos {
-    width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-}
 
 .navi li {
     border: 1px solid rgb(65, 126, 100);
@@ -59,11 +52,7 @@
 }
 
 
-.elementos form {
-    margin-left: 350px;
-}
-
-.elementos input {
+.navi input {
     padding: 7px;
 }
 

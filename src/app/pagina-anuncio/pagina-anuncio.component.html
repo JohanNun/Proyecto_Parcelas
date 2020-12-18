@@ -102,7 +102,7 @@
 
 
     </div>
-    <input class="btn boton" type="submit" value="Enviar mensaje" [routerLink]="['/mensaje']">
+    <input class="btn boton" type="submit" value="Enviar mensaje" (click)="createConversacion(usuario.id)">
 
     <p *ngIf="!usuariosService.isLogged()" class=" warn text-success" (click)="onClick('login')">Inicia sesion para
         mandar un mensaje</p>

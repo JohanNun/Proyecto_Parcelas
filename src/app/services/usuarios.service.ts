@@ -15,7 +15,6 @@ export interface usuario {
   locacion: string;
   telefono: string;
   fecha_nacimiento: Date;
-  experiencia: string;
   imagen: string;
   descripcion: string;
 }

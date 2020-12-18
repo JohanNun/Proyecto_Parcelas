@@ -166,12 +166,6 @@ export class PaginaBusquedaComponent implements OnInit {
 
   agregarFav(pCora) {
 
-    if (pCora === false) {
-      pCora = true;
-    } else {
-      pCora = false;
-    }
-    console.log(pCora);
 
 
   }

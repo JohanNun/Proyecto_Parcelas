@@ -6,7 +6,6 @@ export interface Mensaje {
   fecha: string;
   fk_conversacion: number;
   fk_usuario_id: number;
-  fk_usuario_recibe: number;
   id: number;
   texto: string;
 }
@@ -91,6 +90,20 @@ export class MensajesService {
 
     return this.httpClient.post<Mensaje>(`${this.baserUrl}/nuevo_mensaje/${pIdConversacion}`, { texto: pTexto, fk_usuario_manda: pUsuario, fk_conversacion: pIdConversacion }, httpOptions).toPromise();
   }
+
+
+
+  createConversacion(pUsuario1, pUsuario2): Promise<Conversacion> {
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'authorization': localStorage.getItem('login_usuario')
+      })
+    }
+
+    return this.httpClient.post<Conversacion>(`${this.baserUrl}/nueva_conversacion/${pUsuario2}`, { usuario1: pUsuario1, usuario2: pUsuario2 }, httpOptions).toPromise();
+  }
+
+
 
 
   borrar(idMensaje): Promise<Mensaje> {

@@ -26,13 +26,6 @@ button:hover {
   }
   
   
-.cancelbtn {
-    width: auto;
-    padding: 10px 18px;
-    background-color: #d80f0f;
-    font-weight: 600;
-  }
-  
   
 .imgcontainer {
     text-align: center;
@@ -61,17 +54,7 @@ img.avatar {
     font-weight: 600;
 }  
 
-span.nopassword {
-    float: right;
-    padding-top: 16px;
-    color: rgb(45, 110, 51);
-    font-weight: 600;
-  }
-
-.nopassword a {
-  color: rgb(7, 64, 71);
-  font-weight: 600;
-}  
+ 
   
  
 .contenido {
@@ -87,17 +70,5 @@ span.nopassword {
   
   
   
-.close {
-    position: absolute;
-    right: 25px;
-    top: 0;
-    color: #000;
-    font-size: 35px;
-    font-weight: bold;
-  }
-  
-.close:hover, .close:focus {
-    color: red;
-    cursor: pointer;
-  }
+
   
