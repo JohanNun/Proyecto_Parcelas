@@ -4,31 +4,27 @@
 
     <div class="busqueda">
 
-        <input type="text" placeholder="Busca lo que quieres cultivar...">
-        <button class="boton btn"><i class="fas fa-search"></i></button>
+        <input type="text" placeholder="Busca lo que quieres cultivar..." [(ngModel)]="cultivo">
+        <button class="boton btn"><i class="fas fa-search" (click)="onSearch($event)"></i></button>
 
     </div>
 
     <div class="alimento card mb-3 col-md-10">
 
-        <div class="row no-gutters">
+        <div class="row no-gutters" *ngFor="let element of cultivos">
 
             <div class="columna">
                 <div class="col-md-3">
-                    <img src="/assets/images/oranges.jpg" class="card-img" alt="...">
+                    <img src="{{element.imagen}}" class="card-img">
                 </div>
 
                 <div class="texto col-md-9">
 
                     <div class="nombre">
-                        <h4 class="card-title">Nombre alimento</h4>
+                        <h4 class="card-title">{{element.nombre}}</h4>
                     </div>
 
-                    <p>Breve descripcion: Planta: árbol de tamaño mediano que alcanza una altura
-                        máxima de 5-6 m. Tronco de corteza pardo-azulada, brillante, lisa o agrietada
-                        longitudinalmente.
-                        Produce ramas alternas, pequeñas, delgadas, unas veces lisas, glabras y otras pubescentes y
-                        vellosas.</p>
+                    <p>{{ element.descripcion }}</p>
                 </div>
 
             </div>
@@ -37,18 +33,7 @@
 
 
                 <h5>Cultivo</h5>
-                <p> Es uno de los frutales más rústicos y fáciles de cultivar. Resiste bien las bajas temperaturas.
-                    Dado lo temprano de su floración, en algunas exposiciones puede sufrir con las heladas
-                    primaverales; sin embargo, las flores son bastante resistentes a la misma. Prefiere los climas
-                    templados, pero se desarrolla bien en climas relativamente fríos, con tal de cultivarlo en
-                    sitios bien abrigados. Las variedades europeas son bastante resistentes a las heladas
-                    primaverales, pero las japonesas y americanas son más exigentes en temperatura y humedad,
-                    cultivándose en las exposiciones sur y este. Sufre la escasez hídrica en verano. Los frutos y
-                    las ramas finas son sensibles a los vientos. Puede cultivarse hasta altitudes de 700 m.
-
-                    En cuanto al suelo, aguanta bien la caliza, la humedad y los terrenos compactos. Debido a su
-                    sistema radicular superficial, tolera la humedad y puede vivir en terrenos poco profundos mejor
-                    que otros frutales, pero es necesario que el subsuelo sea fresco, pero sin humedad en exceso.
+                <p> {{ element.siembra }}
                 </p>
 
 
