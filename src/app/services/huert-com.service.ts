@@ -15,19 +15,13 @@ export class HuertComService {
 
   getAll(): any {
     return this.httpClient.get<any>(this.baseUrl).toPromise()
-    /* .then(res => {
-      return res
-    })
-    .catch(error => console.log(error)) */
+
   }
 
 
   getById(pId): any {
     return this.httpClient.get<any>(`${this.baseUrl}/${pId}`).toPromise()
-    /* .then(res => {
-      return res.id == pId;
-    })
-    .catch(error => console.log(error)) */
+
   }
 
 

@@ -22,6 +22,7 @@ const routes: Routes = [
   { path: 'huertos-colectivos', component: HuertosComunitariosComponent },
   { path: 'huertos-colectivos/:huertoId', component: HuertoPublicoComponent },
   { path: 'info-cultivo', component: InfoCultivoComponent },
+  { path: 'info-cultivo/:pNombre', component: InfoCultivoComponent },
   { path: 'form', component: FormularioComponent },
   { path: 'login', component: LoginComponent },
   { path: 'pagina-busqueda/:ciudad', component: PaginaBusquedaComponent },

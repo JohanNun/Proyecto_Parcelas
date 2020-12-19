@@ -15,28 +15,10 @@ export class PaginaBusquedaComponent implements OnInit {
   parcelitas: parcela[];
   imagenes: any[];
   parcelas: any[];
-  cora: boolean;
-  arrCora: any[];
-
   busqueda: string;
   subscripcion: Subscription
 
 
-
-  /*   responsiveOptions: any[] = [
-      {
-        breakpoint: '1024px',
-        numVisible: 5
-      },
-      {
-        breakpoint: '768px',
-        numVisible: 3
-      },
-      {
-        breakpoint: '560px',
-        numVisible: 1
-      }
-    ]; */
 
   constructor(private router: Router,
     private imagenesService: ImagenesgaleriaService,
@@ -44,8 +26,7 @@ export class PaginaBusquedaComponent implements OnInit {
     private activatedRoute: ActivatedRoute) {
 
     this.parcelas = [];
-    this.cora = false;
-    this.arrCora = [];
+
 
   }
 
@@ -164,10 +145,5 @@ export class PaginaBusquedaComponent implements OnInit {
   }
 
 
-  agregarFav(pCora) {
-
-
-
-  }
 
 }

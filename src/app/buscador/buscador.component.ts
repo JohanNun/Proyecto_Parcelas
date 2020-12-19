@@ -19,9 +19,7 @@ export class BuscadorComponent implements OnInit {
     private parcelasService: ParcelasService,
     private activatedRoute: ActivatedRoute) {
 
-    /* this.formularioBuscador = new FormGroup({
-      ciudad: new FormControl('')
-    }) */
+
   }
 
   ngOnInit(): void {

@@ -1,21 +1,37 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
+
+export interface cultivo {
+  id: number;
+  imagen: string;
+  nombre: string;
+  descripcion: string;
+  siembra: string;
+  transplante: string;
+  sustrato: string;
+  clima: string;
+  riego: string;
+  luz: string;
+  plaga: string;
+  cosecha: string;
+}
+
+
 @Injectable({
   providedIn: 'root'
 })
 export class CultivoService {
 
-  constructor(private httpClient: HttpClient) { }
+  baseUrl: string;
 
-  getInfo(pId) {
+  constructor(private httpClient: HttpClient) {
+    this.baseUrl = "http://localhost:3000/api/cultivos"
+  }
 
-    return this.httpClient.get<any>('../../assets/cultivos.json').toPromise()
-      .then(res => {
-        pId = res;
-        console.log(pId);
+  getInfo(pNombre): Promise<cultivo> {
 
-      })
+    return this.httpClient.get<cultivo>(`${this.baseUrl}/${pNombre}`).toPromise()
 
 
   }
