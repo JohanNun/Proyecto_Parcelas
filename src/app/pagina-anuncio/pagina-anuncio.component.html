@@ -5,7 +5,7 @@
     <div class="cabecera">
         <div class="foto">
             <img src="{{usuario?.imagen}}">
-            <h5 (click)="onClick(usuario?.id)">Enlace a perfil del usuario</h5>
+            <h5 (click)="onClick(usuario?.id)">Ver perfil de {{usuario.nombre_usuario}}</h5>
         </div>
 
         <div class="texto">
@@ -20,7 +20,7 @@
                 <ul>
                     <li>Tamaño total: {{ parcela?.tamano_total}}</li>
                     <li>Tamaño disponible: {{ parcela?.tamano_disponible}} </li>
-                    <li>Se puede o no encargar el anunciante</li>
+
                 </ul>
             </div>
         </div>
