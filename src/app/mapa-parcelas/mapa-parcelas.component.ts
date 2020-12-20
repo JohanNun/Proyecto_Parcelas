@@ -34,7 +34,7 @@ export class MapaParcelasComponent implements OnInit {
 
       this.latitud = position.coords.latitude;
       this.longitud = position.coords.longitude;
-      this.zoom = 14;
+      this.zoom = 11;
 
     });
 

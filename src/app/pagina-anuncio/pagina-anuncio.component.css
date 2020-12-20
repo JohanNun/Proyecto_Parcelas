@@ -28,7 +28,8 @@
 }
 
 .foto img {
-    width: 100%;
+    width: auto;
+    max-height: 200px;
 }
 
 .foto h5 {
@@ -45,7 +46,7 @@
 }
 
 .texto {
-    width: 70%;
+    width: 30%;
     display: block;
     margin-left: 20px;
     margin-top: 10px;
@@ -68,6 +69,39 @@
     margin-left: 7px;
 }
 
+.reserva {
+    width: 40%; 
+    padding-left: 10px;
+    margin-top: 10px;
+    margin-left: 15px;
+}
+
+.reserva h5 {
+    margin-bottom: 10px;
+}
+
+.reserva label {
+    width: 100%; 
+}
+
+.reserva input {
+    padding-left: 10px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+
+.botonReserva {
+    width: 120px;
+    height: 40px;
+    border-radius: 3px;
+    background-color: rgb(28, 172, 124);
+    color: white;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+
+
 .linea{
     width: 95%;
     height: 1.5px;
@@ -86,6 +120,18 @@
     margin-bottom: 15px;
 }
 
+.galeria {
+    width: 100%;
+    padding: 0px 5px; 
+    margin-bottom: 20px;
+    margin-top: 45px;
+}
+
+.galeria img {
+    width: 100%;
+}
+
+
 
 .pie {
     width: 100%;
@@ -103,14 +149,11 @@
 }
 
 
-.galeria {
-    width: 55%;
-    padding: 0px 5px; 
+.duda {
+    margin-top: 30px;
+    margin-left: 20px;
     margin-bottom: 20px;
-    margin-top: 45px;
 }
-
-
 
 .boton {
     width: 120px;
@@ -118,9 +161,8 @@
     border-radius: 3px;
     background-color: rgb(28, 172, 124);
     color: white;
-    margin-top: 30px;
-    margin-left: 20px;
-    margin-bottom: 20px;
+    margin-top: 15px;
+
 }
 
 
@@ -139,11 +181,21 @@
 
     .mainCont{
         width: 100%;
+        padding: 0px;
+        margin: 0px; 
     }
+
+   
     .foto{
         width: 90%; 
         margin-left: 1
         0px;
+    }
+
+
+    .texto {
+        width: 100%;
+        margin-left: 15px;
     }
 
     .mapa { 
@@ -154,6 +206,32 @@
         margin-top: 30px;
         width: 100%;
     }
+
+    .reserva {
+        width: 100%; 
+        padding: 10px;
+        margin-top: 30px;
+        margin-left: 5px;
+    }
+
+    .tablacomentarios{
+        width: 100%;
+        margin: 0px;
+        padding: 0px; 
+    }
+
+
+    .comentarios p{
+        width: 100%;
+    }
+
+    .comentarios i{
+        font-size: 10px;
+    }
+
+    .duda {
+        margin-bottom: 35px;
+    }
 }
 
 
@@ -163,16 +241,18 @@
     width: 100%;
     margin:40px 20px;
     padding: 10px;
+    border-radius: 5px;
     background-color: rgb(65, 126, 100);
     -webkit-box-shadow: 0px 0px 9px -2px rgba(80, 214, 18, 0.575);  
     box-shadow: 0px 0px 9px -2px rgba(3, 85, 3, 0.418);
 }
 
 .listacomentarios{
-    max-width: 800px;
+    width: 95%;
     max-height: 300px;
-    margin: 30px 10px;
+    margin: 30px auto;
     overflow-y: scroll;
+    overflow-x: hidden;
     background-color: white;
     -webkit-box-shadow: 0px 0px 9px -2px rgba(80, 214, 18, 0.575);  
     box-shadow: 0px 0px 9px -2px rgba(3, 85, 3, 0.418);
@@ -183,10 +263,8 @@
     margin: 2px 5px 30px 5px;
     width: 99%;
     padding: 10px 5px;
-    
     display: flex;
     flex-wrap: wrap;
-    
     -webkit-box-shadow: 0px 0px 9px -2px rgba(80, 214, 18, 0.575);  
     box-shadow: 0px 0px 9px -2px rgba(3, 85, 3, 0.418);
 }
@@ -201,6 +279,7 @@
 }
 
 .comentarios p{
+    width: 100%;
     margin-left: 20px;
     text-overflow: ellipsis;
     background-color: lightgreen;
@@ -209,13 +288,13 @@
 }
 
 .comentarios span{
-    width: 12%;
+    width: 100%;
+    margin-bottom: 5px;
     font-size: 0.8em;
     color: rgba(0, 0, 0, 0.493);
 }
 
 .comentarios button{
-    
     border: none;
     background-color: transparent;
     width: 5%;
@@ -230,15 +309,24 @@
 }
 
 
+.escribircomentario {
+    width: 95%;
+    margin: 0 auto; 
+}
+
 .escribircomentario textarea{
     padding: 10px;
-    width: 100%;
-    
+    width: 100%; 
+    border-radius: 5px;
     -webkit-box-shadow: 0px 0px 9px -2px rgba(80, 214, 18, 0.575);  
     box-shadow: 0px 0px 9px -2px rgba(3, 85, 3, 0.418);
 }
+
 .escribircomentario input{
     margin-top: 20px;
+    margin-bottom: 20px;
     padding: 10px;
+    border-radius: 5px;
     background-color:rgb(206, 175, 74);
+    color: white;
 }

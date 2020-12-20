@@ -1,11 +1,11 @@
 <navbar></navbar>
 
-<div class="mainCont container">
+<div class="mainCont">
 
     <div class="cabecera">
         <div class="foto">
             <img src="{{usuario?.imagen}}">
-            <h5 (click)="onClick(usuario?.id)">Ver perfil de {{usuario.nombre_usuario}}</h5>
+            <h5 (click)="onClick(usuario?.id)">Ver perfil de {{usuario?.nombre_usuario}}</h5>
         </div>
 
         <div class="texto">
@@ -18,93 +18,105 @@
                 <h5>Caracteristicas</h5>
 
                 <ul>
-                    <li>Tamaño total: {{ parcela?.tamano_total}}</li>
-                    <li>Tamaño disponible: {{ parcela?.tamano_disponible}} </li>
+                    <li>Tamaño total: {{ parcela?.tamano_total}} m²</li>
+                    <li>Tamaño disponible: {{ parcela?.tamano_disponible}} m²</li>
 
                 </ul>
             </div>
+
+
+
         </div>
-    </div>
+
+        <div class="reserva">
+            <form class="form-group row col-12" [formGroup]="formularioReserva" (ngSubmit)="onSubmit()">
+                <h5>Te gusta esta parcela? </h5>
+                <label>Indica cuántos m² quieres y reservala!</label>
+                <input type="number" class="form-control" formControlName="tamano">
+                <p class="text-danger"
+                    *ngIf="formularioReserva.get('tamano').hasError('required') && formularioReserva.get('tamano').touched">
+                    Introduce un valor correcto.
+                </p>
 
 
-    <div class="linea"></div>
-
-
-    <div class="descripcion">
-
-
-        <h5>Comentarios del anunciante</h5>
-
-        <p></p>
-
-    </div>
-
-
-
-    <div class="pie">
-
-        <div class="mapa">
-            <h5>Ubicación</h5>
-            <app-mapa-parcelas [parcelas]="parcelas" [buscador]="false" [fitBounds]="false">
-
-            </app-mapa-parcelas>
+                <input class="botonReserva btn btn-block" type="submit" value="Reserva tu parcela"
+                    [disabled]="!formularioReserva.valid && !usuariosService.isLogged()">
+                <p *ngIf="!usuariosService.isLogged() && formularioReserva.touched" class=" text-success"
+                    (click)="redirigir('login')">Inicia sesion para
+                    registrar tu parcela</p>
+            </form>
+            <p-toast position="top-right"></p-toast>
         </div>
 
 
-
-        <div class="tablacomentarios">
-            <div class="listacomentarios">
-                <div class="comentarios" *ngFor="let comentario of comentarios">
-                    <img src="{{comentario.imagen}}" alt="">
-                    <h5 (click)="onClickPaginaUsuario(comentario.fk_usuario)">{{comentario.nombre_usuario}}:</h5>
-                    <span>{{comentario.fecha | date: 'dd/MM/yyyy'}}</span>
-                    <button (click)="onClickDelete(comentario.id)"
-                        *ngIf="usuariosService.isLogged() && comentario.fk_usuario == idUsuario"><i
-                            class="fas fa-times"></i></button>
-                    <p>{{comentario.texto_comentario}}</p>
+        <div class="linea"></div>
 
 
-                </div>
-            </div>
-            <div class="escribircomentario">
-                <textarea placeholder="Escribe aquí un comentario..." [(ngModel)]="nuevocomentario" cols="90"
-                    rows="4"></textarea>
-                <input type="submit" class="btn btn-success" value="Enviar comentario" (click)="onClickComentario()">
+        <div class="descripcion">
+
+
+            <h5>Comentarios del anunciante</h5>
+
+            <p>{{parcela.descripcion}}</p>
+
+            <div class="galeria">
+
+                <img src="{{ parcela?.images}}" alt="">
+
             </div>
 
-
-
         </div>
 
 
 
+        <div class="pie">
+
+            <div class="mapa">
+                <h5>Ubicación</h5>
+                <app-mapa-parcelas [parcelas]="parcelas" [buscador]="false" [fitBounds]="false">
+
+                </app-mapa-parcelas>
+            </div>
 
 
 
-        <div class="galeria">
-            <!-- <p-galleria [(value)]="imagenes" [responsiveOptions]="responsiveOptions"
-                [containerStyle]="{'max-width': '640px'}" [numVisible]="5" [showThumbnails]="false"
-                [showIndicators]="true">
-                <ng-template pTemplate="item" let-item>
-                    <img [src]="item.previewImageSrc" style="width: 100%; display: block;" />
-                </ng-template>
-                <ng-template pTemplate="thumbnail" let-item>
-                    <div class="p-grid p-nogutter p-justify-center">
-                        <img [src]="item.thumbnailImageSrc" style="display: block;" />
+            <div class="tablacomentarios">
+                <div class="listacomentarios">
+                    <div class="comentarios" *ngFor="let comentario of comentarios">
+                        <img src="{{comentario?.imagen}}" alt="">
+                        <h5 (click)="onClickPaginaUsuario(comentario?.fk_usuario)">{{comentario?.nombre_usuario}}:</h5>
+                        <span>{{comentario?.fecha | date: 'dd/MM/yyyy'}}</span>
+
+                        <p>{{comentario?.texto_comentario}}</p>
+                        <button (click)="onClickDelete(comentario?.id)"
+                            *ngIf="usuariosService.isLogged() && comentario?.fk_usuario == idUsuario"><i
+                                class="fas fa-times"></i></button>
+
+
                     </div>
-                </ng-template>
-            </p-galleria> -->
-            <img src="{{ parcela?.images}}" alt="">
+                </div>
+                <div class="escribircomentario">
+                    <textarea placeholder="Escribe aquí un comentario..." [(ngModel)]="nuevocomentario" cols="90"
+                        rows="4"></textarea>
+                    <input type="submit" class="btn btn-block" value="Enviar comentario" (click)="onClickComentario()">
+                </div>
+
+            </div>
+
+
+
 
 
 
         </div>
 
+        <div class="duda">
+            <h5>Tienes una duda? Contacta con el dueño aquí ⬇</h5>
 
+            <input class="btn boton" type="submit" value="Enviar mensaje" (click)="createConversacion(usuario.id)">
+
+            <p *ngIf="!usuariosService.isLogged()" class=" warn text-success" (click)="onClick('login')">Inicia sesion
+                para
+                mandar un mensaje</p>
+        </div>
     </div>
-    <input class="btn boton" type="submit" value="Enviar mensaje" (click)="createConversacion(usuario.id)">
-
-    <p *ngIf="!usuariosService.isLogged()" class=" warn text-success" (click)="onClick('login')">Inicia sesion para
-        mandar un mensaje</p>
-
-</div>

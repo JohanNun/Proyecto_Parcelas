@@ -1,16 +1,19 @@
-import { mapToMapExpression } from '@angular/compiler/src/render3/util';
 import { Component, Input, OnInit } from '@angular/core';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
+import { MessageService } from 'primeng/api';
 import { comentario, ComentariosService } from '../services/comentarios.service';
 import { ImagenesgaleriaService } from '../services/imagenesgaleria.service';
 import { MensajesService } from '../services/mensajes.service';
 import { parcela, ParcelasService } from '../services/parcelas.service';
+import { TrozosService } from '../services/trozos.service';
 import { usuario, UsuariosService } from '../services/usuarios.service';
 
 @Component({
   selector: 'app-pagina-anuncio',
   templateUrl: './pagina-anuncio.component.html',
-  styleUrls: ['./pagina-anuncio.component.css']
+  styleUrls: ['./pagina-anuncio.component.css'],
+  providers: [MessageService]
 })
 export class PaginaAnuncioComponent implements OnInit {
 
@@ -23,21 +26,7 @@ export class PaginaAnuncioComponent implements OnInit {
   nuevocomentario: string;
   idUsuario: number;
 
-
-  responsiveOptions: any[] = [
-    {
-      breakpoint: '1024px',
-      numVisible: 5
-    },
-    {
-      breakpoint: '768px',
-      numVisible: 3
-    },
-    {
-      breakpoint: '560px',
-      numVisible: 1
-    }
-  ];
+  formularioReserva: FormGroup;
 
   constructor(private router: Router,
     public usuariosService: UsuariosService,
@@ -45,11 +34,19 @@ export class PaginaAnuncioComponent implements OnInit {
     private parcelasService: ParcelasService,
     private comentariosService: ComentariosService,
     private activatedRoute: ActivatedRoute,
-    private mensajesService: MensajesService) {
+    private mensajesService: MensajesService,
+    private trozosService: TrozosService,
+    private messageService: MessageService) {
     this.parcelas = [];
     this.comentarios = [];
     this.usuario2 = [];
+
+    this.formularioReserva = new FormGroup({
+      tamano: new FormControl('', [Validators.required])
+    });
   }
+
+
 
   ngOnInit(): void {
     this.imagenesService.getImagenes()
@@ -95,11 +92,7 @@ export class PaginaAnuncioComponent implements OnInit {
         this.parcela = result;
         this.usuariosService.getUsuario(this.parcela.fk_usuario)
           .then(result => {
-<<<<<<< HEAD
-            let idUsuario = localStorage.getItem('idUsuario');
-=======
             this.idUsuario = parseInt(localStorage.getItem('idUsuario'));
->>>>>>> feature
             this.usuario = result;
             console.log(this.usuario);
 
@@ -184,6 +177,31 @@ export class PaginaAnuncioComponent implements OnInit {
         this.router.navigate(['conversacion', pUsuarioId]);
       })
   }
+
+
+
+
+  redirigir(pRuta) {
+    this.router.navigate([pRuta])
+  }
+
+
+
+  onSubmit() {
+
+    let id = this.activatedRoute.snapshot.params['idParcela'];
+    let idUsuario = localStorage.getItem('idUsuario');
+
+    this.trozosService.reservar(this.formularioReserva.value, id, idUsuario)
+      .then(response => {
+        console.log(response);
+        this.messageService.add({ severity: 'success', summary: 'Tu reserva se ha hecho correctamente! ', detail: 'Urban Garden' });
+
+        this.formularioReserva.reset();
+      })
+      .catch(error => console.log(error))
+  }
+
 
 
 }
