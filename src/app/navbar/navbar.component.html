@@ -1,4 +1,5 @@
-<div class="mainCont" (scroll)="onScroll($event);">
+<div class="mainCont" (scroll)="doSomethingOnWindowsScroll($event)"
+    [ngClass]="[cambiaColor == false ? 'colorado' : '']">
 
     <div class="mainCont2">
 

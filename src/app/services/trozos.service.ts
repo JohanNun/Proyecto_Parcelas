@@ -34,8 +34,28 @@ export class TrozosService {
   }
 
 
-  getByIdUsuario(pIdUsuario): Promise<Trozo> {
-    return this.httpClient.get<Trozo>(`${this.baseUrl}/user/${pIdUsuario}`).toPromise();
+  getByIdUsuario(pIdUsuario, pIdParcela): Promise<Trozo[]> {
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'authorization': localStorage.getItem('login_usuario')
+      })
+    }
+
+
+    return this.httpClient.get<Trozo[]>(`${this.baseUrl}/user/${pIdParcela}`, httpOptions).toPromise();
+  }
+
+
+  getTrozosdelUsuario(pIdUsuario, pIdParcela): Promise<Trozo> {
+
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'authorization': localStorage.getItem('login_usuario')
+      })
+    }
+
+
+    return this.httpClient.get<Trozo>(`${this.baseUrl}/trozosUsuario/${pIdParcela}`, httpOptions).toPromise();
   }
 
 

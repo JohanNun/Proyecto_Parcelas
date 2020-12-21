@@ -13,7 +13,7 @@ export class InfoCultivoComponent implements OnInit {
   cultivos: cultivo[];
   cultivo: cultivo;
   busqueda: string;
-  subscripcion: Subscription;
+  sinDiv: boolean = true;
 
 
   constructor(private cultivoService: CultivoService,
@@ -27,14 +27,25 @@ export class InfoCultivoComponent implements OnInit {
 
 
   onSearch() {
+    console.log(this.busqueda);
+
 
     if (this.busqueda === "") {
 
     } else {
       this.cultivoService.getInfo(this.busqueda)
         .then(res => {
-          this.cultivo = res;
-          this.busqueda = "";
+          if (res) {
+            this.sinDiv = false;
+            this.cultivo = res;
+            this.busqueda = "";
+          } else {
+            this.sinDiv = true;
+          }
+
+
+
+
         })
     }
 

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { parcela, ParcelasService } from '../services/parcelas.service';
+import { Trozo, TrozosService } from '../services/trozos.service';
 import { usuario, UsuariosService } from '../services/usuarios.service';
 
 @Component({
@@ -12,10 +13,14 @@ export class PerfilUsuarioComponent implements OnInit {
 
   parcelitas: parcela[];
   usuario: usuario;
+  trozo: Trozo;
+  trozos: any[];
+
 
   constructor(private activatedRoute: ActivatedRoute,
     private usuarioService: UsuariosService,
     private parcelasService: ParcelasService,
+    private TrozosService: TrozosService,
     private router: Router) { }
 
   ngOnInit(): void {
@@ -26,6 +31,7 @@ export class PerfilUsuarioComponent implements OnInit {
     this.usuarioService.getUsuario(id)
       .then(response => {
         this.usuario = response;
+        console.log(this.usuario);
 
 
       })
@@ -42,6 +48,7 @@ export class PerfilUsuarioComponent implements OnInit {
       })
       .catch(error => console.log(error)
       )
+
 
 
 

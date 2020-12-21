@@ -34,6 +34,13 @@
                 <h3>About</h3>
                 <p><span>Descripción: </span> {{usuario?.descripcion}} </p>
             </div>
+
+            <div class="trozos">
+                <h3>Mis trozos</h3>
+                <div class="trocitos" *ngFor="let trozo of usuario?.trozos">
+                    <p>{{trozo.titulo}}</p>
+                </div>
+            </div>
         </div>
 
 

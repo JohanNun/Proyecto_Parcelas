@@ -14,8 +14,7 @@ export class NavbarComponent implements OnInit {
   progress: ProgressSpinnerModule;
   imagen: string;
   usuario: any;
-  scrollInterval = undefined;
-  lastScroll = false;
+  cambiaColor: boolean = true;
 
 
   constructor(private router: Router,
@@ -58,15 +57,19 @@ export class NavbarComponent implements OnInit {
 
 
 
-  /*  @HostListener("window:scroll", ['$event'])
-   doSomethingOnWindowsScroll($event) {
-     /* console.log($event);
- 
-     let scrollOffset = $event.srcElement.children[0].scrollTop;
-     console.log("window scroll: ", scrollOffset);
- 
-     if (scroll)
-   }
-  */
+  @HostListener("window:scroll", ['$event'])
+  doSomethingOnWindowsScroll($event) {
+
+
+    let scrollOffset = $event.srcElement.children[0].scrollTop;
+    console.log("window scroll: ", scrollOffset);
+
+    if (scrollOffset > 125) {
+      this.cambiaColor = false;
+    } else {
+      this.cambiaColor = true;
+    }
+  }
+
 
 }

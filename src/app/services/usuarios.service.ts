@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
+import { Trozo } from './trozos.service';
 
 
 export interface usuario {
@@ -17,6 +18,12 @@ export interface usuario {
   fecha_nacimiento: Date;
   imagen: string;
   descripcion: string;
+  trozos: [{
+    calle: string;
+    images: string;
+    titulo: string;
+    suma: number;
+  }];
 }
 
 @Injectable({
