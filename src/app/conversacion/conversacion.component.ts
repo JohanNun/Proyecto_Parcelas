@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Conversacion, MensajesService } from '../services/mensajes.service';
+import { Conversacion, Mensaje, MensajesService } from '../services/mensajes.service';
 import { usuario, UsuariosService } from '../services/usuarios.service';
 
 @Component({
@@ -14,6 +14,7 @@ export class ConversacionComponent implements OnInit {
   conversaciones: Conversacion[];
   usuario: usuario;
   texto: string;
+  mensaje: Mensaje;
 
 
   constructor(private activatedRoute: ActivatedRoute,
@@ -54,11 +55,20 @@ export class ConversacionComponent implements OnInit {
 
     this.mensajesService.create(this.texto, idUsuario, id)
       .then(result => {
+        console.log(result);
+        this.mensaje = result;
+        console.log(this.mensaje.fk_conversacion);
+
         this.mensajesService.getConversacion(id)
           .then(result => {
+            console.log(result);
+
             this.conversacion = result;
             this.texto = "";
           })
+
+
+
       })
       .catch()
   }
