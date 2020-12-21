@@ -11,7 +11,7 @@ navbar{
 
 .mainContent{
     width: 70%;
-    background-color: rgb(236, 226, 236);
+    background-color: rgba(199, 236, 233, 0.123);
     padding: 20px;
     margin: 0 auto; 
 }
@@ -70,8 +70,8 @@ navbar{
     margin-top: 15px;
     padding-bottom: 15px;
     padding-top: 15px;
-    border-bottom: 2px solid rgb(69, 105, 69);
-    border-top: 2px solid rgb(69, 105, 69);
+    border-bottom: 2px solid rgb(103, 136, 103);
+    border-top: 2px solid rgb(103, 131, 103);
 }
 
 @media (max-width:48em){

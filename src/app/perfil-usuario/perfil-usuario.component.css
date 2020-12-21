@@ -74,8 +74,8 @@
 .imagenusuario img{
     width: 190px;
     border-radius: 50%;
-    -webkit-box-shadow: 0px 0px 7px -2px rgba(80, 214, 18, 0.575);  
-    box-shadow: 0px 0px 7px -2px rgba(3, 85, 3, 0.418);
+    -webkit-box-shadow: 0px 0px 4px -2px rgba(80, 214, 18, 0.575);  
+    box-shadow: 0px 0px 4px -2px rgba(3, 85, 3, 0.418);
 }
 
 .todainfo{
@@ -105,6 +105,40 @@
     margin-top: 16px;
 }
 
+.trozos {
+    flex-wrap: wrap;
+    display: flex;
+    overflow-y: scroll;
+    height: 200px;
+}
+
+.trocitos {
+border-bottom: 1px solid grey;
+margin-bottom: 10px;
+width: 100%;
+}
+
+.trocitos span {
+    margin-bottom: 10px;
+}
+
+.trocitos img {
+    width: 120px;
+    height: 70px;
+    
+}
+
+.trocitos button {
+    margin-top: 10px;
+    margin-left: 100px;
+    width: 120px;
+    height: 40px;
+    border: 1px solid black;
+    border-radius: 5px;
+    background-color: rgb(206, 175, 74);
+    color: white;
+}
+
 
 
 
@@ -124,7 +158,7 @@
 }
 
 .filita {
-    height: 400px;
+    height: 425px;
     overflow-y: scroll;
 }
 
@@ -346,6 +380,10 @@
 
         width: 90px;
     }
-	
+    
+    .trocitos button {
+        margin-top: 10px;
+        margin-left: 10px;
+}
 }
 

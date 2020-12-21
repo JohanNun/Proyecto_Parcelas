@@ -62,7 +62,7 @@ export class NavbarComponent implements OnInit {
 
 
     let scrollOffset = $event.srcElement.children[0].scrollTop;
-    console.log("window scroll: ", scrollOffset);
+    /* console.log("window scroll: ", scrollOffset); */
 
     if (scrollOffset > 125) {
       this.cambiaColor = false;

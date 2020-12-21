@@ -33,14 +33,24 @@
 
                 <h3>About</h3>
                 <p><span>Descripción: </span> {{usuario?.descripcion}} </p>
-            </div>
 
-            <div class="trozos">
+
                 <h3>Mis trozos</h3>
-                <div class="trocitos" *ngFor="let trozo of usuario?.trozos">
-                    <p>{{trozo.titulo}}</p>
+                <div class="trozos">
+
+                    <div class="trocitos" *ngFor="let trozo of usuario?.trozos">
+
+                        <p>{{trozo.calle}}</p>
+                        <img src="{{trozo.images}}">
+                        <button class="btn">Cancelar vínculo</button>
+                        <p><span>{{trozo.suma}} / m²</span></p>
+
+
+                    </div>
                 </div>
             </div>
+
+
         </div>
 
 

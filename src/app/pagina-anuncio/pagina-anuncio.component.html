@@ -5,7 +5,7 @@
     <div class="cabecera">
         <div class="foto">
             <img src="{{usuario?.imagen}}">
-            <h5 (click)="onClick(usuario?.id)">Ver perfil de {{usuario?.nombre_usuario}}</h5>
+            <h5 (click)="onClick(usuario?.id)">{{usuario?.nombre_usuario}}</h5>
         </div>
 
         <div class="texto">
@@ -43,7 +43,7 @@
                     [disabled]="!formularioReserva.valid && !usuariosService.isLogged()">
                 <p *ngIf="!usuariosService.isLogged() && formularioReserva.touched" class=" text-success"
                     (click)="redirigir('login')">Inicia sesion para
-                    registrar tu parcela</p>
+                    reservar tu parcela</p>
             </form>
             <p-toast position="top-right"></p-toast>
         </div>
