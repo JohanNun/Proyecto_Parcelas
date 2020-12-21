@@ -4,7 +4,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { MessageService } from 'primeng/api';
 import { comentario, ComentariosService } from '../services/comentarios.service';
 import { ImagenesgaleriaService } from '../services/imagenesgaleria.service';
-import { MensajesService } from '../services/mensajes.service';
+import { Conversacion, MensajesService } from '../services/mensajes.service';
 import { parcela, ParcelasService } from '../services/parcelas.service';
 import { TrozosService } from '../services/trozos.service';
 import { usuario, UsuariosService } from '../services/usuarios.service';
@@ -25,6 +25,7 @@ export class PaginaAnuncioComponent implements OnInit {
   comentarios: comentario[];
   nuevocomentario: string;
   idUsuario: number;
+  conversacion: Conversacion;
 
   formularioReserva: FormGroup;
 
@@ -174,7 +175,10 @@ export class PaginaAnuncioComponent implements OnInit {
 
     this.mensajesService.createConversacion(idUsuario, pUsuarioId)
       .then(result => {
-        this.router.navigate(['conversacion', pUsuarioId]);
+        this.conversacion = result;
+        console.log(this.conversacion);
+
+        this.router.navigate(['conversacion', this.conversacion.id]);
       })
   }
 

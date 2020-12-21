@@ -14,6 +14,7 @@ export class ConversacionComponent implements OnInit {
   conversaciones: Conversacion[];
   usuario: usuario;
   texto: string;
+  mensaje: Mensaje;
 
 
   constructor(private activatedRoute: ActivatedRoute,
@@ -54,11 +55,20 @@ export class ConversacionComponent implements OnInit {
 
     this.mensajesService.create(this.texto, idUsuario, id)
       .then(result => {
+        console.log(result);
+        this.mensaje = result;
+        console.log(this.mensaje.fk_conversacion);
+
         this.mensajesService.getConversacion(id)
           .then(result => {
+            console.log(result);
+
             this.conversacion = result;
             this.texto = "";
           })
+
+
+
       })
       .catch()
   }
