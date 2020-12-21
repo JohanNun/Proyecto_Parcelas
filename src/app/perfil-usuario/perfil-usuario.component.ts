@@ -61,5 +61,12 @@ export class PerfilUsuarioComponent implements OnInit {
     this.router.navigate([pRuta, id]);
   }
 
+  onClickUpdateParcela(pId) {
+    console.log(pId);
+
+    this.router.navigate(['edita-parcela', pId]);
+  }
+
+
 
 }

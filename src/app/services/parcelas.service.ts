@@ -67,7 +67,9 @@ export class ParcelasService {
 
 
 
-
+  update(pFormValue): Promise<parcela> {
+    return this.httpClient.put<parcela>(this.baseUrl, pFormValue).toPromise();
+  }
 
 
 

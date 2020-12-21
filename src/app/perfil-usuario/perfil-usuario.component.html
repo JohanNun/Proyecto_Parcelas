@@ -55,10 +55,14 @@
                             <p class="card-text"> {{ parcela?.descripcion }} </p>
                             <p class="card-text text-muted"> {{ parcela?.calle }}</p>
                         </div>
+                        <button class="editaparcela" (click)="onClickUpdateParcela(this.parcela.id)">Editar
+                            Parcela</button>
                     </div>
                 </div>
             </div>
+
         </div>
+
     </div>
 
 
