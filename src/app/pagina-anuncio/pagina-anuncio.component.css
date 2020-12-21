@@ -29,6 +29,7 @@
 
 .foto img {
     width: auto;
+    max-width: 125px;
     max-height: 200px;
 }
 
@@ -167,6 +168,11 @@
 
 
 @media(max-width: 52em){
+
+.mainCont {
+    width: 95%; 
+}
+
     .mapa { 
         width: 100%;
     }

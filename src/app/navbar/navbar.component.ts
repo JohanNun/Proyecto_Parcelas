@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, HostListener, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { usuario, UsuariosService } from '../services/usuarios.service';
 import { ProgressSpinnerModule } from 'primeng/progressspinner';
@@ -14,6 +14,8 @@ export class NavbarComponent implements OnInit {
   progress: ProgressSpinnerModule;
   imagen: string;
   usuario: any;
+  scrollInterval = undefined;
+  lastScroll = false;
 
 
   constructor(private router: Router,
@@ -24,6 +26,8 @@ export class NavbarComponent implements OnInit {
     this.imagen = (localStorage.getItem('imagen_usuario') !== null) ? localStorage.getItem('imagen_usuario') : "";
     this.usuario = localStorage.getItem('idUsuario')
     console.log(this.usuario);
+
+
 
   }
 
@@ -51,8 +55,18 @@ export class NavbarComponent implements OnInit {
 
   }
 
+
+
+
+  /*  @HostListener("window:scroll", ['$event'])
+   doSomethingOnWindowsScroll($event) {
+     /* console.log($event);
+ 
+     let scrollOffset = $event.srcElement.children[0].scrollTop;
+     console.log("window scroll: ", scrollOffset);
+ 
+     if (scroll)
+   }
+  */
+
 }
-/* window.onscroll = () => {
-  const nav = document.querySelector('#navbar');
-  if(this.scrollY <= 200) nav.className = ''; else nav.className = 'scroll';
-}; */

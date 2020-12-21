@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Conversacion, MensajesService } from '../services/mensajes.service';
+import { Conversacion, Mensaje, MensajesService } from '../services/mensajes.service';
 import { usuario, UsuariosService } from '../services/usuarios.service';
 
 @Component({

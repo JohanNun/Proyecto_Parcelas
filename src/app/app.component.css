@@ -18,6 +18,10 @@
     font-family: var(--fuentePrimaria);
 }
 
+.logo img {
+    width: 80px; 
+}
+
 .pie ul {
    list-style: none;
 }
@@ -53,6 +57,10 @@
         margin-left: 6px;
     }
 
+    .logo img{
+        width: 60px;
+    }
+
     .fab, .far {
         padding: 25px 8px;
     }
@@ -61,4 +69,5 @@
         font-size: small;
     }
 }
+
 

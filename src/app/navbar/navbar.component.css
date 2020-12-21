@@ -27,6 +27,14 @@
     background-color: rgba(239, 245, 244, 0.137); 
 }
 
+.colorado {
+    border-bottom:1px ridge rgb(102, 5, 45); 
+    
+    border-bottom: 2px solid;
+      border-image-source: linear-gradient(45deg, rgb(52, 124, 105), rgb(51, 27, 56));
+      border-image-slice: 1;
+}
+
 
 .logo {
     margin-left: 15px;
@@ -50,7 +58,7 @@
 
 .venta{
     width: 100%;
-    margin-left: -30px;
+    margin-left: -35px;
     padding-right: 10px;
 }
 
@@ -168,6 +176,8 @@
 
 
 @media(max-width: 68em){
+
+    
     .contenido-desplegable{
         border: 2px solid green;
         border-radius: 10px 10px;
@@ -184,12 +194,23 @@
 
 @media(max-width: 62em){
 
+    .venta{
+        width: 100%;
+    }
+
+    .desplegable{
+        width: 30%;
+        margin-left: -30px;
+    }
+
     .venta button{
         width: 80%;
         padding: 0px;
         line-height: 1;
         font-size: 16px;
     }
+
+
 
 
     .contenido-desplegable{
@@ -213,7 +234,7 @@
 @media(max-width: 48em){
 
     .logo {
-        margin-left: -10px;
+        margin-left: 5px;
     }
 
     .logo img{
@@ -229,6 +250,16 @@
         justify-content: space-evenly;
     }
 
+    .venta{
+        width: 70%;
+        margin-left: -15px;
+    }
+
+    .desplegable {
+        margin-left: 10px;
+    }
+
+    
     .venta button{
         width: 100%;
         padding: 0px;
@@ -252,6 +283,12 @@
 
 
 @media(max-width: 39em){
+
+    .venta{
+        width: 100%;
+        margin-left: -35px;
+    }
+
     .contenido-desplegable{
         border: 2px solid green;
         border-radius: 10px 10px;
@@ -262,6 +299,15 @@
         background-color: white;
         width: 170px;  
         margin-top: 2px;
+    }
+
+    .desplegable{
+        margin-left: 0px;
+        width: 50%; 
+    }
+
+    .logo {
+        margin-left: -5px; 
     }
 }
 

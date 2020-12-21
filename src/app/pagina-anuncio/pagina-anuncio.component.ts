@@ -198,6 +198,19 @@ export class PaginaAnuncioComponent implements OnInit {
         this.messageService.add({ severity: 'success', summary: 'Tu reserva se ha hecho correctamente! ', detail: 'Urban Garden' });
 
         this.formularioReserva.reset();
+
+        this.parcelasService.getById(id)
+          .then(result => {
+            this.parcela = result;
+            this.usuariosService.getUsuario(this.parcela.fk_usuario)
+              .then(result => {
+                this.idUsuario = parseInt(localStorage.getItem('idUsuario'));
+                this.usuario = result;
+                console.log(this.usuario);
+
+              })
+          })
+
       })
       .catch(error => console.log(error))
   }

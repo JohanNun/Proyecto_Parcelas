@@ -14,6 +14,7 @@ export interface parcela {
   ciudad: string;
   descripcion: string;
   fk_usuario: number;
+  trozo_disponible: number;
 }
 
 @Injectable({
