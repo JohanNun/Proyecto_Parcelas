@@ -1,0 +1,61 @@
+<navbar></navbar>
+
+
+<div class="container">
+    <h2>Edita tus Parcelas</h2>
+
+
+    <form [formGroup]="formularioParcela" (ngSubmit)="onSubmitParcela()" class="row">
+        <div class="form-group col-6">
+            <label>Título</label>
+            <input type="text" class="form-control" formControlName="titulo">
+
+        </div>
+        <div class="form-group col-6">
+            <label>Tamaño Total</label>
+            <input type="number" class="form-control" formControlName="tamano_total">
+
+        </div>
+        <div class="form-group col-6">
+            <label>Tamaño Disponible</label>
+            <input type="number" class="form-control" formControlName="tamano_disponible">
+
+        </div>
+
+        <div class="form-group col-12">
+            <label>Precio Metro</label>
+            <input type="number" class="form-control" formControlName="precio_metro">
+
+        </div>
+
+        <div class="form-group col-12">
+            <label>Calle</label>
+            <input type="text" class="form-control" formControlName="calle">
+
+        </div>
+
+        <div class="form-group col-6">
+            <label>Ciudad</label>
+            <input type="text" class="form-control" formControlName="ciudad">
+        </div>
+
+
+        <div class="form-group col-12">
+            <label>Imágenes</label>
+            <input type="url" class="form-control" formControlName="images">
+        </div>
+        <div class="form-group col-12">
+            <label>Descripción</label>
+            <textarea class="form-control" rows="3" formControlName="descripcion"></textarea>
+        </div>
+
+        <input type="hidden" formControlName="id" ([ngModel])="idParcela">
+        <input type="hidden" formControlName="fk_usuario" ([ngModel])="fkUsuario">
+
+        <div class="boton col-12">
+            <input type="submit" value="Enviar" class="btn btn-info">
+        </div>
+
+    </form>
+
+</div>
