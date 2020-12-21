@@ -95,11 +95,7 @@ export class PaginaAnuncioComponent implements OnInit {
         this.parcela = result;
         this.usuariosService.getUsuario(this.parcela.fk_usuario)
           .then(result => {
-<<<<<<< HEAD
-            let idUsuario = localStorage.getItem('idUsuario');
-=======
             this.idUsuario = parseInt(localStorage.getItem('idUsuario'));
->>>>>>> feature
             this.usuario = result;
             console.log(this.usuario);
 

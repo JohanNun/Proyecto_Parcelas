@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { ConversacionComponent } from './conversacion/conversacion.component';
+import { EditaParcelaComponent } from './edita-parcela/edita-parcela.component';
 import { EditaPerfilComponent } from './edita-perfil/edita-perfil.component';
 import { FormularioParcelaComponent } from './formulario-parcela/formulario-parcela.component';
 import { FormularioComponent } from './formulario/formulario.component';
@@ -32,6 +33,7 @@ const routes: Routes = [
   { path: 'perfil-usuario/:id', component: PerfilUsuarioComponent },
   { path: 'mensajes-privados', component: MensajesPrivadosComponent, canActivate: [LoginGuard] },
   { path: 'edita-perfil/:id', component: EditaPerfilComponent },
+  { path: 'edita-parcela/:id', component: EditaParcelaComponent },
   { path: 'conversacion/:id', component: ConversacionComponent, canActivate: [LoginGuard] },
   { path: '**', redirectTo: '/home' }
 ];

@@ -31,6 +31,7 @@ import { MapaParcelasComponent } from './mapa-parcelas/mapa-parcelas.component';
 import { MensajesPrivadosComponent } from './mensajes-privados/mensajes-privados.component';
 import { EditaPerfilComponent } from './edita-perfil/edita-perfil.component';
 import { ConversacionComponent } from './conversacion/conversacion.component';
+import { EditaParcelaComponent } from './edita-parcela/edita-parcela.component';
 
 
 @NgModule({
@@ -56,6 +57,7 @@ import { ConversacionComponent } from './conversacion/conversacion.component';
     MensajesPrivadosComponent,
     EditaPerfilComponent,
     ConversacionComponent,
+    EditaParcelaComponent,
   ],
   imports: [
     BrowserModule,

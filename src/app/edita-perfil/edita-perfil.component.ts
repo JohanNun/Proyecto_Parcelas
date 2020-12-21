@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { MessageService } from 'primeng/api';
+import { parcela, ParcelasService } from '../services/parcelas.service';
 import { usuario, UsuariosService } from '../services/usuarios.service';
 
 
@@ -13,14 +14,20 @@ import { usuario, UsuariosService } from '../services/usuarios.service';
 })
 export class EditaPerfilComponent implements OnInit {
 
+
   formulario: FormGroup;
   usuario: usuario;
   id: number;
+  parcelas: parcela[];
+  parcela: parcela;
+  idParcela: number;
 
   constructor(private usuariosService: UsuariosService,
     private activatedRoute: ActivatedRoute,
     private router: Router,
-    private messageService: MessageService) {
+    private messageService: MessageService,
+    private parcelasService: ParcelasService) {
+
 
 
     this.formulario = new FormGroup({
@@ -68,9 +75,13 @@ export class EditaPerfilComponent implements OnInit {
           descripcion: new FormControl(this.usuario.descripcion)
         })
 
+
+
       })
       .catch(error => console.log(error)
       )
+
+
 
   }
 
@@ -94,6 +105,8 @@ export class EditaPerfilComponent implements OnInit {
       this.router.navigate(['/perfil-usuario', id]);
     }, 2500);
   }
+
+
 
 
 
