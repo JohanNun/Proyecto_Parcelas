@@ -34,3 +34,9 @@ navbar {
     }
 }
 
+@media(max-width: 48em){
+    .hero{
+        width: 100%;
+    }
+}
+
