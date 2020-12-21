@@ -192,7 +192,7 @@ export class PaginaAnuncioComponent implements OnInit {
     let id = this.activatedRoute.snapshot.params['idParcela'];
     let idUsuario = localStorage.getItem('idUsuario');
 
-    this.trozosService.reservar(this.formularioReserva.value, id, idUsuario)
+    this.trozosService.reservar(this.formularioReserva.value.tamano, id, idUsuario)
       .then(response => {
         console.log(response);
         this.messageService.add({ severity: 'success', summary: 'Tu reserva se ha hecho correctamente! ', detail: 'Urban Garden' });

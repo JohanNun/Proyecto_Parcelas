@@ -46,7 +46,7 @@ export class TrozosService {
       })
     }
 
-    return this.httpClient.post<Trozo>(`${this.baseUrl}/nuevo_trozo/${pFkParcela}`, { tamano: tamano, fk_parcela: pFkParcela, fk_usuario: pFkUsuario }, httpOptions).toPromise();
+    return this.httpClient.post<Trozo>(`${this.baseUrl}/nuevo_trozo/${pFkParcela}`, { tamano, fk_parcela: pFkParcela, fk_usuario: pFkUsuario }, httpOptions).toPromise();
   }
 
 

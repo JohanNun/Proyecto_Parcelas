@@ -6,7 +6,7 @@
 
 
 .mainCont {
-    background-color: rgb(65, 126, 100);
+    background-color: transparent;
 }
 
 .mainCont2 {
@@ -18,24 +18,23 @@
     padding: 15px 25px;
     /* border-bottom:1px ridge rgb(102, 5, 45); */
     
-        border-bottom: 2px solid;
+      /*   border-bottom: 2px solid;
         border-image-source: linear-gradient(45deg, rgb(52, 124, 105), rgb(51, 27, 56));
         border-image-slice: 1;
-        
+        */
     
     
-    background-color: rgba(239, 245, 244, 0.137);
+    background-color: rgba(239, 245, 244, 0.137); 
 }
 
 
 .logo {
-    margin-left: 25px;
+    margin-left: 15px;
 }
 
-.logo i{
-    margin-top: 6px;
-    font-size: 2.4em;
-    color: rgb(243, 241, 241);
+.logo img {
+    width: 3.5em;
+    font-size: 4em;
     text-decoration: none;
 }
 
@@ -217,9 +216,10 @@
         margin-left: -10px;
     }
 
-    .logo i{
-        margin-top: 9px;
-        font-size: 1.9em;
+    .logo img{
+        background-image: "../../assets/images/Logo_urbangarden_small_grey.png";
+        /* margin-top: 2px; */
+        font-size: 1.3em;
         text-decoration: none;
     }
 

@@ -4,12 +4,18 @@
 
         <div class="logo">
             <a href="#">
-                <i class="fas fa-seedling">UG</i>
+                <picture>
+                    <source media="(max-width: 48em)" srcset="../../assets/images/Logo_urbangarden_small1_grey.png">
+                    <img class="img-fluid" src="../../assets/images/Logo_urbangarden_large_grey.png">
+                </picture>
+                <!-- <i class="fas fa-seedling">UG</i> -->
+
+
             </a>
         </div>
 
 
-        <div class="clicka">
+        <div class=" clicka">
 
             <div class="venta" (click)="onClick('form-parcela')">
                 <button class="btn">Ofrece tú parcela</button>
