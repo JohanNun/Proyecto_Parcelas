@@ -15,6 +15,8 @@ export interface parcela {
   descripcion: string;
   fk_usuario: number;
   trozo_disponible: number;
+  latitude: number;
+  longitude: number;
 }
 
 @Injectable({
