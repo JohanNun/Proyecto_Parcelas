@@ -50,6 +50,7 @@ export class PaginaAnuncioComponent implements OnInit {
 
 
   ngOnInit(): void {
+    this.idUsuario = parseInt(localStorage.getItem('idUsuario'));
     this.imagenesService.getImagenes()
       .then(imagenes => this.imagenes = imagenes)
 

@@ -63,22 +63,22 @@ export class PaginaBusquedaComponent implements OnInit {
         .then(result => {
           this.parcelitas = result
 
-          const positionParcelas = new Array();
+          /*  const positionParcelas = new Array(); */
 
-          for (let parcela of this.parcelitas) {
+          /*  for (let parcela of this.parcelitas) {
+ 
+             var geocoder = new google.maps.Geocoder();
+             geocoder.geocode({ address: parcela.calle }, function (result, status) {
+ 
+               if (status === google.maps.GeocoderStatus.OK) {
+                 let position = result[0].geometry.location;
+                 positionParcelas.push({ latitud: position.lat(), longitud: position.lng() });
+               }
+ 
+             });
+           } */
 
-            var geocoder = new google.maps.Geocoder();
-            geocoder.geocode({ address: parcela.calle }, function (result, status) {
-
-              if (status === google.maps.GeocoderStatus.OK) {
-                let position = result[0].geometry.location;
-                positionParcelas.push({ latitud: position.lat(), longitud: position.lng() });
-              }
-
-            });
-          }
-
-          this.parcelas = positionParcelas;
+          /* this.parcelas = positionParcelas; */
           console.log(this.parcelas);
 
         })
@@ -89,23 +89,23 @@ export class PaginaBusquedaComponent implements OnInit {
         .then(result => {
           this.parcelitas = result
 
-          const positionParcelas = new Array();
+          /*   const positionParcelas = new Array(); */
 
-          for (let parcela of this.parcelitas) {
+          /*     for (let parcela of this.parcelitas) {
+    
+                var geocoder = new google.maps.Geocoder();
+                geocoder.geocode({ address: parcela.calle }, function (result, status) {
+    
+                  if (status === google.maps.GeocoderStatus.OK) {
+                    let position = result[0].geometry.location;
+                    positionParcelas.push({ latitud: position.lat(), longitud: position.lng() });
+                  }
+    
+                });
+              } */
 
-            var geocoder = new google.maps.Geocoder();
-            geocoder.geocode({ address: parcela.calle }, function (result, status) {
-
-              if (status === google.maps.GeocoderStatus.OK) {
-                let position = result[0].geometry.location;
-                positionParcelas.push({ latitud: position.lat(), longitud: position.lng() });
-              }
-
-            });
-          }
-
-          this.parcelas = positionParcelas;
-          console.log(this.parcelas);
+          /* this.parcelas = positionParcelas;
+          console.log(this.parcelas); */
         })
         .catch(error => console.log(error))
     }

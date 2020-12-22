@@ -26,7 +26,7 @@ export class MapaComponent implements OnInit {
 
       this.latitud = position.coords.latitude;
       this.longitud = position.coords.longitude;
-      /* this.zoom = 1; */
+      this.zoom = 17;
     });
 
     /* Consulta bd y traer todos los huertos */

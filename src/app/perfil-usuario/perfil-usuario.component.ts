@@ -77,20 +77,19 @@ export class PerfilUsuarioComponent implements OnInit {
 
 
 
-  onCancelar(pId) {
+  async onCancelar(pId) {
 
     let id = this.activatedRoute.snapshot.params['id']
 
-    this.TrozosService.cancelar(pId)
-      .then(res => {
-        console.log(res);
-        this.messageService.add({ severity: 'error', summary: 'Sentimos que hayas cancelado tu vínculo con este usuario :(', detail: 'Urban Garden' });
+
+    await this.TrozosService.cancelar(pId)
+
+    this.messageService.add({ severity: 'error', summary: 'Sentimos que hayas cancelado tu vínculo con este usuario :(', detail: 'Urban Garden' });
+    const response = await this.usuarioService.getUsuario(id)
 
 
-      })
-      .catch(error => {
-        console.log(error)
-      })
+    this.usuario = response;
+
 
 
 

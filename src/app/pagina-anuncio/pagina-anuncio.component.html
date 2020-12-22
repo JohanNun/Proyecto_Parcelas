@@ -28,7 +28,7 @@
 
         </div>
 
-        <div class="reserva">
+        <div class="reserva" *ngIf="idUsuario !== parcela?.fk_usuario">
             <form class="form-group row col-12" [formGroup]="formularioReserva" (ngSubmit)="onSubmit()">
                 <h5>Te gusta esta parcela? </h5>
                 <label>Indica cuántos m² quieres y reservala!</label>
@@ -71,9 +71,9 @@
 
         <div class="pie">
 
-            <div class="mapa">
+            <div class="mapa" *ngIf="parcela">
                 <h5>Ubicación</h5>
-                <app-mapa-parcelas [parcelas]="parcelas" [buscador]="false" [fitBounds]="false">
+                <app-mapa-parcelas [parcelas]="[parcela]" [buscador]="false" [zoom]="15" [fitBounds]="false">
 
                 </app-mapa-parcelas>
             </div>

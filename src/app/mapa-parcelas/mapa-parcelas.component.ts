@@ -29,12 +29,26 @@ export class MapaParcelasComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    let ciudad = this.activatedRoute.snapshot.params['ciudad']
 
-    navigator.geolocation.getCurrentPosition(position => {
+    navigator.geolocation.getCurrentPosition(async position => {
 
       this.latitud = position.coords.latitude;
       this.longitud = position.coords.longitude;
-      this.zoom = 11;
+      /* this.zoom = 5; */
+      /* this.parcelas = await this.parcelasService.getAll() */
+      if (ciudad !== '') {
+
+        /* this.parcelas = await this.parcelasService.getCiudad(ciudad) */
+
+
+
+      } else {
+
+        /* this.parcelas = await this.parcelasService.getAll() */
+
+      }
+
 
     });
 
@@ -51,22 +65,7 @@ export class MapaParcelasComponent implements OnInit {
         .then(result => {
           this.parcelas = result
 
-          const positionParcelas = new Array();
 
-          for (let parcela of this.parcelas) {
-
-            var geocoder = new google.maps.Geocoder();
-            geocoder.geocode({ address: parcela.calle }, function (result, status) {
-
-              if (status === google.maps.GeocoderStatus.OK) {
-                let position = result[0].geometry.location;
-                positionParcelas.push({ latitud: position.lat(), longitud: position.lng() });
-              }
-
-            });
-          }
-
-          this.parcelas = positionParcelas;
           console.log(this.parcelas);
 
         })
@@ -78,22 +77,8 @@ export class MapaParcelasComponent implements OnInit {
         .then(result => {
           this.parcelas = result
 
-          const positionParcelas = new Array();
 
-          for (let parcela of this.parcelas) {
 
-            var geocoder = new google.maps.Geocoder();
-            geocoder.geocode({ address: parcela.calle }, function (result, status) {
-
-              if (status === google.maps.GeocoderStatus.OK) {
-                let position = result[0].geometry.location;
-                positionParcelas.push({ latitud: position.lat(), longitud: position.lng() });
-              }
-
-            });
-          }
-
-          this.parcelas = positionParcelas;
           console.log(this.parcelas);
 
         })
