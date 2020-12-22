@@ -42,9 +42,10 @@
 
                         <p>{{trozo.calle}}</p>
                         <img src="{{trozo.images}}">
-                        <button class="btn">Cancelar vínculo</button>
-                        <p><span>{{trozo.suma}} / m²</span></p>
 
+                        <button class="btn" (click)="onCancelar(trozo.id)">Cancelar vínculo</button>
+                        <p><span>{{trozo.suma}} / m²</span></p>
+                        <p-toast position="bottom-center"></p-toast>
 
                     </div>
                 </div>

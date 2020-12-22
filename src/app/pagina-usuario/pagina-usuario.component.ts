@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ImagenesgaleriaService } from '../services/imagenesgaleria.service';
+import { Conversacion, MensajesService } from '../services/mensajes.service';
 import { parcela, ParcelasService } from '../services/parcelas.service';
 import { usuario, UsuariosService } from '../services/usuarios.service';
 
@@ -14,32 +15,18 @@ export class PaginaUsuarioComponent implements OnInit {
   imagenes: any[];
   usuario: usuario;
   parcela: parcela;
+  conversacion: Conversacion;
 
-  responsiveOptions: any[] = [
-    {
-      breakpoint: '1024px',
-      numVisible: 5
-    },
-    {
-      breakpoint: '768px',
-      numVisible: 3
-    },
-    {
-      breakpoint: '560px',
-      numVisible: 1
-    }
-  ];
+
 
   constructor(public usuariosService: UsuariosService,
-    private parcelasService: ParcelasService,
-    private imagenesService: ImagenesgaleriaService,
-    private activatedRoute: ActivatedRoute) {
+    private activatedRoute: ActivatedRoute,
+    private mensajesService: MensajesService,
+    private router: Router) {
 
   }
 
   ngOnInit(): void {
-    this.imagenesService.getImagenes()
-      .then(imagenes => this.imagenes = imagenes)
 
     //Recuperar usuario
     let id = this.activatedRoute.snapshot.params['id'];
@@ -48,11 +35,27 @@ export class PaginaUsuarioComponent implements OnInit {
     this.usuariosService.getUsuario(id)
       .then(result => {
         this.usuario = result;
-        console.log(this.usuario);
 
       })
 
-
-
   }
+
+
+
+  createConversacion(pUsuarioId) {
+    let idUsuario = localStorage.getItem('idUsuario');
+
+    this.mensajesService.createConversacion(idUsuario, pUsuarioId)
+      .then(result => {
+        this.conversacion = result;
+
+        this.router.navigate(['conversacion', this.conversacion.id]);
+      })
+  }
+
+
+  onClick(pRuta) {
+    this.router.navigate([pRuta])
+  }
+
 }

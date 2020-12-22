@@ -4,10 +4,13 @@ import { parcela, ParcelasService } from '../services/parcelas.service';
 import { Trozo, TrozosService } from '../services/trozos.service';
 import { usuario, UsuariosService } from '../services/usuarios.service';
 
+import { MessageService } from 'primeng/api';
+
 @Component({
   selector: 'app-perfil-usuario',
   templateUrl: './perfil-usuario.component.html',
-  styleUrls: ['./perfil-usuario.component.css']
+  styleUrls: ['./perfil-usuario.component.css'],
+  providers: [MessageService]
 })
 export class PerfilUsuarioComponent implements OnInit {
 
@@ -21,22 +24,20 @@ export class PerfilUsuarioComponent implements OnInit {
     private usuarioService: UsuariosService,
     private parcelasService: ParcelasService,
     private TrozosService: TrozosService,
-    private router: Router) { }
+    private router: Router,
+    private messageService: MessageService) { }
+
+
 
   ngOnInit(): void {
 
     let id = this.activatedRoute.snapshot.params['id']
-    console.log(id);
 
     this.usuarioService.getUsuario(id)
       .then(response => {
         this.usuario = response;
-        console.log(this.usuario);
-
-
       })
-      .catch(error => console.log(error)
-      )
+      .catch(error => console.log(error))
 
 
 
@@ -46,12 +47,7 @@ export class PerfilUsuarioComponent implements OnInit {
       .then(result => {
         this.parcelitas = result;
       })
-      .catch(error => console.log(error)
-      )
-
-
-
-
+      .catch(error => console.log(error))
   }
 
 
@@ -63,15 +59,41 @@ export class PerfilUsuarioComponent implements OnInit {
   }
 
 
+
   onClickUpdate(pRuta) {
     let id = this.activatedRoute.snapshot.params['id']
     this.router.navigate([pRuta, id]);
   }
 
+
+
   onClickUpdateParcela(pId) {
     console.log(pId);
 
     this.router.navigate(['edita-parcela', pId]);
+  }
+
+
+
+
+
+  onCancelar(pId) {
+
+    let id = this.activatedRoute.snapshot.params['id']
+
+    this.TrozosService.cancelar(pId)
+      .then(res => {
+        console.log(res);
+        this.messageService.add({ severity: 'error', summary: 'Sentimos que hayas cancelado tu vínculo con este usuario :(', detail: 'Urban Garden' });
+
+
+      })
+      .catch(error => {
+        console.log(error)
+      })
+
+
+
   }
 
 

@@ -15,15 +15,20 @@
 
     <div class="campos">
         <h4>{{ usuario?.nombre}} {{ usuario?.apellidos}}</h4>
-        <h5>Role - Dueño o busca huertos</h5>
 
         <p> {{ usuario?.descripcion}}</p>
 
 
-        <button class="boton btn" type="submit" [routerLink]="['/mensaje']">Enviar
+        <!--   <button class="boton btn" type="submit" [routerLink]="['/mensaje']">Enviar
             mensaje</button>
 
         <p *ngIf="!usuariosService.isLogged()" class=" warn text-success">Inicia sesion para
+            mandar un mensaje</p> -->
+
+        <input class="btn boton" type="submit" value="Enviar mensaje" (click)="createConversacion(usuario.id)">
+
+        <p *ngIf="!usuariosService.isLogged()" class=" warn text-success" (click)="onClick('login')">Inicia sesion
+            para
             mandar un mensaje</p>
 
     </div>

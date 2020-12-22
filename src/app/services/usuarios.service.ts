@@ -19,6 +19,7 @@ export interface usuario {
   imagen: string;
   descripcion: string;
   trozos: [{
+    id: number;
     calle: string;
     images: string;
     titulo: string;
