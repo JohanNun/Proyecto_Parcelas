@@ -92,6 +92,7 @@ export class UsuariosService {
     localStorage.removeItem('imagen_usuario');
     localStorage.removeItem('idUsuario');
     localStorage.removeItem('usuario');
+
   }
 
 }
