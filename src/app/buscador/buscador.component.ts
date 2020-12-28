@@ -24,7 +24,7 @@ export class BuscadorComponent implements OnInit {
 
   ngOnInit(): void {
     let ciudad = this.activatedRoute.snapshot.params;
-    this.parcelasService.getCiudad(this.busqueda)
+    this.parcelasService.getCiudad(ciudad)
       .then(result => {
         this.parcelas = result;
       })
