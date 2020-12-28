@@ -37,7 +37,8 @@ export class UsuariosService {
   constructor(private httpClient: HttpClient,
     private router: Router) {
 
-    this.baseUrl = 'http://localhost:3000/api/usuarios';
+    /* this.baseUrl = 'http://localhost:3000/api/usuarios'; */
+    this.baseUrl = 'https://huertos-urbanos.herokuapp.com/api/usuarios';
 
   }
 

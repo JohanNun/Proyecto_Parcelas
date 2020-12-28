@@ -9,7 +9,8 @@ export class HuertComService {
   baseUrl: string;
 
   constructor(private httpClient: HttpClient) {
-    this.baseUrl = 'http://localhost:3000/api/huertos'
+    /* this.baseUrl = 'http://localhost:3000/api/huertos' */
+    this.baseUrl = 'https://huertos-urbanos.herokuapp.com/api/huertos';
   }
 
 

@@ -31,7 +31,8 @@ export class MensajesService {
 
   constructor(private httpClient: HttpClient) {
 
-    this.baserUrl = 'http://localhost:3000/api/mensajes'
+    /* this.baserUrl = 'http://localhost:3000/api/mensajes' */
+    this.baserUrl = 'https://huertos-urbanos.herokuapp.com/api/mensajes'
   }
 
 

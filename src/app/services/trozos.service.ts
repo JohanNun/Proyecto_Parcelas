@@ -20,7 +20,9 @@ export class TrozosService {
 
   constructor(private httpClient: HttpClient) {
 
-    this.baseUrl = 'http://localhost:3000/api/trozos'
+    /* this.baseUrl = 'http://localhost:3000/api/trozos' */
+    this.baseUrl = 'https://huertos-urbanos.herokuapp.com/api/trozos';
+
   }
 
 

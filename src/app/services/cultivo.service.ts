@@ -26,7 +26,9 @@ export class CultivoService {
   baseUrl: string;
 
   constructor(private httpClient: HttpClient) {
-    this.baseUrl = "http://localhost:3000/api/cultivos"
+    /* this.baseUrl = "http://localhost:3000/api/cultivos" */
+    this.baseUrl = "https://huertos-urbanos.herokuapp.com/api/cultivos"
+
   }
 
   getInfo(pNombre): Promise<cultivo> {

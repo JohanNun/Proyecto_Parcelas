@@ -28,7 +28,8 @@ export class ParcelasService {
 
   constructor(private httpClient: HttpClient) {
 
-    this.baseUrl = 'http://localhost:3000/api/parcelas'
+    /* this.baseUrl = 'http://localhost:3000/api/parcelas' */
+    this.baseUrl = 'https://huertos-urbanos.herokuapp.com/api/parcelas';
 
   }
 
