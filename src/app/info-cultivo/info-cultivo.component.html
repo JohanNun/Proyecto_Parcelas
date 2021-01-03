@@ -9,7 +9,27 @@
 
     </div>
 
-    <div class="alimento card mb-3 col-md-10" [ngClass]="[sinDiv == true ? 'esconder' : '']">
+
+    <div class="inicio" *ngIf="sinBusc == false && sinDiv == true && !busqueda">
+        <div class="foto">
+            <img src="../../assets/images/busca-imagen.png">
+        </div>
+        <p class="texto">Quieres cultivar algo y no sabes cómo o cuándo? Introduce el nombre del alimento en el
+            buscador!</p>
+    </div>
+
+
+
+    <div class="instruccion" [ngClass]="[sinBusc == false ? 'esconder' : '']">
+
+        <img src="../../assets/images/talking-veg.png" alt="">
+        <i class="fas fa-info-circle">
+            No tenemos información sobre este alimento
+        </i>
+
+    </div>
+
+    <div class="alimento card" [ngClass]="[sinDiv == true ? 'esconder' : '']">
 
         <div class="row no-gutters">
 

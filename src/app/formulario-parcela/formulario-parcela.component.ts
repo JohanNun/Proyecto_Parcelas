@@ -56,7 +56,7 @@ export class FormularioParcelaComponent implements OnInit {
     this.formularioParcela.reset();
 
     setTimeout(() => {
-      this.router.navigate(['/home']);
+      this.router.navigate(['/']);
     }, 2500);
   }
 

@@ -18,8 +18,8 @@ import { PaginaUsuarioComponent } from './pagina-usuario/pagina-usuario.componen
 import { PerfilUsuarioComponent } from './perfil-usuario/perfil-usuario.component';
 
 const routes: Routes = [
-  { path: '', pathMatch: 'full', redirectTo: '/home' },
-  { path: 'home', component: HomeComponent },
+  { path: '', pathMatch: 'full', redirectTo: '/' },
+  { path: '', component: HomeComponent },
   { path: 'huertos-colectivos', component: HuertosComunitariosComponent },
   { path: 'huertos-colectivos/:huertoId', component: HuertoPublicoComponent },
   { path: 'info-cultivo', component: InfoCultivoComponent },

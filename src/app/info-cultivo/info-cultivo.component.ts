@@ -14,6 +14,7 @@ export class InfoCultivoComponent implements OnInit {
   cultivo: cultivo;
   busqueda: string;
   sinDiv: boolean = true;
+  sinBusc: boolean = false;
 
 
   constructor(private cultivoService: CultivoService,
@@ -29,19 +30,28 @@ export class InfoCultivoComponent implements OnInit {
   onSearch() {
     console.log(this.busqueda);
 
-
     if (this.busqueda === "") {
 
     } else {
       this.cultivoService.getInfo(this.busqueda)
         .then(res => {
+          console.log(res);
+
           if (res) {
             this.sinDiv = false;
             this.cultivo = res;
+            this.sinBusc = false;
+            this.busqueda = "";
+          } else if (this.cultivo == null) {
+            this.sinBusc = true;
+            this.sinDiv = true;
             this.busqueda = "";
           } else {
             this.sinDiv = true;
+            this.sinBusc = true;
+            this.busqueda = "";
           }
+
 
 
 

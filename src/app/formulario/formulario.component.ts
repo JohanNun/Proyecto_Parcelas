@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { UsuariosService } from '../services/usuarios.service';
 
 @Component({
@@ -12,7 +13,8 @@ export class FormularioComponent implements OnInit {
   formulario: FormGroup;
   tipoPassword: string;
 
-  constructor(private usuariosService: UsuariosService) {
+  constructor(private usuariosService: UsuariosService,
+    private router: Router) {
 
     this.tipoPassword = 'password';
 
@@ -38,7 +40,6 @@ export class FormularioComponent implements OnInit {
   }
 
   onSubmit() {
-    /* console.log(this.formulario.value); */
     this.usuariosService.create(this.formulario.value)
       .then(response => {
         console.log(response);
@@ -47,6 +48,7 @@ export class FormularioComponent implements OnInit {
       .catch(error => console.log(error));
 
     this.formulario.reset();
+    this.router.navigate(['/login']);
   }
 
 

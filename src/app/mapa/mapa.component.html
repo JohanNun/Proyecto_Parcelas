@@ -9,7 +9,7 @@
     <div class="mapa">
 
         <agm-map [latitude]="huertosLocalizacion[0].latitud" [longitude]="huertosLocalizacion[0].longitud"
-            [zoom]="zoom">
+            [zoom]="huertosLocalizacion[0].zoom">
             <agm-marker *ngFor="let huerto of huertosLocalizacion" [latitude]="huerto.latitud"
                 [longitude]="huerto.longitud">
             </agm-marker>

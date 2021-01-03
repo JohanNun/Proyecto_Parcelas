@@ -48,7 +48,7 @@ export class NavbarComponent implements OnInit {
     setTimeout(() => {
       this.usuariosService.logOut();
       this.progress;
-      this.router.navigate(['/home']);
+      this.router.navigate(['/']);
     }, 2000);
 
 

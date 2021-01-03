@@ -47,7 +47,7 @@ export class LoginComponent implements OnInit {
           localStorage.setItem('usuario', response['usuario']);
           localStorage.setItem('idUsuario', response['idUsuario'])
 
-          this.router.navigate(['/home']);  //Cuando el login este hecho manda a la pagina home
+          this.router.navigate(['/']);  //Cuando el login este hecho manda a la pagina home
         }
 
 
