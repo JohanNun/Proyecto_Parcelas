@@ -73,8 +73,8 @@
 
             <div class="mapa" *ngIf="parcela">
                 <h5>Ubicación</h5>
-                <app-mapa-parcelas [parcelas]="[parcela]" [buscador]="false" [zoom]="15" [fitBounds]="false">
-
+                <app-mapa-parcelas [parcelas]="[parcela]" [buscador]="false" [zoom]="11" [latitud]="parcela.latitude"
+                    [longitud]="parcela.longitude">
                 </app-mapa-parcelas>
             </div>
 

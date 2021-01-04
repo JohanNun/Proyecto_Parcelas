@@ -35,7 +35,7 @@ export class MapaParcelasComponent implements OnInit {
 
       this.latitud = position.coords.latitude;
       this.longitud = position.coords.longitude;
-      /* this.zoom = 5; */
+      /* this.zoom = 5; 
       /* this.parcelas = await this.parcelasService.getAll() */
       if (ciudad !== '') {
 
