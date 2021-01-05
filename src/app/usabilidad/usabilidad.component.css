@@ -1,0 +1,139 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.mainCont{
+    padding: 50px; 
+    margin-top: 50px;
+    min-height: 80vh;
+}
+
+.fas, .far .arriba, .fa-handshake {
+    font-size: 40px;
+    color: rgb(65, 126, 100);
+}
+
+.fa-arrow-alt-circle-right {
+    font-size: 25px;
+    color: rgb(206, 175, 74);
+    margin-top: 30px;
+}
+
+.fa-arrow-alt-circle-down {
+    display: inline-block;
+    font-size: 25px;
+    color: rgb(206, 175, 74);
+    margin-top: 30px;
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    transform: rotate(-45deg);
+}
+
+
+.abajo {
+    width: 66%;
+    margin-top: 20px;
+    text-align: center;
+}
+
+.arriba {
+    flex-wrap: wrap;
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%; 
+    text-align: center;
+}
+
+.registra, .consulta, .reserva {
+    width: 18%;
+}
+
+.duenoDentro {
+    width: 18%;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.dueno {
+    width: 100%;
+    flex-wrap: wrap;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 50px;
+}
+
+
+
+.comunidad {
+    width: 100%;
+    margin-top: 75px;
+    text-align: center;
+}
+
+.comunidad p {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.comunidad span {
+    color: rgb(65, 126, 100);
+}
+
+.comunidad .far {
+    display: inline-block;
+    font-size: 25px;
+    color: rgb(206, 175, 74);
+    margin-top: 20px;
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+}
+
+
+@media(max-width: 48em) {
+
+    .mainCont {
+        padding: 10px;
+    }
+
+    .registra, .consulta, .reserva {
+        width: 28%;
+        max-height: 100px;
+        font-size: 14px;
+        margin-bottom: 20px;
+    }
+
+    .duenoDentro {
+        width: 28%;
+        max-height: 100px;
+        font-size: 14px;
+        margin-bottom: 40px;
+    }
+
+    .abajo .fa-arrow-alt-circle-down {
+        margin-top: 80px;
+        margin-left: -50px;
+    }
+}
+
+@media(max-width: 20em) {
+
+    .registra, .consulta, .reserva, .duenoDentro {
+        width: 100%;
+        max-height: 100px;
+        font-size: 14px;
+        margin-bottom: 30px;
+    }
+
+    .fa-arrow-alt-circle-right, .fa-arrow-alt-circle-down {
+        display: none;
+    }
+
+
+}

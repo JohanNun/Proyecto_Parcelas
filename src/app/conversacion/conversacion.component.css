@@ -7,17 +7,19 @@
 .mainCont {
     padding: 30px 25px;
     margin: 0 auto;
-    
+    min-height: 80vh;
+    margin-top: 30px;
 }
 
 .cabeza {
     width: 100%;
     height: 50px;
     padding: 12px 15px;
-    border-top-left-radius: 20px;
-    border-top-right-radius: 20px;
-    background-color:rgb(92, 60, 71);
-    border: 1px solid rgb(199, 196, 196);
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+    /* background-color:rgba(92, 60, 71, 0.664); */
+    background-color:rgba(92, 60, 71, 0.036);
+    /* border: 1px solid rgb(199, 196, 196); */
     flex-wrap: wrap;
     display: flex;
 }
@@ -30,7 +32,7 @@
 
 .cabeza h5 {
     font-weight: 700;
-    color: white;
+    color: rgb(49, 46, 46);
     width: 90%;
     margin-left: 10px;
 }
@@ -43,7 +45,7 @@
     padding: 1px 0px 0px 1px;
     overflow-y: scroll;
     padding-top: 15px;
-    border-left: 1px solid rgb(199, 196, 196);
+    /* border-left: 1px solid rgb(199, 196, 196); */
 }
 
 ul {
@@ -64,9 +66,8 @@ li {
 .sender {
     background-color: rgb(144, 212, 167);
     float: right;
-    
     text-align: right; 
-    }
+}
     
 .reciver {
     background-color: rgb(228, 226, 165);
@@ -82,8 +83,8 @@ span {
     flex-wrap: wrap;
     display: flex;
     justify-content: space-evenly;
-    
-    border-top: 1px solid rgb(199, 196, 196);
+    background-color:rgba(92, 60, 71, 0.036);
+    /* border-top: 1px solid rgb(199, 196, 196); */
 }
 
 .campo {
@@ -151,7 +152,7 @@ textarea {
 
     .cabeza h5 {
         font-weight: 700;
-        color: white;
+        color: rgb(49, 46, 46);
         width: 80%;
         margin-left: 10px;
     }

@@ -33,6 +33,7 @@ import { MensajesPrivadosComponent } from './mensajes-privados/mensajes-privados
 import { EditaPerfilComponent } from './edita-perfil/edita-perfil.component';
 import { ConversacionComponent } from './conversacion/conversacion.component';
 import { EditaParcelaComponent } from './edita-parcela/edita-parcela.component';
+import { UsabilidadComponent } from './usabilidad/usabilidad.component';
 
 
 @NgModule({
@@ -59,6 +60,7 @@ import { EditaParcelaComponent } from './edita-parcela/edita-parcela.component';
     EditaPerfilComponent,
     ConversacionComponent,
     EditaParcelaComponent,
+    UsabilidadComponent,
   ],
   imports: [
     BrowserModule,
